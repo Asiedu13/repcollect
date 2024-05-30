@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RepCollect | Home</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body class="bg-gray-100 mx-[100px]">
+    <header class="flex justify-between  py-[10px]">
+        <nav>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+        </nav>
+
+        <h2 class="text-xl font-bold">RepCollect</h2>
+    </header>
+    <main class="container">
+       <section class="flex flex-col h-[500px] justify-center items-center w-[inherit]">
+        <section class="flex flex-col justify-center items-center w-[inherit]">
+            <h1 class="text-3xl font-bold">Get Started</h1>
+            <p class="">Start <b class="bg-green-400 text-white p-1 rounded-md ">tracking</b> donations and group collections today in three easy steps</p>
+        </section>
+        <div class="w-[500px] my-[50px] ">
+            <p class="text-gray-700 font-bold">Steps #</p>
+            <ol class=" mx-[20px]">
+                <li class="flex gap-2">1. Create a link <a href="#" class="bg-blue-400 text-white text-sm p-1 rounded-md w-[120px] flex gap-2 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    Create a link</a> </li>
+                <li class="flex gap-5 relative">2. Fill in details
+                    <div class="bg-white w-[200px] h-[300px] rounded-xl shadow-md absolute right-0 p-4">
+                        <h2 class="font-bold text-gray-600">Group 5 Project Work</h2>
+                        <p class="text-gray-400 text-sm font-bold">Payments</p>
+                        <ul class="text-sm text-gray-500 my-4 font-semibold ">
+                            <li>Mary James $10</li>
+                            <li>John Doe $10</li>
+                            <li>Elizabeth Keen $10</li>
+                             <li>Patrick Hightower $10</li>
+                             <li>Eunice Kennedy $20</li>
+                             <li> Willa Cather $15</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>3. Share payment link</li>
+            </ol>
+            
+        </div>
+       </section>
+
+    </main>
+</body>
+</html>
