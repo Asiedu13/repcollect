@@ -17,13 +17,13 @@
         <h2 class="text-xl font-bold">RepCollect</h2>
     </header>
     <main class="container">
-       <section class="flex flex-col h-[500px] justify-center items-center w-[inherit]">
+       <section class="flex flex-col h-[550px] justify-center items-center w-[inherit]">
         <section class="flex flex-col justify-center items-center w-[inherit]">
             <h1 class="text-3xl font-bold">Get Started</h1>
             <p class="">Start <b class="bg-green-400 text-white p-1 rounded-md ">tracking</b> donations and group collections today in three easy steps</p>
         </section>
-        <div class="w-[500px] my-[50px] ">
-            <p class="text-gray-700 font-bold">Steps #</p>
+        <div class="w-[500px] my-[40px] ">
+            <p class="text-gray-700 font-bold flex items-center gap-2">Steps <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hash"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>  </p>
             <ol class=" mx-[20px]">
                 <li class="flex gap-2">1. Create a link <a href="#" class="bg-blue-400 text-white text-sm p-1 rounded-md w-[120px] flex gap-2 items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -47,7 +47,11 @@
             
         </div>
        </section>
-
+       <section class='flex justify-center items-center mt-[80px] gap-5'>
+        <a href="register" class="bg-gray-600 text-white py-1 px-2 rounded-md font-semibold .text-gray-600">Register account</a>
+        <a href="#login" class="bg-white py-1 px-2 rounded-md font-semibold text-gray-600">Log in to account</a>
+        
+       </section>
     </main>
 </body>
 </html>
