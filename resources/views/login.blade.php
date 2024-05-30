@@ -8,6 +8,13 @@
             <div>
                 <h1 class="text-2xl font-bold text-gray-700">Welcome Back</h1>
                 <p class="mb-10">Enter your credentials to access your account</p>
+                @if($errors->any())
+                <div>
+                    @foreach ($errors->all() as $error )
+                    <li class='text-red-600'>* {{$error}}</li>
+                    @endforeach
+                </div>
+                @endif
 
                 <a href="#google-login" class="border border-slate-300 p-1 rounded-md flex gap-3 items-center justify-center font-bold text-sm text-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
@@ -25,6 +32,7 @@
         </div>
 
         <form action="" class="w-[500px]" method="POST">
+            @csrf
             <div class="my-5 flex flex-col">
                 <label for="email" class="text-sm font-semibold text-gray-600">Email address</label>
                 <input class="outline-none border border-gray-400 rounded-md p-2" type="email" id="email" name="email" placeholder="example@gmail.com">

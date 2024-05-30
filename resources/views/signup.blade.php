@@ -24,7 +24,8 @@
             </div>
         </div>
 
-        <form action="" class="w-[500px]" method="POST">
+        <form action="<?php echo route('register') ?>" class="w-[500px]" method="POST">
+            @csrf
             <div class="my-5 flex flex-col">
                 <label for="email" class="text-sm font-semibold text-gray-600">Email address</label>
                 <input class="outline-none border border-gray-400 rounded-md p-2" type="email" id="email" name="email" placeholder="example@gmail.com">
