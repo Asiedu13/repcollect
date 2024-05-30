@@ -49,7 +49,7 @@
        </section>
        <section class='flex justify-center items-center mt-[80px] gap-5'>
         <a href="register" class="bg-gray-600 text-white py-1 px-2 rounded-md font-semibold .text-gray-600">Register account</a>
-        <a href="#login" class="bg-white py-1 px-2 rounded-md font-semibold text-gray-600">Log in to account</a>
+        <a href="login" class="bg-white py-1 px-2 rounded-md font-semibold text-gray-600">Log in to account</a>
         
        </section>
     </main>
