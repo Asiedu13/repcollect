@@ -4,11 +4,17 @@
             <div class="mt-24 mb-14 flex items-center gap-2">
                 <h2 class="text-xl font-bold text-gray-700">RepCollect</h2> | <span>Sign Up</span>
             </div>
-
+            
             <div>
                 <h1 class="text-2xl font-bold text-gray-700">Get Started Now</h1>
                 <p class="mb-10">Enter your credentials to access your account</p>
-
+                 @if($errors->any())
+                <div>
+                    @foreach ($errors->all() as $error )
+                    <p class='text-red-600'>* {{$error}}</p>
+                    @endforeach
+                </div>
+                @endif
                 <a href="{{route('auth.google')}}" class="border border-slate-300 p-1 rounded-md flex gap-3 items-center justify-center font-bold text-sm text-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
                 <path d="M23.5 13.2607C23.5 12.4482 23.4271 11.667 23.2917 10.917H12.5V15.3493H18.6667C18.401 16.7816 17.5938 17.9951 16.3802 18.8076V21.6826H20.0833C22.25 19.6878 23.5 16.7503 23.5 13.2607Z" fill="#4285F4"/>

@@ -11,7 +11,7 @@
                 @if($errors->any())
                 <div>
                     @foreach ($errors->all() as $error )
-                    <li class='text-red-600'>* {{$error}}</li>
+                    <p class='text-red-600'>* {{$error}}</p>
                     @endforeach
                 </div>
                 @endif
