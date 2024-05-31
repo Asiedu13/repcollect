@@ -97,6 +97,15 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    // 'providers' => [
+    //    \Laravel\Socialite\SocialiteServiceProvider::class
+    // ],
+
+    // 'aliases' => [
+    //     'Socialite' => \Laravel\Socialite\Facades\Socialite::class
+    // ],
+    
+
     'key' => env('APP_KEY'),
 
     'previous_keys' => [
@@ -124,3 +133,5 @@ return [
     ],
 
 ];
+
+
