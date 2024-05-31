@@ -49,9 +49,32 @@
             
         </div>
        </section>
-       <section class='flex justify-center items-center mt-[80px] gap-5'>
-        <a href="register" class="bg-gray-600 text-white py-1 px-2 rounded-md font-semibold .text-gray-600">Register account</a>
-        <a href="login" class="bg-white py-1 px-2 rounded-md font-semibold text-gray-600">Log in to account</a>
+       @guest
+            <section class='flex justify-center items-center mt-[80px] gap-5'>
+            <a href="register" class="bg-gray-600 text-white py-1 px-2 rounded-md font-semibold .text-gray-600">Register account</a>
+            <a href="login" class="bg-white py-1 px-2 rounded-md font-semibold text-gray-600">Log in to account</a>
+       @endguest
+
+       @auth
+            <section class='flex justify-center items-center mt-[80px] gap-5'>
+            {{-- <a href="register" class="bg-gray-600 text-white py-1 px-2 rounded-md font-semibold .text-gray-600">Register account</a> --}}
+            <p class="bg-white py-1 px-4 rounded-md font-semibold text-gray-600 flex justify-center items-center gap-4 shadow-md"> {{$username}}  <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+            </span></p> 
+           
+
+
+{{-- 
+            <div class="relative w-32 h-32 rounded-full overflow-hidden">
+                <div class="absolute w-full h-full bg-ripple"></div>
+                <div class="absolute w-full h-full flex items-center justify-center">
+                <p class="text-white">Circular Div</p>
+                </div>
+            </div> --}}
+
+       @endauth
+      
         
        </section>
     </main>

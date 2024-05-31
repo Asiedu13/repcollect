@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
-    return view('welcome');
+    // dd(User::where('id', auth()->id())->value('email'));
+    return view('welcome')->with('username', auth()->id() ? User::where('id', auth()->id())->value('email') : 'Nobody man');
 })->name('home');
 
 Route::get('login', function() {
@@ -53,7 +54,7 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 
 Route::middleware('auth')->group(function(){
-    Route::resource('me', UserController::class );
+    Route::resource('me', UserController::class);
 });
 
 Route::get('/logout', function(){
