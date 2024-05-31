@@ -38,7 +38,7 @@ class GoogleController extends Controller
 
                 Auth::login($newUser);
 
-                return redirect()->intended('me.index');
+                return redirect()->route('me.index');
             }
 
             // return redirect()->intended('me.index');
