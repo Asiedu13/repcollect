@@ -2,12 +2,12 @@
     <section class="flex flex-col gap-2 justify-center items-center bg-white rounded-md p-1">
         <div class="w-[500px] .h-[700px]">
              <div class="mt-24 mb-14 flex items-center gap-2">
-                <h2 class="text-xl font-bold text-gray-700">RepCollect</h2> | <span>Login</span>
+                <h2 class="text-lg font-bold text-gray-700">RepCollect</h2> | <span>Login</span>
             </div>
 
             <div>
                 <h1 class="text-2xl font-bold text-gray-700">Welcome Back</h1>
-                <p class="mb-10">Enter your credentials to access your account</p>
+                <p class="mb-10 text-lg">Enter your credentials to access your account</p>
                 @if($errors->any())
                 <div>
                     @foreach ($errors->all() as $error )
@@ -26,7 +26,7 @@
                 </a>
                 <div class="relative flex flex-col .items-center justify-center">
                     <hr class="h-px mt-8 bg-gray-400 border-0 dark:bg-gray-700">
-                    <span class="absolute right-[50%] top-[20px] bg-[#fff] px-1 shadow-xl rounded-md">or</span>
+                    <span class="absolute right-[50%] top-[20px] bg-[#fff] px-1 shadow-xl rounded-md text-sm">or</span>
                 </div>
             </div>
         </div>
@@ -40,14 +40,14 @@
 
             <div class="my-5 flex flex-col">
                 <label for="password" class="text-sm font-semibold text-gray-600">Password</label>
-                <input class="outline-none border border-gray-400 rounded-md p-2" type="password" id="password" name="password" placeholder="••••••••••">
-                <a href="#" class="text-sm font-bold text-gray-700 text-right">Forgot password?</a>
+                    <input class="outline-none border border-gray-400 rounded-md p-2" type="password" id="password" name="password" placeholder="••••••••••">
+                    <a href="#" class="text-sm font-bold text-gray-700 text-right">Forgot password?</a>
             </div>
 
             <div class="mt-10 flex mb-10">
-                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%]">Sign In</button>
+                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%] text-sm">Sign In</button>
             </div>
-            <p class="text-sm font-bold text-gray-700 mb-[20px]">Don&apos;t have an account? <a  class='text-purple-500' href="<?php echo route('register') ?>">Sign Up</a></p>
+            <p class="text-sm font-bold text-gray-700 mb-[20px]">Don&apos;t have an account? <a  class='text-purple-500 text-sm' href="<?php echo route('register') ?>">Sign Up</a></p>
         </form>
     </section>
 @endcomponent

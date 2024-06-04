@@ -15,17 +15,7 @@ Route::get('login', function() {
     return view('login');
 })->name('login');
 
-Route::post('login', function(Request $request) {
-     $request->validate([
-        'email' => 'required|email',
-        'password' => 'required'
-    ]);
-
-    if (! auth()->attempt($request->except('_token'))) {
-        return redirect()->back();
-    }
-    return redirect()->route('me.index')->with('user', auth()->user());
-});
+Route::post('login', [User::class, 'login']);
 
 Route::get('register', function() {
     return view('signup');
@@ -55,6 +45,7 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 Route::middleware('auth')->group(function(){
     Route::resource('me', UserController::class);
+
 });
 
 Route::get('/logout', function(){

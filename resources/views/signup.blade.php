@@ -2,7 +2,7 @@
     <section class="flex flex-col gap-2 justify-center items-center bg-white rounded-md p-1">
         <div class="w-[500px] .h-[700px]">
             <div class="mt-24 mb-14 flex items-center gap-2">
-                <h2 class="text-xl font-bold text-gray-700">RepCollect</h2> | <span>Sign Up</span>
+                <h2 class="text-lg font-bold text-gray-700">RepCollect</h2> | <span>Sign Up</span>
             </div>
             
             <div>
@@ -44,9 +44,9 @@
             </div>
 
             <div class="mt-10 flex mb-10">
-                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%]">Sign Up</button>
+                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%] text-sm">Sign Up</button>
             </div>
-            <p class="text-sm font-bold text-gray-700 mb-[20px]">Already have an account? <a  class='text-purple-500' href="<?php echo route('login') ?>">Sign In</a></p>
+            <p class="text-sm font-bold text-gray-700 mb-[20px]">Already have an account? <a  class='text-purple-500 text-sm' href="<?php echo route('login') ?>">Sign In</a></p>
         </form>
     </section>
 @endcomponent

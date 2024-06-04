@@ -20,7 +20,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+    
     }
 
     /**
@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -62,4 +62,17 @@ class UserController extends Controller
     {
         //
     }
-}
+
+    public function login(Request $request)
+    {
+         $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if (! auth()->attempt($request->except('_token'))) {
+            return redirect()->back();
+        }
+            return redirect()->route('me.index')->with('user', auth()->user());
+        }
+    }
