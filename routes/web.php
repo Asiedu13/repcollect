@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Livewire\Dashboard;
 
 Route::get('/', function () {
     // dd(User::where('id', auth()->id())->value('email'));
@@ -33,7 +34,7 @@ Route::post('register', function(Request $request){
    if(! auth()->attempt($request->only(['email', 'password']))){
         return redirect()->route('register');
    }
-   return redirect()->route('me.index');
+   return redirect()->route('dashboard');
 });
 
 

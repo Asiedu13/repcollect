@@ -24,7 +24,7 @@ class GoogleController extends Controller
 
             if($findUser){
                 Auth::login($findUser);
-               return redirect()->route("me.index");
+               return redirect()->route("dashboard");
 
             } else {
                 $newUser = User::firstOrNew([
@@ -38,14 +38,14 @@ class GoogleController extends Controller
 
                 Auth::login($newUser);
 
-                return redirect()->route('me.index');
+                return redirect()->route('dashboard');
             }
 
             // return redirect()->intended('me.index');
 
         } catch(Exception $e) {
         //     //TODO: log error
-        //     dd($e->getMessage());
+            // dd($e->getMessage());
 
             return redirect()->route('register');
         }

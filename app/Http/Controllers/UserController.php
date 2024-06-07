@@ -12,7 +12,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('me')->with('username', 'princekofasiedu');
+        return view('livewire.dashboard');
     }
 
     /**
