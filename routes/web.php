@@ -45,11 +45,16 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 
 Route::middleware('auth')->group(function(){
-    Route::resource('me', UserController::class);
+    // Route::resource('me', UserController::class);
+    Route::get('me', Dashboard::class)->name('dashboard');
 
 });
 
 Route::get('/logout', function(){
     auth()->logout();
     return redirect()->route('home');
+});
+
+Route::fallback(function(){
+    return 'WOrking on it';
 });
