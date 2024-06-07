@@ -63,16 +63,6 @@
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
             </span></p> 
            
-
-
-{{-- 
-            <div class="relative w-32 h-32 rounded-full overflow-hidden">
-                <div class="absolute w-full h-full bg-ripple"></div>
-                <div class="absolute w-full h-full flex items-center justify-center">
-                <p class="text-white">Circular Div</p>
-                </div>
-            </div> --}}
-
        @endauth
       
         
