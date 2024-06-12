@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Livewire\Dashboard;
+use App\Livewire\FocusForm;
 
 Route::get('/', function () {
     // dd(User::where('id', auth()->id())->value('email'));
@@ -44,9 +45,11 @@ Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
 
+// Logged in users access
 Route::middleware('auth')->group(function(){
     // Route::resource('me', UserController::class);
     Route::get('me', Dashboard::class)->name('dashboard');
+    Route::get('me/collect', FocusForm::class)->name('me.collect');
 
 });
 
