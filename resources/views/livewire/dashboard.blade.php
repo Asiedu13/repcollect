@@ -20,9 +20,9 @@
         </section>
 
     <main class="bg-white mt-5 rounded-md h-[fit] lg:w-[600px] flex flex-start flex-col .container">
-      <livewire:collection-display color="bg-yellow" method="ongoing"  />
-      <livewire:collection-display color="bg-green" method="completed"  />
-      <livewire:collection-display color="bg-gray" method="paused"  />
+      <livewire:collection-display color="yellow" type="ongoing" :items="$ongoing"  />
+      <livewire:collection-display color="green" type="completed" :items="$completed" />
+      <livewire:collection-display color="gray" type="paused" :items="$paused"  />
         {{-- display section --}}
         {{-- <section class="flex-1">
            @if ($view == 'ongoing')

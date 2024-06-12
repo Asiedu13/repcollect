@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Exception;
 use App\Models\User;
+use App\Models\focus;
 use App\Models\Saying;
 use Livewire\Component;
 
@@ -17,30 +18,22 @@ class Dashboard extends Component
 
     public $method = '';
 
-    public function getOngoing()
-    {
-        try {
-            
-        }catch(Exception $e) {
-
-        }
-    }
-
     public function mount() 
     {
         try {
             $this->saying = Saying::findOrFail(rand(1, Saying::all()->count()));
+            $this->ongoing = focus::where('status', 'ongoing')->get();
+            $this->completed = focus::where('status', 'completed')->get();
+            $this->paused = focus::where('status', 'paused')->get();
+
 
         }catch(Exception $e) {
-         $this->saying = 'Nothing to say about money today';   
+        //  $this->saying = 'Nothing to say about money today';   
         }
     }
 
     public function render()
-    {
-        // dd(auth()->id());
-        // dd(User::find(auth()->id()));
-        
+    {   
         return view('livewire.dashboard')->with('user', User::where('id', auth()->id())->get(), );
     }
 }
