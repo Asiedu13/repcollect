@@ -4,7 +4,9 @@ namespace App\Livewire;
 
 use Exception;
 use App\Models\focus;
+use App\Models\Link;
 use Livewire\Component;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
 
 class FocusForm extends Component
@@ -27,7 +29,7 @@ class FocusForm extends Component
         $this->validate();
         // dd($this->all());
 
-       $newFocus =  focus::firstOrCreate([
+       $newFocus = focus::firstOrNew([
             'title' => $this->title,
             'user_id' => auth()->id(),
             'description' => $this->description,
@@ -35,9 +37,17 @@ class FocusForm extends Component
             'cost' => $this->amount
         ]);
 
-        // $newFocus->save();
+        $newFocus->save();
+
+        $newLink = Link::firstOrNew([
+            'focus_id' => $newFocus->id,
+            'link' =>  Str::random(25)
+        ]);
+
+        $newLink->save();
+
         $this->reset();
-        return redirect()->to('dashboard');
+        return redirect()->route('me.generate', ['url' => $newLink->link]);
     }
 
     public function render()

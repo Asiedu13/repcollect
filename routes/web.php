@@ -4,9 +4,9 @@ use App\Http\Controllers\GoogleController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Livewire\Dashboard;
 use App\Livewire\FocusForm;
+use App\Livewire\GenerateLink;
 
 Route::get('/', function () {
     // dd(User::where('id', auth()->id())->value('email'));
@@ -47,9 +47,13 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 // Logged in users access
 Route::middleware('auth')->group(function(){
-    // Route::resource('me', UserController::class);
     Route::get('dashboard', Dashboard::class)->name('dashboard');
-    Route::get('me/collect', FocusForm::class)->name('me.collect');
+    Route::get('me/create', FocusForm::class)->name('me.create');
+    Route::get('/me/generate/{url}', GenerateLink::class )->name('me.generate');
+
+    Route::get('/collect/{url}', function($url = ''){
+        return "page for collecting money";
+    })->name('collect');
 
 
 });
@@ -60,5 +64,5 @@ Route::get('/logout', function(){
 });
 
 Route::fallback(function(){
-    return 'WOrking on it';
+    return 'Working on it';
 });
