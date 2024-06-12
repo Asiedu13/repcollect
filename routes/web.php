@@ -48,8 +48,9 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 // Logged in users access
 Route::middleware('auth')->group(function(){
     // Route::resource('me', UserController::class);
-    Route::get('me', Dashboard::class)->name('dashboard');
+    Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('me/collect', FocusForm::class)->name('me.collect');
+
 
 });
 
