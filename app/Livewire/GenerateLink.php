@@ -9,9 +9,15 @@ class GenerateLink extends Component
 {
     public $link;
 
+
     public function mount()
     {
         $this->link = request()->segment(3);
+    }
+
+    public function proceed()
+    {
+        return redirect()->route('dashboard');
     }
 
     public function render()
