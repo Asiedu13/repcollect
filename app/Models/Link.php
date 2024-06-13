@@ -13,4 +13,9 @@ class Link extends Model
         'focus_id',
         'link'
     ];
+
+    public function focus()
+    {
+        return $this->belongsTo(focus::class);
+    }
 }

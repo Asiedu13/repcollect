@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Link;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class focus extends Model
 {
@@ -19,5 +20,10 @@ class focus extends Model
         'cost',
         'tags'
     ];
+
+    public function paymentLink()
+    {
+        return $this->hasOne(Link::class);
+    }
 
 }
