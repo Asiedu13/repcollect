@@ -22,7 +22,7 @@ class Dashboard extends Component
     {
         try {
             $this->saying = Saying::findOrFail(rand(1, Saying::all()->count()));
-            $this->ongoing = focus::where('status', 'ongoing')->get();
+            $this->ongoing = focus::with(['paymentLink'])->where('status', 'ongoing')->get();
             $this->completed = focus::where('status', 'completed')->get();
             $this->paused = focus::where('status', 'paused')->get();
 

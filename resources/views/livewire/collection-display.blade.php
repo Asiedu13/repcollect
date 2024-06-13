@@ -9,7 +9,9 @@
                 @if (count($items) > 0)
                     @foreach ($items as $item )
                         <div wire:key="{{$item->id}}">
-                            {{$item->title}}
+                            <a href="{{route('collect', $item->paymentLink->link)}}" class=".capitalize">
+                            {{$item->paymentLink->link}}
+                            </a>
                         </div>
                     @endforeach
                 @else
