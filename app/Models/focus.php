@@ -21,6 +21,11 @@ class focus extends Model
         'tags'
     ];
 
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
     public function paymentLink()
     {
         return $this->hasOne(Link::class);

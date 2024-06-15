@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function foci()
+    {
+        return $this->hasMany(focus::class);
+    }
 }

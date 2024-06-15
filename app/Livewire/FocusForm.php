@@ -3,8 +3,9 @@
 namespace App\Livewire;
 
 use Exception;
-use App\Models\focus;
 use App\Models\Link;
+use App\Models\User;
+use App\Models\focus;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
@@ -17,17 +18,20 @@ class FocusForm extends Component
     #[Validate('required')]
     public $description;
 
-    // #[Validate('min:5')]
     public $desired_amount;
 
     #[Validate('required|min:1')]
     public $amount;
-    
 
+    public $currentUser;
+    
+    public function mount()
+    {
+        $this->currentUser = User::where('id', auth()->id())->value('name');
+    }
     public function save()
     {
         $this->validate();
-        // dd($this->all());
 
        $newFocus = focus::firstOrNew([
             'title' => $this->title,
@@ -52,6 +56,6 @@ class FocusForm extends Component
 
     public function render()
     {
-        return view('livewire.focus-form');
+        return view('livewire.focus-form')->layout('components.layouts.app', ['currentUser' => User::where('id', auth()->id())->get()]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire;
+use App\Models\User;
 use Livewire\Component;
 
 
@@ -22,6 +23,6 @@ class GenerateLink extends Component
 
     public function render()
     {
-        return view('livewire.generate-link');
+        return view('livewire.generate-link')->layout('components.layouts.app', ['currentUser' => User::where('id', auth()->id())->get()]);;
     }
 }
