@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-gray-100 mx-[100px]">
-    <header class="flex justify-between  py-[10px]">
+    <header class="flex justify-between .text-center py-[10px]">
         <nav>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
         </nav>
@@ -17,11 +17,16 @@
      <a href="<?php echo route('home') ?>">
          <h2 class="text-xl font-bold">RepCollect</h2>
      </a>
+
     </header>
     <main class="container">
-       <section class="flex flex-col h-[550px] justify-center items-center w-[inherit]">
+        <section class="flex flex-col h-[550px] justify-center items-center w-[inherit]">
+        {{-- <h1 class="text-6xl mb-2 font-bold text-gray-400">RepCollect</h1>
+        <p class="mb-5 w-[500px] text-center">
+            Effortlessly manage, track, and record your group donations and collections with our all-in-one solution.
+        </p> --}}
         <section class="flex flex-col justify-center items-center w-[inherit]">
-            <h1 class="text-3xl font-bold">Get Started</h1>
+            <h1 class="text-3xl font-bold text-gray-500">Get Started</h1>
             <p class="">Start <b class="bg-green-400 text-white p-1 rounded-md ">tracking</b> donations and group collections today in three easy steps</p>
         </section>
         <div class="w-[500px] my-[40px] ">
