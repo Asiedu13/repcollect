@@ -1,19 +1,6 @@
 /* ./resources/css/app.css */
+@import "./scrollbar.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    /* body {
-        background-color: #fff;
-        opacity: 1;
-        background-size: 10px 10px;
-        background-image: repeating-linear-gradient(
-            45deg,
-            #d8d8d9 0,
-            #d8d8d9 1px,
-            #fff 0,
-            #fff 50%
-        );
-    } */
-}

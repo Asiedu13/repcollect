@@ -9,6 +9,7 @@ class CollectionDisplay extends Component
     public $color;
     public $type;
     public $items;
+    public $svg;
 
     public function render()
     {
