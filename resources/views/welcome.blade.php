@@ -46,7 +46,6 @@
                 </li>
                 <li>3. Share payment link</li>
             </ol>
-            
         </div>
        </section>
        @guest
