@@ -90,7 +90,7 @@
                 <h3 class="text-green-500 text-lg">
                     Successfully asked question!
                 </h3>
-                <p class="text-gray-700 text-sm">Our support team will answer the question and make it available</p>
+                <p class="text-gray-700 text-sm">The support team will answer the question and make it available</p>
             </div>
             <div x-show="qopen">
                 <livewire:faq-form />
