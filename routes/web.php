@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Dashboard;
 use App\Livewire\FocusForm;
 use App\Livewire\GenerateLink;
+use App\Livewire\IndividualCollection;
 
 Route::get('/', function () {
     // dd(User::where('id', auth()->id())->value('email'));
@@ -51,9 +52,7 @@ Route::middleware('auth')->group(function(){
     Route::get('me/create', FocusForm::class)->name('me.create');
     Route::get('/me/generate/{url}', GenerateLink::class )->name('me.generate');
 
-    Route::get('/collect/{url}', function($url = ''){
-        return "page for collecting money";
-    })->name('collect');
+    Route::get('/collect/{url}', IndividualCollection::class)->name('collect');
 
 
 });
