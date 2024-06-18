@@ -2,8 +2,6 @@
     {{-- Because she competes with no one, no one can compete with her. --}}
 
     <section class="flex flex-col .justify-center .items-center transition-all">
-
-       
             <h1 class="text-2xl font-medium capitalize text-zinc-600 text-center">Good day, {{$user[0]->name}}</h1>
         
             <svg  class="text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
@@ -34,7 +32,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     <p class="text-sm">Profile</p>
                 </li>
-                <li class="flex gap-2 items-center h-[50px] .my-2 cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md .hover:text-white hover:px-4 transition-all {{$view == 'collections' ? 'bg-gray-700 text-white px-4 rounded-md' : 'bg-white text-slate-600' }} "  wire:click="handleMenuClick('collections')">
+                <li class="flex gap-2 items-center h-[50px] my-2 cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md .hover:text-white hover:px-4 transition-all {{$view == 'collections' ? 'bg-gray-700 text-white px-4 rounded-md' : 'bg-white text-slate-600' }} "  wire:click="handleMenuClick('collections')">
                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
                     <p class="text-sm">Collections</p>
                 </li>
