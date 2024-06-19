@@ -1,5 +1,5 @@
 <section class='.flex .justify-center .items-center .mt-[80px] gap-5 .cursor-pointer'>
-    <p class="bg-white py-4 px-10 rounded-md font-bold text-gray-600 flex .justify-center items-center gap-2 .shadow-md capitalize text-{{$color}}-500 text-lg"> 
+    <p class="bg-white py-4 px-10 rounded-md font-bold text-gray-600 flex .justify-center items-center gap-2 .shadow-md capitalize  text-lg"> 
         {!! $svg !!} 
        {{$type}}
     </p> 

@@ -24,16 +24,17 @@
 
                 
                 {{-- Other collection --}}
-                <section class="rounded-md w-[400px] h-[300px] bg-white text-gray-700 px-6 py-2 ">
-                    <header class="my-5">
+                <section class="rounded-md w-[400px] max-h-[300px] bg-white text-gray-700 px-6 pt-2 pb-10">
+                    <header class="my-5 .px-6">
                         <h2 class="text-lg font-semibold">Other Collections</h2>
                     </header>
                     <hr>
 
-                  <ul>
+                  <ul class=".overflow-auto max-h-[200px] .px-4">
+                    {{-- use this one for the component --}}
                     <li>
                         <a class="border-b-2 .shadow-md h-[50px] flex items-center p-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Collecting money for Onishaa </p>
+                            <p class="text-slate-500 max-w-[210px]"> Collecting money for Onishaa </p>
                             <div class="text-sm font-bold text-gray-400 ">
                                 <span class="text-slate-500"> 21 paid </span> • <span class="text-green-500"> $100.00 </span>
                                 </div>
@@ -48,6 +49,8 @@
                                 </div>
                         </a>
                     </li>
+
+                    
 
                      <li>
                         <a class="border-b-2 .shadow-md h-[50px] flex items-center p-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
@@ -71,8 +74,132 @@
             </section>
             
             {{-- Individual collection --}}
-            <section class="flex-1 bg-white rounded-md my-5 p-4">
-                <p>Table with data and more stats</p>
+            <section class="flex-1 bg-white rounded-md my-5 .px-4">
+                <div class="flex gap-2 .text-gray-600 text-gray-500 font-semibold items-center py-2 px-4">
+                    <a href="{{route('home')}}" class="flex gap-2 font-normal items-center text-sm text-gray-500 border-gray-400 border-r-2  pr-4">
+                        RepCollect
+                    </a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                    <h2 class="text-sm font-normal">Collections</h2> 
+                </div>
+                <hr>
+
+                <section class="px-4 py-4">
+                    <header class="py-4 text-gray-700 flex ">
+                        <div class="">
+                            <h2 class="capitalize text-2xl text-sky-500">Collecting Money for Onishaaa</h2>
+                            <p class="text-sm text-gray-500 my-2 max-h-[80px] .w-[400px]">Our man said we should do it so send money
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, fuga. Veritatis vel explicabo dignissimos aperiam omnis dolores nihil a enim, 
+                            </p>
+                        </div>
+
+                        <div class="max-w-[600px] w-[600px] max-h-[inherit] h-[inherit] overflow-clip .border-2">
+                            <b class="text-green-400 .text-gray-600 text-lg">Goal: <span>GHS 5000.00</span></b> 
+                            <b class=".text-green-400 text-gray-600 text-2xl ">Current: <span>GHS 350000.00</span></b>
+
+                            <p class="text-sm font-semibold text-orange-300 ">21 more payments at base price</p>
+                        </div>
+                    </header>
+                    <hr>
+                    <section class="mt-5">
+                        <h3 class="text-sm text-gray-600 font-semibold">Payments made</h3>
+                        <section class="overflow-y-auto max-h-[400px] ">
+                            <div class="my-2">
+                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
+                            <div class="text-sm font-bold text-gray-400 ">
+                                <span class="text-slate-500"> Momo </span>
+                                •
+                                 <span class="text-green-500"> $100.00 </span>
+                                </div>
+                            </a>
+                            </div>
+
+                        <div class="my-2">
+                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
+                            <div class="text-sm font-bold text-gray-400 ">
+                                <span class="text-slate-500"> Momo </span>
+                                •
+                                 <span class="text-green-500"> $100.00 </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
+                            <div class="text-sm font-bold text-gray-400 ">
+                                <span class="text-slate-500"> Momo </span>
+                                •
+                                 <span class="text-green-500"> $100.00 </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
+                            <div class="text-sm font-bold text-gray-400 ">
+                                <span class="text-slate-500"> Momo </span>
+                                •
+                                 <span class="text-green-500"> $100.00 </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
+                            <div class="text-sm font-bold text-gray-400 ">
+                                <span class="text-slate-500"> Momo </span>
+                                •
+                                 <span class="text-green-500"> $100.00 </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
+                            <div class="text-sm font-bold text-gray-400 ">
+                                <span class="text-slate-500"> Momo </span>
+                                •
+                                 <span class="text-green-500"> $100.00 </span>
+                                </div>
+                            </a>
+                        </div>
+
+                         <div class="my-2">
+                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                            <p class="text-slate-500"> Victoria Koomson </p>
+                            <div class="text-sm font-bold text-gray-400 ">
+                                <span class="text-slate-500"> Bank </span>
+                                •
+                                 <span class="text-green-500"> $100.00 </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="my-2">
+                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                            <p class="text-slate-500"> Felix Arthur </p>
+                            <div class="text-sm font-bold text-gray-400 ">
+                                <span class="text-slate-500"> Bank </span>
+                                •
+                                 <span class="text-green-500"> $100.00 </span>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                </section>
+            </section>
+            <div class="text-right px-6 relative">
+                {{-- Could be a pause collection button --}}
+                {{-- <button class="text-white text-sm border-1 bg-red-500 border-red-500 w-fit rounded-md p-1">
+                    End collection
+                </button> --}}
+                <button class="text-red-500 text-sm border-red-500 w-fit rounded-md py-1 hover:underline">
+                    Want to stop collecting money for this cause?
+                </button>
+                {{-- <p class="text-gray-600 text-sm">Stop collecting money for this cause</p> --}}
+            </div>
             </section>
         </section>
     {{-- </div> --}}
