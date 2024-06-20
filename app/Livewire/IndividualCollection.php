@@ -17,6 +17,11 @@ class IndividualCollection extends Component
 
     public function mount()
     {
+        // Verifying link before work begins
+        if (is_null( Link::where('link', request()->segment(2))->first())) {
+            return redirect()->to('errr');
+        }
+        
         // The current collection
         $this->theOne = Link::where('link', request()->segment(2))->first()->focus;
 
