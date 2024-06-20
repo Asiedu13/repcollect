@@ -4,9 +4,10 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Focus;
+use App\Models\Transaction;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -52,7 +53,8 @@ class User extends Authenticatable
         return $this->hasMany(Focus::class);
     }
 
+    public function transactions() 
     {
-        return $this->hasMany(focus::class);
+        return $this->hasManyThrough(Transaction::class,Focus::class);
     }
 }

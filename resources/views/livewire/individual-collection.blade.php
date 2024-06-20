@@ -32,35 +32,18 @@
 
                   <ul class=".overflow-auto max-h-[200px] .px-4">
                     {{-- use this one for the component --}}
-                    <li>
-                        <a class="border-b-2 .shadow-md h-[50px] flex items-center p-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500 max-w-[210px]"> Collecting money for Onishaa </p>
+                    @forelse ($otherCollections as $collection )
+                         <li>
+                        <a class="border-b-2 .shadow-md h-[50px] flex items-center py-2 flex-1 justify-between  text-gray-400 .capitalize " href="{{route('collect', $collection->link)}}" wire:navigate class="capitalize">
+                            <p class="text-slate-500 max-w-[180px] overflow-hidden"> {{$collection->title}} </p>
                             <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> 21 paid </span> • <span class="text-green-500"> $100.00 </span>
+                                <span class="text-slate-500"> {{count($collection->transactions)}} paid </span> • <span class="text-green-500"> GHS {{$collection->sum}}.00 </span>
                                 </div>
                         </a>
                     </li>
-
-                    <li>
-                        <a class="border-b-2 .shadow-md h-[50px] flex items-center p-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Date night prep </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> 21 pays </span> • <span class="text-green-500"> $100.00 </span>
-                                </div>
-                        </a>
-                    </li>
-
-                    
-
-                     <li>
-                        <a class="border-b-2 .shadow-md h-[50px] flex items-center p-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Excursion snacks </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> 21 pays </span> • <span class="text-green-500"> $100.00 </span>
-                                </div>
-                        </a>
-                    </li>
-
+                    @empty
+                        
+                    @endforelse
                   </ul>
                 </section>
 
@@ -87,106 +70,40 @@
                 <section class="px-4 py-4">
                     <header class="py-4 text-gray-700 flex ">
                         <div class="">
-                            <h2 class="capitalize text-2xl text-sky-500">Collecting Money for Onishaaa</h2>
-                            <p class="text-sm text-gray-500 my-2 max-h-[80px] .w-[400px]">Our man said we should do it so send money
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, fuga. Veritatis vel explicabo dignissimos aperiam omnis dolores nihil a enim, 
+                            <h2 class="capitalize text-2xl text-sky-500"> {{$theOne->title}} </h2>
+                            <p class="text-sm px-1 text-gray-500 my-2 max-h-[80px] w-[400px]"> {{$theOne->description}} 
                             </p>
                         </div>
 
                         <div class="max-w-[600px] w-[600px] max-h-[inherit] h-[inherit] overflow-clip .border-2">
-                            <b class="text-green-400 .text-gray-600 text-lg">Goal: <span>GHS 5000.00</span></b> 
-                            <b class=".text-green-400 text-gray-600 text-2xl ">Current: <span>GHS 350000.00</span></b>
+                            <b class="text-green-400 .text-gray-600 text-lg">Goal: <span>GHS {{$theOne->desired_amount}}.00 </span></b> <br>
+                            <b class=".text-green-400 text-gray-600 text-2xl ">Current: <span>GHS {{$transactionsSum}}.00</span></b>
 
-                            <p class="text-sm font-semibold text-orange-300 ">21 more payments at base price</p>
+                            <p class="text-sm font-semibold text-orange-300 "> {{$nOfPaymentsAtBase;}}  more payments at base price (GHS {{$theOne->cost}}.00 )</p>
                         </div>
                     </header>
                     <hr>
                     <section class="mt-5">
                         <h3 class="text-sm text-gray-600 font-semibold">Payments made</h3>
-                        <section class="overflow-y-auto max-h-[400px] ">
-                            <div class="my-2">
-                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> Momo </span>
-                                •
-                                 <span class="text-green-500"> $100.00 </span>
-                                </div>
-                            </a>
-                            </div>
+                        <section class="overflow-y-auto h-[400px] max-h-[400px] ">
 
-                        <div class="my-2">
-                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> Momo </span>
-                                •
-                                 <span class="text-green-500"> $100.00 </span>
+                            @forelse ($transactions as $transaction )
+                                <div class="my-2">
+                                    <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
+                                    <p class="text-slate-500"> {{$transaction->payer_name}} </p>
+                                    <div class="text-sm font-bold text-gray-400 ">
+                                        <span class="text-slate-500 capitalize"> {{$transaction->payment_type}} </span>
+                                        •
+                                    <span class="text-green-500"> GHS {{$transaction->amount_paid}}.00 </span>
+                                    </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="my-2">
-                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> Momo </span>
-                                •
-                                 <span class="text-green-500"> $100.00 </span>
+                            @empty
+                                <div class="max-h-[400px] h-[400px] flex justify-center items-center">
+                                    <p class="text-center text-gray-400 font-semibold text-2xl">No transactions at the moment</p>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="my-2">
-                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> Momo </span>
-                                •
-                                 <span class="text-green-500"> $100.00 </span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="my-2">
-                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> Momo </span>
-                                •
-                                 <span class="text-green-500"> $100.00 </span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="my-2">
-                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Paa Kwesi Donkor </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> Momo </span>
-                                •
-                                 <span class="text-green-500"> $100.00 </span>
-                                </div>
-                            </a>
-                        </div>
-
-                         <div class="my-2">
-                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Victoria Koomson </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> Bank </span>
-                                •
-                                 <span class="text-green-500"> $100.00 </span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="my-2">
-                             <a class="border-2 rounded-md .shadow-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between  text-gray-400 .capitalize " href="#" class="capitalize">
-                            <p class="text-slate-500"> Felix Arthur </p>
-                            <div class="text-sm font-bold text-gray-400 ">
-                                <span class="text-slate-500"> Bank </span>
-                                •
-                                 <span class="text-green-500"> $100.00 </span>
-                                </div>
-                            </a>
-                        </div>
+                                
+                            @endforelse
                     </section>
                 </section>
             </section>
