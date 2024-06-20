@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(focus::class);
+            $table->foreignIdFor(Focus::class)->constrained('focus')->onDelete('cascade');
             $table->string('link');
             $table->timestamps();
         });

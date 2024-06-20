@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use App\Models\Link;
+use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class focus extends Model
+class Focus extends Model
 {
     use HasFactory;
     protected $table = 'focus';
@@ -26,9 +27,14 @@ class focus extends Model
         return $this->hasOne(User::class);
     }
 
-    public function paymentLink()
+    public function link()
     {
         return $this->hasOne(Link::class);
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
     }
 
 }

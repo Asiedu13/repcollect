@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Focus;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -13,9 +14,10 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('focus_id');
-            $table->index('focus_id');
+            $table->foreignIdFor(Focus::class)->constrained('focus')->onDelete('cascade');
             $table->string('payer_name');
+            $table->string('contact');
+            $table->string('email');
             $table->float('amount_paid');
             $table->timestamps();
         });

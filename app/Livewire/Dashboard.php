@@ -37,10 +37,14 @@ class Dashboard extends Component
     public function mount() 
     {
         try {
+             $this->ongoing = User::find(auth()->id())->focus->where('status', 'ongoing')->reverse();
+            
+            $this->completed = User::find(auth()->id())->focus->where('status', 'completed')->reverse();
+            
+            $this->paused = User::find(auth()->id())->focus->where('status', 'paused')->reverse();
+            
             $this->saying = Saying::findOrFail(rand(1, Saying::all()->count()));
-            $this->ongoing = User::find(auth()->id())->foci->where('status', 'ongoing')->reverse();
-            $this->completed = User::find(auth()->id())->foci->where('status', 'completed')->reverse();
-            $this->paused = User::find(auth()->id())->foci->where('status', 'paused')->reverse();
+            // dd($this->saying);
 
         }catch(Exception $e) {
         //  $this->saying = 'Nothing to say about money today';   
