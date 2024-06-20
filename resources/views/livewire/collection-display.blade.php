@@ -5,10 +5,10 @@
     </p> 
         <section class="">
             <div class="w-[inherit] h-[200px] .text-center px-10 overflow-y-scroll">
-                @if (count($items) > 0)
+                @if ( !is_null($items) && count($items) > 0)
                     @foreach ($items as $item )
                         <div wire:key="{{$item->id}}" class="flex gap-2 items-center">
-                            <a class="border-b-2 .shadow-md h-[50px] flex items-center p-2 flex-1 justify-between text-slate-500 .capitalize " href="{{route('collect', $item->paymentLink->link)}}" class="capitalize">
+                            <a class="border-b-2 .shadow-md h-[50px] flex items-center p-2 flex-1 justify-between text-slate-500 .capitalize " href="{{route('collect', $item->link->link)}}" class="capitalize">
                                 <p> {{$item->title}} </p>
                                 <div class="text-sm font-bold text-gray-500 ">
                                     <span class="text-slate-500"> 21 paid </span> • <span class="text-green-500"> $100.00 </span>

@@ -9,9 +9,9 @@
 
             <blockquote class="text-gray-400 text-xl w-[500px] h-[100px] flex gap-5 my-3 justify-center items-center">
                 <p class="text-center ">
-                    {{$saying->content}}
+                    {{ is_null( $saying ) ? 'Gathering insight on money managment' : $saying->content }}
                     <br>
-                        ~ {{$saying->author}}
+                        ~ {{ is_null($saying) ? 'RepCollect': $saying->author}}
                 </p>
             </blockquote>
 
