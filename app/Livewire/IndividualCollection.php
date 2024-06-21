@@ -17,13 +17,10 @@ class IndividualCollection extends Component
 
     public function mount()
     {
-        // Verifying link before work begins
-        if (is_null( Link::where('link', request()->segment(2))->first())) {
-            return redirect()->to('errr');
-        }
+        $link = request()->segment(2);
         
         // The current collection
-        $this->theOne = Link::where('link', request()->segment(2))->first()->focus;
+        $this->theOne = Link::where('link', $link)->first()->focus;
 
         $focus_id = $this->theOne->id;
 
@@ -48,7 +45,6 @@ class IndividualCollection extends Component
 
     public function render()
     {
-        // do some url checks first before returning
         return view('livewire.individual-collection')->layout('components.layouts.admin-collection');
     }
 }

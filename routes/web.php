@@ -47,13 +47,12 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 
 // Logged in users access
-Route::middleware('auth')->group(function(){
+Route::middleware(['auth'])->group(function(){
     Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('me/create', FocusForm::class)->name('me.create');
     Route::get('/me/generate/{url}', GenerateLink::class )->name('me.generate');
 
-    Route::get('/collect/{url}', IndividualCollection::class)->name('collect');
-
+    Route::get('/collect/{url}', IndividualCollection::class)->name('collect')->middleware('isCreator');
 
 });
 

@@ -57,4 +57,9 @@ class User extends Authenticatable
     {
         return $this->hasManyThrough(Transaction::class,Focus::class);
     }
+
+    public function links()
+    {
+        return $this->hasManyThrough(Link::class, Focus::class);
+    }
 }
