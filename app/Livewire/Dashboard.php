@@ -50,13 +50,10 @@ class Dashboard extends Component
         //  $this->saying = 'Nothing to say about money today';   
         }
     }
-    public function handleMenuClick($item)
-    {
-        $this->view = $item;
-    }
+
     public function render()
     {   
-        return view('livewire.dashboard')->with('user', User::where('id', auth()->id())->get())->layout('components.layouts.dashboard-layout',
+        return view('livewire.dashboard')->layout('components.layouts.dashboard-layout',
          [
             'user' => User::where('id', auth()->id())->get(), 
             'saying' => $this->saying,

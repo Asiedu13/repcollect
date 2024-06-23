@@ -5,6 +5,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Dashboard;
+use App\Livewire\DashboardFaq;
+use App\Livewire\DashboardProfile;
+use App\Livewire\DashboardSettings;
 use App\Livewire\FocusForm;
 use App\Livewire\GenerateLink;
 use App\Livewire\IndividualCollection;
@@ -49,6 +52,10 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 // Logged in users access
 Route::middleware(['auth'])->group(function(){
     Route::get('dashboard', Dashboard::class)->name('dashboard');
+    Route::get('faq', DashboardFaq::class)->name('dashboard.faq');
+    Route::get('settings', DashboardSettings::class)->name('dashboard.settings');
+    Route::get('profile', DashboardProfile::class)->name('dashboard.profile');
+
     Route::get('me/create', FocusForm::class)->name('me.create');
     Route::get('/me/generate/{url}', GenerateLink::class )->name('me.generate');
 
@@ -62,5 +69,5 @@ Route::get('/logout', function(){
 });
 
 Route::fallback(function(){
-    return 'Working on it';
+    return abort(404); // change this because it indicates laravel
 });
