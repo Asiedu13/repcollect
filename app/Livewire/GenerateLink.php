@@ -23,6 +23,6 @@ class GenerateLink extends Component
 
     public function render()
     {
-        return view('livewire.generate-link')->layout('components.layouts.app', ['currentUser' => User::where('id', auth()->id())->get()]);;
+        return view('livewire.generate-link')->layout('components.layouts.app', ['currentUser' => User::where('id', auth()->id())->get()]);
     }
 }

@@ -9,7 +9,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 
 
-#[Title('RepCollect | Dashboard')]
+#[Title('RepCollect | Collections')]
 class Dashboard extends Component
 {
     // Data to display
@@ -56,6 +56,11 @@ class Dashboard extends Component
     }
     public function render()
     {   
-        return view('livewire.dashboard')->with('user', User::where('id', auth()->id())->get())->layout('components.layouts.app', ['currentUser' => User::where('id', auth()->id())->get()]);
+        return view('livewire.dashboard')->with('user', User::where('id', auth()->id())->get())->layout('components.layouts.dashboard-layout',
+         [
+            'user' => User::where('id', auth()->id())->get(), 
+            'saying' => $this->saying,
+            'view' => $this->view,
+        ]);
     }
 }
