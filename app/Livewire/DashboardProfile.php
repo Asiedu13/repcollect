@@ -6,6 +6,7 @@ use Exception;
 use App\Models\User;
 use App\Models\Saying;
 use Livewire\Component;
+use Livewire\Attributes\Title;
 
 class DashboardProfile extends Component
 {
@@ -23,7 +24,7 @@ class DashboardProfile extends Component
         //  $this->saying = 'Nothing to say about money today';   
         }
     }
-
+    #[Title('RepCollect | Profile')]
     public function render()
     {
         return view('livewire.dashboard-profile')->layout('components.layouts.dashboard-layout',

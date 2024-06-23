@@ -6,6 +6,7 @@ use Exception;
 use App\Models\User;
 use App\Models\Saying;
 use Livewire\Component;
+use Livewire\Attributes\Title;
 
 class DashboardFaq extends Component
 {
@@ -13,7 +14,7 @@ class DashboardFaq extends Component
 
     public $view = 'faq';
     
-     public function mount() 
+    public function mount() 
     {
         try {
             $this->saying = Saying::findOrFail(rand(1, Saying::all()->count()));
@@ -23,7 +24,7 @@ class DashboardFaq extends Component
         //  $this->saying = 'Nothing to say about money today';   
         }
     }
-
+    #[Title('RepCollect | Frequently Asked Questions')]
     public function render()
     {
         return view('livewire.dashboard-faq')->layout('components.layouts.dashboard-layout',
