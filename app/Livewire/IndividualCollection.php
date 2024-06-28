@@ -6,6 +6,7 @@ use App\Models\Link;
 use App\Models\User;
 use Livewire\Component;
 use App\Models\Transaction;
+use Livewire\Attributes\Title;
 
 class IndividualCollection extends Component
 {
@@ -42,7 +43,7 @@ class IndividualCollection extends Component
             $collection->link = $collection->link->link;
         }
     }
-
+    #[Title("RepCollect | Collection")]
     public function render()
     {
         return view('livewire.individual-collection')->layout('components.layouts.admin-collection');
