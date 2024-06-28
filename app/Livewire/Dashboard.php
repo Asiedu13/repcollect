@@ -6,6 +6,7 @@ use Exception;
 use App\Models\User;
 use App\Models\Saying;
 use Livewire\Component;
+use App\Models\Transaction;
 use Livewire\Attributes\Title;
 
 
@@ -16,6 +17,8 @@ class Dashboard extends Component
     public $ongoing;
     public $completed;
     public $paused;
+
+    public $transactions;
 
     // One crazy wise saying
     public $saying;
@@ -44,7 +47,21 @@ class Dashboard extends Component
             $this->paused = User::find(auth()->id())->focus->where('status', 'paused')->reverse();
             
             $this->saying = Saying::findOrFail(rand(1, Saying::all()->count()));
-            // dd($this->saying);
+
+            foreach($this->ongoing as $item) {
+                $item->sum = $item->transactions->sum('amount_paid');
+                $item->payCount = $item->transactions->count();
+            }
+            
+            foreach($this->completed as $item) {
+                $item->sum = $item->transactions->sum('amount_paid');
+                $item->payCount = $item->transactions->count();
+            }
+
+            foreach($this->paused as $item) {
+                $item->sum = $item->transactions->sum('amount_paid');
+                $item->payCount = $item->transactions->count();
+            }
 
         }catch(Exception $e) {
         //  $this->saying = 'Nothing to say about money today';   
