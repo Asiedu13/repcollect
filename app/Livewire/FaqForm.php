@@ -15,6 +15,7 @@ class FaqForm extends Component
     {
         $this->validate();
         $newQuestion = Faq::create([
+            'user_id' => auth()->id(),
             'question' => $this->question,
         ]);
         $this->reset();
