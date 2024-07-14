@@ -6,7 +6,7 @@
         </div>
         <p class="text-sm pl-10">Your link has been generated. Share with anyone to receive payments</p>
         <div class="rounded-md my-2 ml-10 w-fit flex">
-            <input class="border px-2 rounded-md w-[400px] outline-none" type="text" id='link' x-ref='linkToCopy' value="{{url("/collect/$link")}}" readonly>
+            <input class="border px-2 rounded-md w-[400px] outline-none" type="text" id='link' x-ref='linkToCopy' value="{{url("/pay/$link")}}" readonly>
         </div>
 
         <div class="ml-10 flex gap-5 mt-10">

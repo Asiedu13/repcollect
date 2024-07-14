@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\focus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -17,6 +16,6 @@ class Link extends Model
 
     public function focus()
     {
-        return $this->belongsTo(Focus::class, 'focus_id');
+        return $this->belongsTo(Focus::class);
     }
 }

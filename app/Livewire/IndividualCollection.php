@@ -22,6 +22,7 @@ class IndividualCollection extends Component
         
         // The current collection
         $this->theOne = Link::where('link', $link)->first()->focus;
+        $this->theOne->link = $this->theOne->link->link;
 
         $focus_id = $this->theOne->id;
 

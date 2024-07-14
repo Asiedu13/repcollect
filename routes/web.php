@@ -1,22 +1,25 @@
 <?php
 
-use App\Http\Controllers\GoogleController;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Livewire\GivePage;
 use App\Livewire\Dashboard;
+use App\Livewire\FocusForm;
+use Illuminate\Http\Request;
 use App\Livewire\DashboardFaq;
+use App\Livewire\GenerateLink;
 use App\Livewire\DashboardProfile;
 use App\Livewire\DashboardSettings;
-use App\Livewire\FocusForm;
-use App\Livewire\GenerateLink;
+use Illuminate\Support\Facades\Route;
 use App\Livewire\IndividualCollection;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\PaystackPaymentController;
 
 Route::get('/', function () {
     // dd(User::where('id', auth()->id())->value('email'));
     return view('welcome')->with('username', auth()->id() ? User::where('id', auth()->id())->value('email') : 'Nobody man');
 })->name('home');
 
+// ------------ Registration -----------------
 Route::get('login', function() {
     return view('login');
 })->name('login');
@@ -42,14 +45,16 @@ Route::post('register', function(Request $request){
    return redirect()->route('dashboard');
 });
 
-
 // Google Logins
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
 
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
+// ------------ Payment ---------------
+Route::get('/pay/{url}', GivePage::class)->name('pay');
+Route::get('/payment/callback', [PaystackPaymentController::class, 'handleGatewayCallback']);
 
-// Logged in users access
+// ------------ Admin -----------------
 Route::middleware(['auth'])->group(function(){
     Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('faq', DashboardFaq::class)->name('dashboard.faq');

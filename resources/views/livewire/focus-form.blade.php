@@ -23,9 +23,9 @@
                 <label for="description" class="text-sm font-semibold text-gray-600">Description  <sup class="text-red-600 text-md">*</sup></label>
                 <p>
                     @error('description')
-                        <span class="text-red-500"> {{$message}} </span>   
+                        <span class="text-red-500 text-sm"> {{$message}} </span>   
                     @enderror</p>
-                <input wire:model.live="description" class="outline-none border-b-2 border-gray-400 .rounded-md p-2" type="text" id="description" name="description" placeholder="This is for the end of sem class party...">
+                <textarea wire:model.live="description" class="outline-none border-2 rounded-md my-1 border-gray-400 .rounded-md p-2" type="text" id="description" name="description" placeholder="This is for the end of sem class party..."> </textarea>
             </div>
 
             <div class="my-5 flex flex-col">
@@ -33,7 +33,7 @@
                 <p class="text-gray-400">This is set as the min amount anyone can pay</p>
                  <p>
                     @error('amount')
-                        <span class="text-red-500"> {{$message}} </span>   
+                        <span class="text-red-500 text-sm"> {{$message}} </span>   
                     @enderror
                 </p>
                 <input wire:model.live="amount" class="outline-none border-b-2 border-gray-400 .rounded-md p-2" type="number" id="amount" name="amount" placeholder="50">
