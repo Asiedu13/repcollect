@@ -59,7 +59,7 @@
          <div class="my-5 flex flex-col">
             <label for="contact" class="text-sm font-semibold text-gray-600">Amount <sup class="text-red-600">*</sup>
             </label>
-            <input wire:model.live="payerAmount" class="outline-none border-b-2 border-gray-400 .rounded-md py-2" type="number" id="payerAmount" name="payerAmount" placeholder="100">
+            <input wire:model.live="payerAmount" class="outline-none border-b-2 border-gray-400 .rounded-md py-2" type="number" min="{{$min}}" id="payerAmount" name="payerAmount" placeholder="100">
             <p>
                 @error('payerAmount')
                     <span class="text-red-500 text-sm"> {{$message}} </span>   
