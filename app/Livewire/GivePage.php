@@ -26,6 +26,13 @@ class GivePage extends Component
      #[Validate('required', message: "The contact field is required")]
     public $payerContact;
 
+    #[Validate("required|email", message: "The email field is required")]
+    public $payerEmail;
+
+    public $authorizer;
+
+    public $showModal = false;
+
 
     public function mount() 
     {
@@ -36,22 +43,49 @@ class GivePage extends Component
         // dd($this->creator);
     }
 
+    public function toggleModal()
+    {
+        $this->showModal = !$this->showModal;
+    }
+
      public function redirectToGateway()
     {
         $this->validate();
-        $data = array(
-        "amount" => 700 * 100,
-        // "reference" => '4g4g5485g8545jg8gj',
-        "email" => 'user@mail.com',
-        "currency" => "GHS",
-        "orderID" => 23456,
-    );
-        try{
-            return paystack()->getAuthorizationUrl($data)->redirectNow();
-        }catch(\Exception $e) {
-            dd($e);
-            return Redirect::back()->withMessage(['msg'=>'The paystack token has expired. Please refresh the page and try again.', 'type'=>'error']);
-        }        
+        $this->showModal = true;
+        $url = "https://api.paystack.co/transaction/initialize";
+
+        $fields = [
+            'email' => $this->payerEmail,
+            'amount' => (string) $this->payerAmount * 100,
+            'currency' => "GHS",
+            'channels' => ['mobile_money', 'bank', 'qr']
+        ];
+
+        $fields_string = http_build_query($fields);
+
+        //open connection
+        $ch = curl_init();
+  
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, true);
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            "Authorization:  Bearer sk_test_8ab2e89ffe3deadce41ed50134439d6dfa0ecbe1",
+        ));
+  
+        //So that curl_exec returns the contents of the cURL; rather than echoing it
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
+  
+        //execute post
+        $result = curl_exec($ch);
+        // echo $result;
+
+        // $err = curl_error($ch);
+        curl_close($ch);
+
+        $this->authorizer = json_decode($result);
+        return redirect()->away($this->authorizer->data->authorization_url);
     }
 
     public function render()

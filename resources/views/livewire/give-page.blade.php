@@ -34,6 +34,18 @@
                 @enderror
             </p>
         </div>
+
+        <div class="my-5 flex flex-col">
+            <label for="email" class="text-sm font-semibold text-gray-600">Email <sup class="text-red-600">*</sup>
+            </label>
+            <input wire:model.live="payerEmail" class="outline-none border-b-2 border-gray-400 .rounded-md py-2" type="text" id="payerEmail" name="payerEmail" placeholder="example@gmail.com">
+            <p>
+                @error('payerEmail')
+                    <span class="text-red-500 text-sm"> {{$message}} </span>   
+                @enderror
+            </p>
+        </div>
+
         <div class="my-5 flex flex-col">
             <label for="contact" class="text-sm font-semibold text-gray-600">Contact {{"(MOMO)"}} <sup class="text-red-600">*</sup>
             </label>
@@ -55,8 +67,8 @@
             </p>
         </div>
 
-        <div class="mt-10 flex mb-10">
-                <button type="submit" class="bg-gray-600 p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%] text-sm gap-5 hover:bg-gray-700"> Proceed to payment
+        <div  class="mt-10 flex mb-10">
+                <button @click="showModal = true" class="bg-gray-600 p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%] text-sm gap-5 hover:bg-gray-700"> Proceed to payment
                      <div wire:loading>
                         <div class="relative w-8 h-8">
                             <div class="absolute left-0 bottom-0 w-full h-4 bg-white rounded-b-full animate-move"></div>
@@ -65,7 +77,9 @@
 
                      </div>
                 </button>
-            </div>
+ 
+
+        </div>
             <p class="text-sm .font-bold text-gray-700 mb-[20px]">  <b>Thank you! ❤️</b>
                 {{-- <a  class='text-purple-500 text-sm' href="<?php echo route('login') ?>">Sign In</a> --}}
             </p>

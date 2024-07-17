@@ -53,7 +53,9 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 // ------------ Payment ---------------
 Route::get('/pay/{url}', GivePage::class)->name('pay');
 Route::get('/payment/callback', [PaystackPaymentController::class, 'handleGatewayCallback']);
-
+// Route::get('https://checkout.paystack.com/{r}', function(){
+//     return redirect()->away("https://checkout.paystack.com/xj2w8zi223n6q8r");
+// });
 // ------------ Admin -----------------
 Route::middleware(['auth'])->group(function(){
     Route::get('dashboard', Dashboard::class)->name('dashboard');
