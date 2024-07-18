@@ -14,6 +14,7 @@ use App\Livewire\IndividualCollection;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PaystackPaymentController;
 
+
 Route::get('/', function () {
     // dd(User::where('id', auth()->id())->value('email'));
     return view('welcome')->with('username', auth()->id() ? User::where('id', auth()->id())->value('email') : 'Nobody man');
