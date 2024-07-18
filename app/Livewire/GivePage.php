@@ -57,6 +57,21 @@ class GivePage extends Component
 
         $this->authorizer = $this->PayPOST('transaction/initialize',  (string) $this->payerAmount * 100,  $this->payerEmail);
         // dd($this->authorizer);
+
+        // Create a transaction (unverified transaction)
+        $newTransaction = Transaction::create([
+                //     'id' => $this->paymentVerified->data->id,
+                //     'focus_id' => $this->focusId, 
+                //     'payer_name' => ,
+                //     'payer_contact',
+                //     'email',
+                //     'amount_paid',
+                //     'payment_type',
+                //     'reference',
+                //     'currency',
+                //     'ip_address',
+                // ]);
+        ]);
         return redirect()->away($this->authorizer->data->authorization_url);
         // $this->verifyPayment();
     }
@@ -66,18 +81,7 @@ class GivePage extends Component
         $this->paymentVerified = $this->PayGET("transaction/verify/{$this->authorizer->data->reference}");
         // dd($this->paymentVerified);
         if ($this->paymentVerified->data->status && $this->payerAmount * 100 == $this->paymentVerified->data->amount) {
-            // $newTransaction = Transaction::create([
-            //     'id' => $this->paymentVerified->data->id,
-            //     'focus_id' => $this->focusId, 
-            //     'payer_name' => ,
-            //     'payer_contact',
-            //     'email',
-            //     'amount_paid',
-            //     'payment_type',
-            //     'reference',
-            //     'currency',
-            //     'ip_address',
-            // ]);
+            // 
         } else {
             // Trhow an error or exception
         }
