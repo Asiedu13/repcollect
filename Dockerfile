@@ -2,8 +2,7 @@ FROM richarvey/nginx-php-fpm:1.7.2
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    git \
-    unzip
+    git
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
