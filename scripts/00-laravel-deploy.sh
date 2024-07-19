@@ -17,3 +17,7 @@ php artisan route:cache
 
 echo "Running migrations..."
 php artisan migrate --force
+
+chown -R www-data:www-data /var/www/html
+
+echo "deployment almost done"
