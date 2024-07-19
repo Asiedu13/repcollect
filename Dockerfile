@@ -1,19 +1,6 @@
 FROM richarvey/nginx-php-fpm:1.7.2
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-# Set working directory
-WORKDIR /var/www/html
-
-# Copy application files
 COPY . .
-
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader
-
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html
 
 # Image config
 ENV SKIP_COMPOSER 1
