@@ -14,6 +14,7 @@ class DashboardProfile extends Component
 
     public $view = 'profile';
     
+    public $selectedFile;
     public function mount() 
     {
         try {
