@@ -11,20 +11,40 @@ use Livewire\Attributes\Title;
 class DashboardProfile extends Component
 {
     public $saying;
-
     public $view = 'profile';
-    
+    public $username;
+    public $email;
+    public $phone;
+    public $bio;
+    public $country;
     public $selectedFile;
     public function mount() 
     {
+        $this->username = User::where('id', auth()->id())->get()->value('name');
+        $this->email = User::where('id', auth()->id())->get()->value('email');
+        $this->phone = User::where('id', auth()->id())->get()->value('phone');
+        $this->bio = User::where('id', auth()->id())->get()->value('bio');
+        $this->country = User::where('id', auth()->id())->get()->value('country');
+
         try {
             $this->saying = Saying::findOrFail(rand(1, Saying::all()->count()));
-            // dd($this->saying);
 
         }catch(Exception $e) {
-        //  $this->saying = 'Nothing to say about money today';   
+            //TODO: add a logger here 
         }
     }
+    public function updateUser()
+    {
+        $user = User::where('id', auth()->id())->get()[0];
+        $user->name = $this->username;
+        $user->bio = $this->bio;
+        $user->email = $this->email;
+        $user->phone = $this->phone;
+        $user->country = $this->country;
+        
+        $user->save();
+    }
+    
     #[Title('RepCollect | Profile')]
     public function render()
     {
