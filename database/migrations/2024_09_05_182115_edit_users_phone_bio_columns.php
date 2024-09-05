@@ -12,9 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('phone');
-            $table->text('bio');
-            $table->enum('country', ['Ghana', 'Nigeria', 'USA', 'Canada'])->default('Ghana');
+            $table->string('phone')->nullable()->change();
+            $table->text('bio')->nullable()->change();
         });
     }
 
@@ -24,9 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->removeColumn('phone');
-            $table->removeColumn('bio');
-            $table->removeColumn('country');
+            //
         });
     }
 };
