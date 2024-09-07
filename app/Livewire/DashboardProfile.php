@@ -17,6 +17,9 @@ class DashboardProfile extends Component
     public $phone;
     public $bio;
     public $country;
+    public $currency;
+    public $timezone;
+    public $language;
     public $selectedFile;
     public function mount() 
     {
