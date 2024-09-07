@@ -10,10 +10,10 @@
         <main class="mt-5 flex flex-col gap-4 overflow-y-scroll">
             <section x-data="{save: false, selectedFile: null, fileReader: null}" class="flex gap-5 border border-gray-200 rounded-lg p-4">
                 <div class="bg-blue-200 w-[100px] h-[100px] rounded-full relative">
-                    <div class="absolute bottom-0 right-0 w-[40px] h-[40px] bg-slate-100 text-slate-500 rounded-full flex justify-center items-center">
+                    <!-- TODO:Implement in version 2 <div class="absolute bottom-0 right-0 w-[40px] h-[40px] bg-slate-100 text-slate-500 rounded-full flex justify-center items-center">
                         <input .x-model="selectedFile" @change="selectedFile = Object.values($event.target.files); $dispatch('load-image')" class="opacity-0 w-[50px] z-10 absolute " type="file" name="" id="">
                         <svg  class="absolute" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>                    
-                    </div>
+                    </div> --> 
                     <img 
                         class="w-[100px] h-[100px] rounded-full cover" 
                         @load-image.window="fileReader = new FileReader(); fileReader.onLoad = (e) => {$el.src = e.target.result}; fileReader.readAsDataURL(selectedFile[0]);" 
