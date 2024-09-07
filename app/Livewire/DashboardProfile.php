@@ -45,6 +45,14 @@ class DashboardProfile extends Component
         $user->save();
     }
     
+    public function delete() 
+    {
+        // //deleting shouldn't be that easy
+        // $user = User::where('id', auth()->id())->get()[0];
+        // $user->delete();
+        // return redirect()->route('home');
+        
+    }
     #[Title('RepCollect | Profile')]
     public function render()
     {
