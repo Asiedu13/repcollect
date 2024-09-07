@@ -1,4 +1,4 @@
-<main class="bg-white mt-5 rounded-md .h-[fit] h-[600px] lg:w-[700px] flex flex-start flex-col .container px-2">
+<main x-data="{approveDelete: false}" class="bg-white mt-5 rounded-md .h-[fit] h-[600px] lg:w-[700px] flex flex-start flex-col .container px-2">
         <header class="flex gap-2 .text-gray-600 text-sky-500 font-semibold items-center py-4 px-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             <h2 class="text-xl .border-r-2 border-sky-400 pr-4">Profile</h2> 
@@ -123,11 +123,74 @@
                         <p class="text-sm">Once you delete, there is no going back</p>
                     </div>
                     <div>
-                        <button class=".border border-red-700 rounded-lg p-2 font-medium bg-red-100 hover:bg-red-200 transition">
+                        <button @click="approveDelete = ! approveDelete" class=".border border-red-700 rounded-lg p-2 font-medium bg-red-100 hover:bg-red-200 transition">
                             Delete my account
                         </button>
                     </div>
                 </section>
             </section>
+
+       
+             
         </main>
+
+        <!-- Confirmation box --> 
+         <section x-show="approveDelete" class="absolute top-0 left-0 h-screen w-screen backdrop-blur-md .z-20 flex flex-col items-center justify-center">
+            <div class="bg-white py-8 px-8 w-[600px] h-[700px] rounded-md z-30 overflow-y-scroll">
+                <header class="text-lg text-gray-500 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-warning"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M12 7v2"/><path d="M12 13h.01"/></svg>
+                    <h2 class="font-medium text-xl">Are You Sure You Want to Delete Your Account?</h2>
+                </header>
+                <p class="text-sm text-gray-500 mb-5 .font-medium">
+                    Deleting your account is a permanent action and cannot be undone. Once your account is deleted, 
+                    all your personal data will be removed from our systems, and you will lose access to any services
+                     associated with your account. Please take a moment to review the information below
+                </p>
+                <section class="text-gray-500">
+                    <h2 class="text-gray-500 text-lg font-medium">What You Will Lose</h2>
+                    <p class="text-sm">By deleting your account, the following data will be <b> permanently lost</b>:</p>
+                    <ul class="list-disc px-8 text-sm">
+                        <li> <b>Transaction History</b>: All past financial records, reports, and insights will be deleted.</li> 
+                        <li><b>Budget and Goals</b>:Any budgeting plans, financial goals, and progress you've made will be erased.</li> 
+                        <li><b>Linked Accounts</b> : Your linked bank and financial accounts will be unlinked and permanently removed.</li> 
+                        <li><b>Personalized Settings</b>: All your preferences, notifications, and account settings will be lost.</li> 
+                        <li><b>Access to Premium Features</b>:If you're a paid user, you will lose access to any premium services. No refunds will be issued for unused portions of your subscription.
+                        </li> 
+                    </ul>
+                    <h2 class="text-gray-500 text-lg font-medium mt-4">We Have Alternatives</h2>
+                    <p class="text-sm">If you're considering deleting your account, we encourage you to explore other options:</p>
+                    <ul class="list-disc px-8 text-sm">
+                        <li> <b>Deactivate Account</b>: Take a break! <a class="underline" href="#" target="_blank" rel="noopener noreferrer">Deactivating your account </a> allows you to pause it temporarily without losing any data. You can reactivate it anytime.</li> 
+                        <li><b>Pause Notifications</b>: Are you overwhelmed by notifications? You can easily manage or turn off notifications from your account settings.</li> 
+                        <li><b>Contact Support</b>: Facing issues? <a class="underline" href="#" target="_blank" rel="noopener noreferrer">Reach out to our support team</a>  for assistance. We&apos;re here to help!</li> 
+                    </ul>
+                    <h2 class="text-gray-500 font-medium mt-4">What Happens to Your Data?</h2>
+                    <p class="text-sm">
+                        We value your privacy. 
+                        Once your account is deleted, <b>all of your data will be permanently removed</b> from our systems, and we will no longer retain any information linked to your account. 
+                        This ensures your personal information remains secure and private.
+                    </p>
+                    
+                    <h2 class="text-gray-500 text-lg font-medium mt-4">Paid Users Notice</h2>
+                    <p class="text-sm">
+                    If you're currently on a paid plan, please note that deleting your account will forfeit any remaining time on your subscription. 
+                    <b>No refunds</b> will be issued for unused portions of your plan.
+                    </p>
+                    <h2 class="text-gray-500 text-lg font-medium mt-4">7-Day Waiting Period</h2>
+                    <p class="text-sm">
+                        After you confirm deletion, your account will be scheduled for <b>permanent removal in 7 days</b>. 
+                        During this period, you can <b>reactivate your account </b> by simply logging back in. 
+                        Once the waiting period expires, your account and all associated data will be permanently deleted.
+                    </p>
+                    <h3 class="font-medium text-gray-500 mt-5">I understand</h3>
+                    <p class="text-sm">
+                       I have read and completely understand the effects of this action
+                    </p>
+                    <div class="flex gap-1 mt-2">
+                        <button @click="approveDelete = ! approveDelete; $refresh" class="text-md text-gray-500 bg-gray-100 p-2 rounded-md font-medium flex-1">Cancel</button>
+                        <button wire:click="delete" class="flex-1 text-red-500 bg-red-100 font-medium rounded-md text-md">Delete my account</button>
+                    </div>
+                </section>
+            </div>
+         </section>
     </main>
