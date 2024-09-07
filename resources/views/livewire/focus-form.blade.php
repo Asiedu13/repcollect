@@ -2,12 +2,12 @@
     <section class="flex flex-col gap-2 justify-center items-center bg-white rounded-md p-1">
         <div class="w-[500px] .h-[700px]">
             <div class="mt-24 mb-14 flex items-center gap-2">
-                <h2 class="text-lg font-bold text-gray-700">RepCollect</h2> | <span>Let's Collect</span>
+                <h2 class="text-lg font-bold text-gray-700">RepCollect</h2> | <span>Let's Organize Collections</span>
             </div>
             
             <div>
                 <h1 class="text-2xl font-bold text-gray-700">Create A Cause For Collection</h1>
-                <p class="mb-10">Setup money collection point for a cause</p>
+                <p class="mb-10">Where leaders, business owners and representatives can streamline the process of collecting payments for goods, group projects, class resources and more. </p>
             </div>
         </div>
 
