@@ -7,14 +7,20 @@ use App\Models\User;
 use App\Models\Saying;
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use Livewire\Attributes\Validate;
 
 class DashboardProfile extends Component
 {
     public $saying;
     public $view = 'profile';
+
+    #[Validate('regex:/^[A-Za-z -]+$/', message: "Invalid name format")]
     public $username;
+    #[Validate('email')]
     public $email;
+    #[Validate('regex:/^\+?\d{10,15}$/')]
     public $phone;
+    #[Validate('regex:/^[a-zA-Z]*$/')]
     public $bio;
     public $country;
     public $currency;
@@ -38,6 +44,7 @@ class DashboardProfile extends Component
     }
     public function updateUser()
     {
+        $this->validate();
         $user = User::where('id', auth()->id())->get()[0];
         $user->name = $this->username;
         $user->bio = $this->bio;

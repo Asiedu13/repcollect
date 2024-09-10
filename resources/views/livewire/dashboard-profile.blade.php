@@ -42,18 +42,6 @@
                             @edit-meta.window="$el.removeAttribute('disabled'); $el.setAttribute('class', 'p-2 border rounded-md')" 
                             class="text-gray-500 font-medium bg-white" 
                             value="Accra, Ghana" name="country" disabled />
-                    </div>
-                    <!-- edit icon goes here -->
-                     <button x-show="! save" @click="$dispatch('edit-meta'); save = true" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-gray-400 text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white transition delay-150">
-                         Edit
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-line"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/><path d="m15 5 3 3"/></svg>
-                     </button>
-                     <!-- Save button -->
-                     <button x-show="save" @click="$dispatch('save-meta'); save = false; updateUser(); $refresh;" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-gray-400 text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white transition delay-150">
-                         Save
-                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>
-                    </button>
-                </div>
             </section>
 
             <section class="p-4 border border-gray-200 rounded-lg" x-data="{save: false}">
@@ -78,6 +66,14 @@
                             @save-personal.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0'); updateUser;" 
                             @edit-personal.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="firstname" class="font-medium bg-white text-gray-600" type="text" name="firstname" disabled 
                         />
+                        @error('username')
+                            <p class="text-red-400 text-sm mt-5 flex gap-2">
+                                <span> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>  
+                                </span>   
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
                     <!-- <div class="flex flex-col my-2">
                         <label class="text-gray-400">Last name</label>
@@ -94,6 +90,14 @@
                             @save-personal.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0')" 
                             @edit-personal.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="firstname" class="font-medium bg-white text-gray-600" type="text" name="email" disabled 
                         />
+                        @error('email')
+                            <p class="text-red-400 text-sm mt-5 flex gap-2">
+                                <span> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>  
+                                </span>   
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
                     <div class="flex flex-col my-2">
                         <label class="text-gray-400">Phone</label>
@@ -102,6 +106,14 @@
                             @save-personal.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0')" 
                             @edit-personal.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="phone" class="font-medium bg-white text-gray-600" type="text" name="phone" disabled 
                         />
+                        @error('phone')
+                            <p class="text-red-400 text-sm mt-5 flex gap-2">
+                                <span> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>  
+                                </span>   
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
                     <div class="flex flex-col my-2">
                         <label class="text-gray-400">Bio</label>
