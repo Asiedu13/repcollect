@@ -27,6 +27,10 @@ class User extends Authenticatable
         'bio',
         'country',
         'google_id',
+        'timezone',
+        'momo_number',
+        'language'
+
     ];
 
     /**
