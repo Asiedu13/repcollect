@@ -7,7 +7,7 @@ trait PayStackRequest
     
 
     public function PayGET($url)
-    {
+{
         $ch = curl_init();
         $url = "https://api.paystack.co/{$url}";
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -26,7 +26,7 @@ trait PayStackRequest
            return json_decode($result);
         }
     }
-    public function PayPOST($url, $amount=null, $email=null)
+    public function PayPOST($url, $name, $phone, $callbackUrl="http://localhost:8000/", $amount=null, $email=null)
     {
         $url = "https://api.paystack.co/{$url}";
         
@@ -35,9 +35,11 @@ trait PayStackRequest
             'amount' => $amount,
             'currency' => "GHS",
             'channels' => ['mobile_money', 'bank', 'qr'],
-            'first_name' => 'Prince',
+            'first_name' => $name,
             'last_name'=> 'Asiedu',
             'phone' => '0244276809',
+            'callback_url' => $callbackUrl,
+            'metadata' => ["username" => $name, "phone" => $phone]
         ];
         
         $fields_string = http_build_query($fields);

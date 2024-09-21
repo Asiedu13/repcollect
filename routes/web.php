@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\PaymentSuccess;
 use App\Models\User;
 use App\Livewire\GivePage;
 use App\Livewire\Dashboard;
@@ -51,11 +52,10 @@ Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
 // ------------ Payment ---------------
-Route::get('/pay/{url}', GivePage::class)->name('pay');
+Route::get('/pay/{url?}', GivePage::class)->name('pay');
 Route::get('/payment/callback', [PaystackPaymentController::class, 'handleGatewayCallback']);
-// Route::get('https://checkout.paystack.com/{r}', function(){
-//     return redirect()->away("https://checkout.paystack.com/xj2w8zi223n6q8r");
-// });
+Route::get('/success/{reference}', PaymentSuccess::class)->name('pay.success');
+// Route::get('/payment/{url}/',  );
 // ------------ Admin -----------------
 Route::middleware(['auth'])->group(function(){
     Route::get('dashboard', Dashboard::class)->name('dashboard');

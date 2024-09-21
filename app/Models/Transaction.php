@@ -10,6 +10,20 @@ class Transaction extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'focus_id',
+        'payer_name',
+        'payer_contact',
+        'email',
+        'amount_paid',
+        'payment_type',
+        'reference',
+        'ip_address',
+        'verified',
+        'currency',
+        'vendor'
+    ];
+
     public function focus()
     {
         return $this->belongsTo(Focus::class);
