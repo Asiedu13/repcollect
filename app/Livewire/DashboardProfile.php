@@ -34,7 +34,6 @@ class DashboardProfile extends Component
         $this->phone = User::where('id', auth()->id())->get()->value('phone');
         $this->bio = User::where('id', auth()->id())->get()->value('bio');
         $this->country = User::where('id', auth()->id())->get()->value('country');
-
         try {
             $this->saying = Saying::findOrFail(rand(1, Saying::all()->count()));
 
@@ -52,6 +51,8 @@ class DashboardProfile extends Component
         $user->phone = $this->phone;
         $user->country = $this->country;
         
+        // dd($user);
+        
         $user->save();
     }
     
@@ -61,7 +62,7 @@ class DashboardProfile extends Component
         // $user = User::where('id', auth()->id())->get()[0];
         // $user->delete();
         // return redirect()->route('home');
-        
+        session()->flash('message', 'Post updated successfully!');
     }
     #[Title('RepCollect | Profile')]
     public function render()
