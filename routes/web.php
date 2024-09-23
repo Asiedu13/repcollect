@@ -10,16 +10,13 @@ use App\Livewire\DashboardFaq;
 use App\Livewire\GenerateLink;
 use App\Livewire\DashboardProfile;
 use App\Livewire\DashboardSettings;
+use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\IndividualCollection;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PaystackPaymentController;
 
-Route::get('/', function () {
-    // dd(User::where('id', auth()->id())->value('email'));
-    return view('welcome')->with('username', auth()->id() ? User::where('id', auth()->id())->value('email') : 'Nobody man');
-})->name('home');
-
+Route::get('/', Welcome::class)->name('home');
 // ------------ Registration -----------------
 Route::get('login', function() {
     return view('login');
