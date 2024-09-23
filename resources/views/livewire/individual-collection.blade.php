@@ -42,6 +42,9 @@
                         </a>
                     </li>
                     @empty
+                        <div class="flex flex-col items-center py-5">
+                            <p class="flex-1 font-medium text-xl text-gray-400">No other collections</p>
+                        </div>
                         
                     @endforelse
                   </ul>
