@@ -65,5 +65,6 @@
         @endauth
     </header>
         {{$slot}}
+    <livewire:footer />
     </body>
 </html>
