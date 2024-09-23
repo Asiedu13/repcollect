@@ -1,6 +1,7 @@
 <div>
     <section class="flex flex-col gap-2 justify-center items-center bg-white rounded-md p-1">
         <div class="w-[500px] .h-[700px]">
+            <!-- TODO:Add a back navigation button -->
             <div class="mt-24 mb-14 flex items-center gap-2">
                 <h2 class="text-lg font-bold text-gray-700">RepCollect</h2> | <span>Let's Organize Collections</span>
             </div>

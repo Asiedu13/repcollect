@@ -9,6 +9,7 @@ use App\Models\focus;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
+use Livewire\Attributes\Title;
 
 class FocusForm extends Component
 {
@@ -53,7 +54,7 @@ class FocusForm extends Component
         $this->reset();
         return redirect()->route('me.generate', ['url' => $newLink->link]);
     }
-
+    #[Title('RepCollect | New Collection Form')]
     public function render()
     {
         return view('livewire.focus-form')->layout('components.layouts.app', ['currentUser' => User::where('id', auth()->id())->get()]);
