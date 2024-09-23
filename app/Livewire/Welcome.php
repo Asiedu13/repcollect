@@ -8,7 +8,6 @@ use App\Models\User;
 
 class Welcome extends Component
 {
-    //     return view('welcome')->with('username', auth()->id() ? User::where('id', auth()->id())->value('email') : 'Nobody man');
     public $username;
 
     public function mount() 
