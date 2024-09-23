@@ -18,7 +18,7 @@
                         </div>
                     @endforeach
                 @else
-                    <h2 class="text-lg text-gray-300 font-bold py-10 text-center">No collection at the moment</h2>
+                    <h2 class="text-lg px-[100px] text-gray-300 font-bold py-10 text-center">No collection at the moment</h2>
                 @endif
             </div>
         </section>
