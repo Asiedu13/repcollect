@@ -116,22 +116,10 @@
                                 <div class="max-h-[400px] h-[400px] flex justify-center items-center">
                                     <p class="text-center text-gray-400 font-semibold text-2xl">No transactions at the moment</p>
                                 </div>
-                                
                             @endforelse
                     </section>
                 </section>
             </section>
-            <div class="text-right px-6 relative">
-                {{-- Could be a pause collection button --}}
-                {{-- <button class="text-white text-sm border-1 bg-red-500 border-red-500 w-fit rounded-md p-1">
-                    End collection
-                </button> --}}
-                <button class="text-red-500 text-sm border-red-500 w-fit rounded-md py-1 hover:underline">
-                    Want to stop collecting money for this cause?
-                </button>
-                {{-- <p class="text-gray-600 text-sm">Stop collecting money for this cause</p> --}}
-            </div>
-            </section>
         </section>
-    {{-- </div> --}}
+        </section>
 </div>
