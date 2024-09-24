@@ -3,7 +3,7 @@
                 <h2 class="text-xl font-medium">RepCollect</h2>
                 <p class="w-3/4 mt-3">
                     Where leaders, business owners and representatives can 
-                    streamline the process of collecting payments for goods, group projects, class resources and more.
+                    streamline the process of collecting payments for goods, group projects, resources and more.
                 </p>
                 <livewire:socials />
                 <div class="flex gap-2 mb-2">
