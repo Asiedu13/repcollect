@@ -1,6 +1,6 @@
 <div>   
     {{-- Logo, Tips and Options bar (till i know what to put there) --}}
-        <section  class="grid grid-cols-2 min-h-screen">
+        <section  class="grid grid-cols-2 min-h-screen relative">
             <section class="flex flex-col min-h-screen justify-center items-center">
                 <header class="text-center">
                     <h1 class="text-3xl">RepCollect</h1>
@@ -26,9 +26,9 @@
                     @forelse ($otherCollections as $collection )
                         <li>
                             <a class="border-b-2 h-[50px] flex items-center py-2 flex-1 justify-between  text-gray-400" href="{{route('collect', $collection->link)}}" wire:navigate class="capitalize">
-                                <p class="text-slate-500 max-w-[180px] overflow-hidden"> {{$collection->title}} </p>
+                                <p class="text-slate-500 max-w-[180px] truncate"> {{$collection->title}} </p>
                                 <div class="text-sm font-bold text-gray-400 ">
-                                    <span class="text-slate-500"> {{count($collection->transactions)}} paid </span> • <span class="text-green-500"> GHS {{$collection->sum}}.00 </span>
+                                    <span class="text-slate-500"> {{count($collection->transactions)}} paid </span> • <span class="text-green-500"> {{$collection->currency}} {{number_format($collection->sum)}}.00 </span>
                                 </div>
                             </a>
                         </li>
@@ -50,7 +50,7 @@
             </section>
             
             {{-- Individual collection --}}
-            <section class="flex-1 bg-white rounded-md my-5">
+            <section  class="flex-1 bg-white rounded-md my-5">
                 <div class="flex gap-2 text-gray-500 font-semibold items-center py-2 px-4 justify-between">
 
                     <div class="flex gap-2">
@@ -72,22 +72,25 @@
                 <hr>
 
                 <section class="px-4 py-4">
-                    <header class="py-4 text-gray-700 flex ">
-                        <div class="">
+                    <header class="py-4 text-gray-700 flex gap-3">
+                        <div class="flex-1">
                             <h2 class="capitalize text-2xl text-sky-500 font-medium"> {{$theOne->title}} </h2>
-                            <p class="text-sm px-1 text-gray-500 my-2 max-h-[80px] w-3/4">{{$theOne->description}}</p>
+                            <p class="text-sm px-1 text-gray-500 my-2 max-h-[80px] w-4/4 text-wrap truncate">{{$theOne->description}}</p>
                         </div>
 
-                        <div class="max-w-[600px] w-[600px] max-h-[inherit] h-[inherit] overflow-clip">
-                            <b class="text-green-400 text-lg">Goal: <span>GHS {{$theOne->desired_amount}}.00 </span></b> <br>
-                            <b class="text-gray-600 text-2xl ">Current: <span>GHS {{$transactionsSum}}.00</span></b>
-                            <p class="text-sm font-semibold text-orange-300">{{$nOfPaymentsAtBase;}}  more payments at base price (GHS {{$theOne->cost}}.00 )</p>
+                        <div class="max-w-[600px] w-fit .w-[600px] max-h-[inherit] h-[inherit] overflow-clip">
+                            <b class="text-green-400 text-lg">Goal: <span>{{$theOne->currency}} {{number_format($theOne->desired_amount)}}.00 </span></b> <br>
+                            <b class="text-gray-600 text-2xl ">Current: <span>{{$theOne->currency}}  {{number_format($transactionsSum)}}.00</span></b>
+                            <p class="text-sm font-semibold text-orange-300">{{number_format($nOfPaymentsAtBase)}}  more payment{{$nOfPaymentsAtBase > 1 ? 's': ''}} at base price ({{$theOne->currency}} {{number_format($theOne->cost)}}.00 )</p>
                         </div>
                     </header>
                     <hr>
-                    <section class="mt-5">
-                        <h3 class="text-sm text-gray-600 font-semibold">Payments made</h3>
-                        <section class="overflow-y-auto h-[400px] max-h-[400px] ">
+                    <section  x-data="{settingsShow: false}" class="mt-5">
+                        <nav class="flex .gap-2 mx-3 border-b-2 border-gray-200">
+                            <button @click="settingsShow = false" :class="settingsShow ? 'border-b-0': 'border-b-2 border-gray-800' " class="bg-white z-10 text-sm text-gray-600 font-semibold py-2 px-5 ">Payments</button>
+                            <button @click="settingsShow = true" :class="! settingsShow ? 'border-b-0': 'border-b-2 border-gray-800' " class="bg-white z-10 text-sm text-gray-600 font-semibold py-2 px-5 ">Settings</button>
+                        </nav>
+                        <section x-show="! settingsShow" class="overflow-y-auto h-[400px] max-h-[400px] rounded-lg p-3">
                             @forelse ($transactions as $transaction )
                                 <div class="my-2">
                                     <a class="border-2 rounded-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between text-gray-400" href="#" class="capitalize">
@@ -95,16 +98,19 @@
                                     <div class="text-sm font-bold text-gray-400 ">
                                         <span class="text-slate-500 capitalize">{{$transaction->payment_type}}</span>
                                         •
-                                    <span class="text-green-500">GHS {{$transaction->amount_paid}}.00 </span>
+                                    <span class="text-green-500">{{$theOne->currency}} {{number_format($transaction->amount_paid)}}.00 </span>
                                     </div>
                                     </a>
                                 </div>
                             @empty
-                                <div class="max-h-[400px] h-[400px] flex justify-center items-center">
+                                <div class="max-h-[300px] h-[400px] flex justify-center items-center">
                                     <p class="text-center text-gray-400 font-semibold text-2xl">No transactions at the moment</p>
                                 </div>
                             @endforelse
-                    </section>
+                        </section>
+                        <section x-show="settingsShow" class="overflow-y-auto h-[400px] max-h-[400px] rounded-lg p-3">
+                            <livewire:individual-collection-settings :collection="$theOne" />
+                        </section>
                 </section>
             </section>
         </section>
