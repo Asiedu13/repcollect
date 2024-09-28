@@ -7,7 +7,7 @@
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
    <body class="bg-gray-100 min-h-full">
-    <header class="flex justify-between py-[10px] px-[100px] h-[100px] border-b sticky top-0 bg-gray-100 z-40 mb-12">
+    <header class="h-[100px] border-b sticky top-0 bg-gray-100 z-40 mb-12 flex flex-col justify-around lg:flex-row lg:justify-between lg:px-[100px] lg:h-[90px] shadow-md">
         <nav class="flex justify-center items-center">
             {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg> --}}
              <a href="<?php echo route('home') ?>">
@@ -20,7 +20,7 @@
         </a>
         @endguest
         @auth
-        <div x-data="{open: false}" class='flex gap-2 justify-center items-center'>
+        <div x-data="{open: false}" class='hidden gap-2 justify-center items-center lg:flex'>
             <nav class='relative'> 
                 <button  class="inline-flex items-center px-4 gap-2 py-2 bg-gray-800 border border-gray-800 w-[300px] rounded-md text-sm text-white focus:outline-none focus:border-gray-900 focus:ring ring-gray-300" @click="open = true" >
                 <p class=".bg-white py-1 px-1 rounded-md font-semibold text-gray-600 flex justify-center items-center gap-4 .shadow-md"> 
@@ -64,14 +64,14 @@
         </div>
         @endauth
     </header>
-        <div class="flex gap-10 justify-between px-[100px] ">
-        <section class="flex flex-col .justify-center transition-all">
-            <h1 class="text-2xl font-medium capitalize text-zinc-600 text-center">Good day, {{$user[0]->name}}</h1>
+    <div class="flex flex-col gap-10 justify-between lg:flex-row lg:px-[100px]">
+        <section class="flex flex-col transition-all p-4 lg:p-0">
+            <h1 class="text-xl font-medium capitalize text-zinc-600 text-center lg:text-2xl">Good day, {{$user[0]->name}}</h1>
         
             <svg  class="text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
             </svg>
 
-            <blockquote class="text-gray-400 text-xl w-[500px] h-[100px] flex gap-5 my-3 justify-center items-center">
+            <blockquote class="text-gray-400 text-xl  h-[100px] flex  my-3 justify-center items-center lg:w-[500px] lg:gap-5">
                 <p class="text-center ">
                     {{ is_null( $saying ) ? 'Gathering insight on money managment' : $saying->content }}
                     <br>
@@ -83,15 +83,15 @@
                 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
             </div>
 
-            <nav class="bg-white p-4 rounded-md mt-20 text-slate-600 w-[500px]">
-                <header class="flex gap-2 items-center mb-5">
+            <nav class="bg-white p-4 rounded-md mt-20 text-slate-600 fixed bottom-24 z-40 group/menu lg:relative lg:bottom-0 lg:w-[500px] lg:z-0">
+                <header class="flex gap-2 items-center px-2 lg:mb-5 lg:px-0 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                    <h2 class="text-lg"> Menu</h2>
+                    <h2 class="text-lg lg:text-lg lg:flex"> Menu</h2>
                 </header>
 
-                <hr>
+                <hr class="hidden lg:block">
 
-                <ul>
+                <ul class="hidden group-hover/menu:block absolute bottom-20 left-0 w-[300px] bg-white p-2 shadow-md lg:p-0 lg:shadow-none lg:relative lg:bottom-0 lg:left-0 lg:block lg:w-full">
                     <a href="{{route('dashboard.profile')}}" wire:navigate>
                         <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'profile' ? 'bg-gray-700 text-white px-4 rounded-md' : 'bg-white text-slate-600' }} "   wire:click="handleMenuClick('profile')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
