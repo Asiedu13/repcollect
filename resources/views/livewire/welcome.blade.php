@@ -1,7 +1,7 @@
 <main class=".container">
-    <header class="overflow-hidden px-[100px] .border border-red-200 relative">
-        <section class="flex .flex-col h-[550px] justify-between items-center w-[inherit]">
-            <section class="flex flex-col justify-between .items-center w-[inherit] text-slate-600">
+    <header class="overflow-hidden px-[100px] pt-[50px] .border border-red-200 relative lg:pt-0">
+        <section class="flex flex-col justify-between items-center w-[inherit] lg:h-[550px] lg:flex-row">
+            <section class="flex flex-col justify-between w-[inherit] text-slate-600">
                 <h1 class="text-3xl font-medium text-gray-500">RepCollect</h1>
                 <p class="text-5xl font-bold my-2">Be Safe.</p>
                 <p class="text-5xl font-bold my-2">Be Organized.</p>

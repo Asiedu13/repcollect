@@ -1,5 +1,5 @@
 {{-- Individual collection --}}
-<section class="flex-1 .col-span-2 bg-white rounded-md my-5 w-2/4 .px-4 absolute right-5 shadow-lg">
+<section class="flex-1 bg-white rounded-md my-5 w-2/4 .px-4 lg:absolute right-5 shadow-lg">
     <div class="flex gap-2 .text-gray-600 text-gray-500 font-semibold items-center py-2 px-4 justify-between">
 
         <div class="flex gap-2">
