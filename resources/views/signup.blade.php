@@ -1,13 +1,18 @@
-@component('app')
-    <section class="flex flex-col gap-2 justify-center items-center bg-white rounded-md p-1">
-        <div class="w-[500px] .h-[700px]">
-            <div class="mt-24 mb-14 flex items-center gap-2">
-                <h2 class="text-lg font-bold text-gray-700">RepCollect</h2> | <span>Sign Up</span>
+<x-app>
+    
+    <x-slot:title>
+        RepCollect | Sign Up
+    </x-slot>
+
+    <section class="flex flex-col gap-2 bg-white rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center">
+        <div class="lg:w-[500px]">
+            <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
+                <h2 class="text-sm font-bold text-gray-700 md:text-md lg:text-lg">RepCollect</h2> | <span>Sign Up</span>
             </div>
             
             <div>
-                <h1 class="text-2xl font-bold text-gray-700">Get Started Now</h1>
-                <p class="mb-10">Enter your credentials to access your account</p>
+                <h1 class="text-lg font-bold text-gray-700 md:text-xl lg:text-2xl">Get Started Now</h1>
+                <p class="mb-10 text-sm lg:text-lg">Enter your credentials to access your account</p>
                  @if($errors->any())
                 <div>
                     @foreach ($errors->all() as $error )
@@ -30,11 +35,11 @@
             </div>
         </div>
 
-        <form action="<?php echo route('register') ?>" class="w-[500px]" method="POST">
+        <form action="<?php echo route('register') ?>" class="md:w-[500px]" method="POST">
             @csrf
             <div class="my-5 flex flex-col">
                 <label for="email" class="text-sm font-semibold text-gray-600">Email address</label>
-                <input class="outline-none border border-gray-400 rounded-md p-2" type="email" id="email" name="email" placeholder="example@gmail.com">
+                <input class="outline-none border border-gray-400 rounded-md p-2 lg:w-full placeholder:text-sm lg:placeholder:text-md" type="email" id="email" name="email" placeholder="example@gmail.com">
             </div>
 
             <div class="my-5 flex flex-col">
@@ -49,4 +54,4 @@
             <p class="text-sm font-bold text-gray-700 mb-[20px]">Already have an account? <a  class='text-purple-500 text-sm' href="<?php echo route('login') ?>">Sign In</a></p>
         </form>
     </section>
-@endcomponent
+</x-app>
