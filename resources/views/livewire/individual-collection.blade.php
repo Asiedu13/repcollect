@@ -1,9 +1,16 @@
 <div>   
     {{-- Logo, Tips and Options bar (till i know what to put there) --}}
-        <section  class="grid grid-cols-2 min-h-screen relative">
-            <section class="flex flex-col min-h-screen justify-center items-center">
-                <header class="text-center">
-                    <h1 class="text-3xl">RepCollect</h1>
+        <section  class="grid lg:grid-cols-2 min-h-screen relative">
+            {{-- back to dashboard goes here with arrow --}}
+            <nav class="text-gray-400 flex gap-2 mt-4 lg:hidden">
+                    <svg class="animate-slideLeft" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
+                    <a href="{{route('dashboard')}}" wire:navigate>
+                        <p>Back to dashboard</p>
+                    </a>
+                </nav>
+            <section class="flex flex-col min-h-screen order-2 lg:order-1 lg:justify-center lg:items-center">
+                <header class=" mt-2 lg:mt-0 lg:text-center">
+                    <h1 class="text-3xl hidden lg:block">RepCollect</h1>
                 </header> 
                 <article class="flex items-center gap-5 bg-white rounded-md px-2 py-5 my-5 w-[400px] text-gray-400">
                     <div class="absolute opacity-15">
@@ -41,7 +48,7 @@
                 </section>
 
                 {{-- back to dashboard goes here with arrow --}}
-                <nav class="text-gray-400 flex gap-2 mt-4">
+                <nav class="text-gray-400 flex gap-2 mt-4 hidden lg:flex">
                     <svg class="animate-slideLeft" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
                     <a href="{{route('dashboard')}}" wire:navigate>
                         <p>Back to dashboard</p>
@@ -50,7 +57,7 @@
             </section>
             
             {{-- Individual collection --}}
-            <section  class="flex-1 bg-white rounded-md my-5">
+            <section  class="flex-1 bg-white w-screen lg:w-full rounded-md my-5 lg:order-1">
                 <div class="flex gap-2 text-gray-500 font-semibold items-center py-2 px-4 justify-between">
 
                     <div class="flex gap-2">
@@ -60,8 +67,6 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
                         <h2 class="text-sm font-normal">Collections</h2>
                     </div>
-                    {{-- <a href="{{route('pay', $theOne->link)}}">Copy link</a> --}}
-                    <input class="border px-2 rounded-md w-[100px] outline-none invisible" type="text" id='link' x-ref='linkCopy' value="{{url("/pay/$theOne->link")}}" readonly>
                       
                     <a href="{{route('me.generate', $theOne->link)}}" class="bg-gray-600 text-white rounded-md p-2 text-sm hover:bg-gray-500 gap-2 flex text-right" wire:navigate> 
                         Get payment link
@@ -72,7 +77,7 @@
                 <hr>
 
                 <section class="px-4 py-4">
-                    <header class="py-4 text-gray-700 flex gap-3">
+                    <header class="py-4 text-gray-700 flex flex-col gap-3 lg:flex-row">
                         <div class="flex-1">
                             <h2 class="capitalize text-2xl text-sky-500 font-medium"> {{$theOne->title}} </h2>
                             <p class="text-sm px-1 text-gray-500 my-2 max-h-[80px] w-4/4 text-wrap truncate">{{$theOne->description}}</p>
@@ -108,7 +113,7 @@
                                 </div>
                             @endforelse
                         </section>
-                        <section x-show="settingsShow" class="overflow-y-auto h-[400px] max-h-[400px] rounded-lg p-3">
+                        <section x-show="settingsShow" class="lg:overflow-y-auto lg:h-[400px] lg:max-h-[400px] rounded-lg p-3">
                             <livewire:individual-collection-settings :collection="$theOne" />
                         </section>
                 </section>
