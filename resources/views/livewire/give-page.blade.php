@@ -1,14 +1,41 @@
 <div class="bg-white w-[700px] h-fit py-5 rounded-md">
     {{-- The whole world belongs to you. --}}
-      <header class="flex gap-2 .text-gray-600 text-sky-500 font-semibold items-center py-4 px-4">
+      <header x-data="{show: false}" class="flex justify-between .gap-2 .text-gray-600 text-sky-500 font-semibold items-center py-4 px-4">
             {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg> --}}
-            <a href="{{route('home')}}" wire:navigate> 
-                <h2 class="text-xl border-r-2 border-sky-400 pr-4">RepCollect</h2> 
-            </href>
-            <a class="flex gap-2 font-normal items-center text-sm text-sky-500" wire:navigate>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
-                 Payment
-            </a>
+            <section class="flex gap-2">
+                <a href="{{route('home')}}" wire:navigate> 
+                    <h2 class="text-xl border-r-2 border-sky-400 pr-4">RepCollect</h2> 
+                </href>
+                <a class="flex gap-2 font-normal items-center text-sm text-sky-500" wire:navigate>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+                    Payment
+                </a>
+            </section>
+            <section  class="bg-red-200 text-red-500 py-2 px-4 rounded-md flex gap-2 items-center">
+                <a href="#">Report collection </a>
+
+                <svg @click="show = !show" class="hover:text-red-600 hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="14" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+
+            </section>
+            <article x-show="show" class="absolute right-24 top-20 bg-white py-4 px-4 rounded-md w-[400px] shadow-xl ">
+                <header class="my-2">
+                    <h2>Why Report This Collection?</h2>
+                </header>
+                <hr>
+                <p class="font-normal mt-2">
+                        Reporting a campaign helps maintain the integrity of our platform. Please report this collection if you believe it violates our guidelines or involves any of the following:
+                    </p>
+                    <ul class="font-medium list-disc px-4">
+                        <li>Suspected fraud or misuse of funds.</li>
+                        <li>Inaccurate or misleading information.</li>
+                        <li>Violations of RepCollect terms of service.</li>
+                        <li>Unauthorized fundraising on behalf of others.</li>
+                        <li>Identity theft or impersonation.</li>
+                    </ul>
+                    <p class="mt-2">
+                     All reports are confidential and will be reviewed by our team.
+                    </p>
+            </article>
         </header>
         <hr>
 
