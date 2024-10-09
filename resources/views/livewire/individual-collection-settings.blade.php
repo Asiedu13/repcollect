@@ -1,4 +1,4 @@
-<main x-data="{approveDelete: false}" class="bg-white rounded-md lg:w-[550px] flex flex-start flex-col">
+<main x-data="{approveDelete: false}" class="bg-transparent rounded-md lg:w-[550px] flex flex-start flex-col">
         <main class="mt-5 flex flex-col gap-5">
             <section x-data="{save: false, selectedFile: null, fileReader: null}" class="flex lg:flex-1 gap-5 border border-gray-200 rounded-lg p-4">
                 <div class="flex flex-1 justify-between lg:w-full">
@@ -9,7 +9,7 @@
                             name="title"
                             @save-collection-meta.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-xl text-gray-500 font-medium bg-white border-none')" 
                             @edit-collection-meta.window="$el.removeAttribute('disabled'); $el.setAttribute('class', 'text-xl p-2 border rounded-md')"
-                            class="text-xl text-wrap text-gray-500 font-medium bg-white border-none lg:flex-1" 
+                            class="text-xl text-wrap text-gray-500 font-medium bg-transparent border-none lg:flex-1" 
                             disabled />
                             <button x-show="! save" @click="$dispatch('edit-collection-meta'); save = true" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-gray-400 text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white transition delay-150">
                                 Edit
@@ -26,7 +26,7 @@
                             name="description"
                             @save-collection-meta.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0')" 
                             @edit-collection-meta.window="$el.removeAttribute('disabled'); $el.setAttribute('class', 'p-2 my-2 border rounded-md')" 
-                            class="text-gray-500 bg-white text-wrap w-full mt-5 lg:h-[180px] lg:w-[500px]" 
+                            class="text-gray-500 bg-transparent text-wrap w-full mt-5 lg:h-[180px] lg:w-[500px]" 
                              disabled ></textarea>
                         <div class="flex flex-col">
                             <label for="status" class="text-gray-500 font-medium mt-2">Status</label>

@@ -6,8 +6,8 @@
         @vite('resources/css/app.css')
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
-   <body class="bg-gray-100 min-h-full">
-    <header class="h-[100px] border-b sticky top-0 bg-gray-100 z-40 mb-12 flex flex-col justify-around lg:flex-row lg:justify-between lg:px-[100px] lg:h-[90px] shadow-md">
+   <body class="bg-primary min-h-full">
+    <header class="h-[100px] border-b sticky top-0 bg-secondary z-40 mb-12 flex flex-col justify-around lg:flex-row lg:justify-between lg:px-[100px] lg:h-[90px] shadow-md">
         <nav class="flex justify-center items-center">
             {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg> --}}
              <a href="<?php echo route('home') ?>">
@@ -66,12 +66,12 @@
     </header>
     <div class="flex flex-col gap-10 justify-between lg:flex-row lg:px-[100px]">
         <section class="flex flex-col transition-all p-4 lg:p-0">
-            <h1 class="text-xl font-medium capitalize text-zinc-600 text-center lg:text-2xl">Good day, {{$user[0]->name}}</h1>
+            <h1 class="text-xl font-medium capitalize text-secondary text-center lg:text-2xl">Good day, {{$user[0]->name}}</h1>
         
-            <svg  class="text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+            <svg  class="text-accent" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
             </svg>
 
-            <blockquote class="text-gray-400 text-xl  h-[100px] flex  my-3 justify-center items-center lg:w-[500px] lg:gap-5">
+            <blockquote class="text-neutral text-xl  h-[100px] flex  my-3 justify-center items-center lg:w-[500px] lg:gap-5">
                 <p class="text-center ">
                     {{ is_null( $saying ) ? 'Gathering insight on money managment' : $saying->content }}
                     <br>
@@ -79,11 +79,11 @@
                 </p>
             </blockquote>
 
-            <div class="flex justify-end flex-end text-gray-400">
+            <div class="flex justify-end flex-end text-accent">
                 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
             </div>
 
-            <nav class="bg-white p-4 rounded-md mt-20 text-slate-600 fixed bottom-24 z-40 group/menu lg:relative lg:bottom-0 lg:w-[500px] lg:z-0">
+            <nav class="bg-transparent p-4 rounded-md mt-20 border border-neutral text-neutral fixed bottom-24 z-40 group/menu .lg:relative lg:sticky lg:top-20 .lg:bottom-0 lg:w-[500px] lg:z-0">
                 <header class="flex gap-2 items-center px-2 lg:mb-5 lg:px-0 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
                     <h2 class="text-lg lg:text-lg lg:flex"> Menu</h2>
@@ -91,29 +91,29 @@
 
                 <hr class="hidden lg:block">
 
-                <ul class="hidden group-hover/menu:block absolute bottom-20 left-0 w-[300px] bg-white p-2 shadow-md lg:p-0 lg:shadow-none lg:relative lg:bottom-0 lg:left-0 lg:block lg:w-full">
+                <ul class="hidden group-hover/menu:block absolute bottom-20 left-0 w-[300px] bg-transparent p-2 shadow-md lg:p-0 lg:shadow-none lg:relative lg:bottom-0 lg:left-0 lg:block lg:w-full">
                     <a href="{{route('dashboard.profile')}}" wire:navigate>
-                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'profile' ? 'bg-gray-700 text-white px-4 rounded-md' : 'bg-white text-slate-600' }} "   wire:click="handleMenuClick('profile')">
+                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'profile' ? 'bg-accent text-neutral px-4 rounded-md' : 'bg-transparent text-neutral' }} "   wire:click="handleMenuClick('profile')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                             <p class="text-sm">Profile</p>
                         </li>
                     </a>
 
                     <a href="{{route('dashboard')}}" wire:navigate>
-                        <li class="flex gap-2 items-center h-[50px] my-2 cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'collections' ? 'bg-gray-700 text-white px-4 rounded-md' : 'bg-white text-slate-600' }} "  wire:click="handleMenuClick('collections')">
+                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'collections' ? 'bg-accent text-neutral px-4 rounded-md' : 'bg-transparent text-neutral' }} "  wire:click="handleMenuClick('collections')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
                             <p class="text-sm">Collections</p>
                         </li>
                     </a>
                     <a href="{{route('dashboard.settings')}}" wire:navigate>
-                        <li class="flex gap-2 items-center h-[50px] my-2 cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'settings' ? 'bg-gray-700 text-white px-4 rounded-md' : 'bg-white text-slate-600' }} "  wire:click="handleMenuClick('settings')">
+                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'settings' ? 'bg-accent text-neutral px-4 rounded-md' : 'bg-transparent text-neutral' }} "  wire:click="handleMenuClick('settings')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
                             <p class="text-sm">Settings</p>
                         </li>
                     </a>
 
                     <a href="{{route('dashboard.faq')}}" wire:navigate>
-                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md .hover:text-white hover:px-4 transition-all {{$view == 'faq' ? 'bg-gray-700 text-white px-4 rounded-md' : 'bg-white text-slate-600' }} "   wire:click="handleMenuClick('faq')">
+                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'faq' ? 'bg-accent text-neutral px-4 rounded-md' : 'bg-transparent text-neutral' }} "   wire:click="handleMenuClick('faq')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-question"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
                             <p class="text-sm">Frequently Asked Questions</p>
                         </li>

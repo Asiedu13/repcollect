@@ -1,4 +1,4 @@
-<footer class="bg-slate-600 text-slate-200 min-w-screen p-[50px] mt-40 grid gap-10 lg:gap-0 lg:h-[350px] lg:p-[100px] lg:grid-cols-2">
+<footer class="bg-secondary text-accent min-w-screen p-[50px] mt-40 grid gap-10 lg:gap-0 lg:h-[350px] lg:p-[100px] lg:grid-cols-2">
             <section>
                 <h2 class="text-xl font-medium">RepCollect</h2>
                 <p class="w-3/4 mt-3">
@@ -12,7 +12,7 @@
                 <p>&copy; Copyright {{date('Y')}}</p>
             </section>
             <section class="flex flex-col gap-10 justify-between lg:flex-row lg:gap-0">
-                <div class="text-slate-200">
+                <div class="text-primary-light">
                     <h2 class="font-semibold .text-lg underline decoration-wavy mb-2">Company</h2>
                     <ul class="flex flex-col gap-3">
                         <li>About us</li>
@@ -20,7 +20,7 @@
                         <li>Contact us</li>
                     </ul>
                 </div>
-                <div class="text-slate-200">
+                <div class="text-primary-light">
                     <h2 class="font-semibold .text-lg underline decoration-wavy mb-2">Information</h2>
                     <ul class="flex flex-col gap-3">
                         <li>FAQ</li>
@@ -28,8 +28,8 @@
                         <li>Support</li>
                     </ul>
                 </div>
-                <div class="text-slate-200">
-                    <h2 class="font-semibold .text-lg underline decoration-wavy mb-2">Community</h2>
+                <div class="text-primary-light">
+                    <h2 class="font-semibold underline decoration-wavy mb-2">Community</h2>
                     <ul class="flex flex-col gap-3">
                         <li>Donations</li>
                     </ul>

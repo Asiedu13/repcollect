@@ -2,18 +2,13 @@
     {{-- Logo, Tips and Options bar (till i know what to put there) --}}
         <section  class="grid lg:grid-cols-2 min-h-screen relative">
             {{-- back to dashboard goes here with arrow --}}
-            <nav class="text-gray-400 flex gap-2 mt-4 lg:hidden">
-                    <svg class="animate-slideLeft" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
-                    <a href="{{route('dashboard')}}" wire:navigate>
-                        <p>Back to dashboard</p>
-                    </a>
-                </nav>
+           <livewire:utils.return-nav styles="lg:hidden" />
             <section class="flex flex-col min-h-screen order-2 lg:order-1 lg:justify-center lg:items-center">
                 <header class=" mt-2 lg:mt-0 lg:text-center">
-                    <h1 class="text-3xl hidden lg:block">RepCollect</h1>
+                    <h1 class="text-3xl hidden text-secondary lg:block">RepCollect</h1>
                 </header> 
-                <article class="flex items-center gap-5 bg-white rounded-md px-2 py-5 my-5 w-[400px] text-gray-400">
-                    <div class="absolute opacity-15">
+                <article class="flex items-center gap-5 bg-secondary rounded-md px-2 py-5 my-5 w-[400px] text-gray-400">
+                    <div class="absolute opacity-40 text-accent">
                         <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hash"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>
                     </div>
                     <div class="text-gray-700 z-10 pl-16">
@@ -23,7 +18,7 @@
                 </article>
                 
                 {{-- Other collection --}}
-                <section class="rounded-md w-[400px] max-h-[300px] bg-white text-gray-700 px-6 pt-2 pb-10">
+                <section class="rounded-md w-[400px] max-h-[300px] bg-secondary. border border-accent text-secondary px-6 pt-2 pb-10">
                     <header class="my-5">
                         <h2 class="text-lg font-semibold">Other Collections</h2>
                     </header>
@@ -33,8 +28,8 @@
                     @forelse ($otherCollections as $collection )
                         <li>
                             <a class="border-b-2 h-[50px] flex items-center py-2 flex-1 justify-between  text-gray-400" href="{{route('collect', $collection->link)}}" wire:navigate class="capitalize">
-                                <p class="text-slate-500 max-w-[180px] truncate"> {{$collection->title}} </p>
-                                <div class="text-sm font-bold text-gray-400 ">
+                                <p class="text-secondary max-w-[180px] truncate"> {{$collection->title}} </p>
+                                <div class="text-sm font-bold text-secondary ">
                                     <span class="text-slate-500"> {{count($collection->transactions)}} paid </span> • <span class="text-green-500"> {{$collection->currency}} {{number_format($collection->sum)}}.00 </span>
                                 </div>
                             </a>
@@ -48,16 +43,12 @@
                 </section>
 
                 {{-- back to dashboard goes here with arrow --}}
-                <nav class="text-gray-400 flex gap-2 mt-4 hidden lg:flex">
-                    <svg class="animate-slideLeft" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
-                    <a href="{{route('dashboard')}}" wire:navigate>
-                        <p>Back to dashboard</p>
-                    </a>
-                </nav>
+                <livewire:utils.return-nav />
+                
             </section>
             
             {{-- Individual collection --}}
-            <section  class="flex-1 bg-white w-screen lg:w-full rounded-md my-5 lg:order-1">
+            <section  class="flex-1 bg-secondary w-screen lg:w-full rounded-md my-5 lg:order-1">
                 <div class="flex gap-2 text-gray-500 font-semibold items-center py-2 px-4 justify-between">
 
                     <div class="flex gap-2">
@@ -74,31 +65,31 @@
                     </a>
                 </div>
 
-                <hr>
+                <hr class="bg-accent h-1 text-accent">
 
                 <section class="px-4 py-4">
                     <header class="py-4 text-gray-700 flex flex-col gap-3 lg:flex-row">
                         <div class="flex-1">
-                            <h2 class="capitalize text-2xl text-sky-500 font-medium"> {{$theOne->title}} </h2>
-                            <p class="text-sm px-1 text-gray-500 my-2 max-h-[80px] w-4/4 text-wrap truncate">{{$theOne->description}}</p>
+                            <h2 class="capitalize text-2xl text-primary font-medium"> {{$theOne->title}} </h2>
+                            <p class="text-sm px-1 text-primary my-2 max-h-[80px] w-4/4 text-wrap truncate">{{$theOne->description}}</p>
                         </div>
 
                         <div class="max-w-[600px] w-fit .w-[600px] max-h-[inherit] h-[inherit] overflow-clip">
-                            <b class="text-green-400 text-lg">Goal: <span>{{$theOne->currency}} {{number_format($theOne->desired_amount)}}.00 </span></b> <br>
-                            <b class="text-gray-600 text-2xl ">Current: <span>{{$theOne->currency}}  {{number_format($transactionsSum)}}.00</span></b>
-                            <p class="text-sm font-semibold text-orange-300">{{number_format($nOfPaymentsAtBase)}}  more payment{{$nOfPaymentsAtBase > 1 ? 's': ''}} at base price ({{$theOne->currency}} {{number_format($theOne->cost)}}.00 )</p>
+                            <b class="text-primary text-lg">Goal: <span>{{$theOne->currency}} {{number_format($theOne->desired_amount)}}.00 </span></b> <br>
+                            <b class="text-primary text-2xl ">Current: <span>{{$theOne->currency}}  {{number_format($transactionsSum)}}.00</span></b>
+                            <p class="text-sm font-semibold text-accent">{{number_format($nOfPaymentsAtBase)}}  more payment{{$nOfPaymentsAtBase > 1 ? 's': ''}} at base price ({{$theOne->currency}} {{number_format($theOne->cost)}}.00 )</p>
                         </div>
                     </header>
-                    <hr>
+                    <hr class="bg-accent h-1 text-accent">
                     <section  x-data="{settingsShow: false}" class="mt-5">
-                        <nav class="flex .gap-2 mx-3 border-b-2 border-gray-200">
-                            <button @click="settingsShow = false" :class="settingsShow ? 'border-b-0': 'border-b-2 border-gray-800' " class="bg-white z-10 text-sm text-gray-600 font-semibold py-2 px-5 ">Payments</button>
-                            <button @click="settingsShow = true" :class="! settingsShow ? 'border-b-0': 'border-b-2 border-gray-800' " class="bg-white z-10 text-sm text-gray-600 font-semibold py-2 px-5 ">Settings</button>
+                        <nav class="flex .gap-2 mx-3 border-b-2 border-accent">
+                            <button @click="settingsShow = false" :class="settingsShow ? 'border-b-0': 'border-b-2 border-accent' " class="bg-transparent z-10 text-sm text-primary font-semibold py-2 px-5 ">Payments</button>
+                            <button @click="settingsShow = true" :class="! settingsShow ? 'border-b-0': 'border-b-2 border-accent' " class="bg-transparent z-10 text-sm text-primary font-semibold py-2 px-5 ">Settings</button>
                         </nav>
                         <section x-show="! settingsShow" class="overflow-y-auto h-[400px] max-h-[400px] rounded-lg p-3">
                             @forelse ($transactions as $transaction )
                                 <div class="my-2">
-                                    <a class="border-2 rounded-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between text-gray-400" href="#" class="capitalize">
+                                    <a class="border-2 border-accent rounded-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between text-gray-400" href="#" class="capitalize">
                                     <p class="text-slate-500">{{$transaction->payer_name}} </p>
                                     <div class="text-sm font-bold text-gray-400 ">
                                         <span class="text-slate-500 capitalize">{{$transaction->payment_type}}</span>

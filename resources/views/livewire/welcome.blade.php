@@ -1,23 +1,23 @@
 <main class=".container">
-    <header class="overflow-hidden px-[50px] pt-[50px] .border border-red-200 relative lg:pt-0">
+    <header class="overflow-hidden px-[50px] pt-[50px] relative lg:pt-0">
         <section class="flex flex-col justify-between items-center w-[inherit] lg:h-[550px] lg:flex-row">
-            <section class="flex flex-col justify-between w-[inherit] text-slate-600">
-                <h1 class="text-3xl font-medium text-gray-500">RepCollect</h1>
+            <section class="flex flex-col justify-between w-[inherit] text-secondary font-sans">
+                <h1 class="text-3xl font-medium text-primary-hover">RepCollect</h1>
                 <p class="text-4xl lg:text-5xl font-bold my-2">Be Safe.</p>
                 <p class="text-4xl font-bold my-2 lg:text-5xl">Be Organized.</p>
                 <p class="text-5xl font-bold my-2">Be Transparent.</p>
-                <p class="mt-5">Start <b class="bg-green-400 text-white p-1 rounded-md ">tracking</b> payments and group collections today in three easy steps</p>
+                <p class="mt-5">Start <b class="bg-accent text-white p-1 rounded-md ">tracking</b> payments and group collections today in three easy steps</p>
                 @guest
                     <section class='flex .justify-center items-center mt-[40px] gap-5'>
-                        <a href="register" class="bg-gray-600 text-white py-1 px-2 rounded-md font-semibold .text-gray-600">Register account</a>
-                        <a href="login" class="bg-white py-1 px-2 rounded-md font-semibold text-gray-600">Log in to account</a>
+                        <a href="register" class="bg-orange-500 text-white py-1 px-2 rounded-md font-semibold .text-gray-600">Register account</a>
+                        <a href="login" class="bg-primary-light py-1 px-2 rounded-md font-semibold text-primary-normal">Log in to account</a>
                     </section>
                 @endguest
 
                 @auth
                     <section class='flex .justify-center items-center mt-[40px] gap-5'>
                         <a href="{{route('dashboard')}}"> 
-                            <p class="bg-white py-1 px-4 rounded-md font-semibold text-gray-600 flex justify-center items-center gap-4 shadow-md"> {{$username}}  <span class="relative flex h-3 w-3">
+                            <p class="bg-primary-hove py-1 px-4 rounded-md font-semibold text-accent flex justify-center items-center gap-4 shadow-md"> {{$username}}  <span class="relative flex h-3 w-3">
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
                                 </span>

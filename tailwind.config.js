@@ -7,6 +7,14 @@ export default {
     ],
     theme: {
         extend: {
+            colors: {
+                "primary": "var(--primary)",
+                "secondary": "var(--secondary)",
+                "accent": "var(--accent)",
+                "neutral": "var(--neutral)",
+                "primary-hover": "var(--primary-hover)"
+
+            },
             animation: {
                 move: "move 1s ease-in-out infinite",
                 rotate: "rotate 1s ease-in-out infinite",
