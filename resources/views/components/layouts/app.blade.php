@@ -7,7 +7,7 @@
         <title>{{ $title ?? 'RepCollect' }}</title>
     </head>
     <body class="bg-gray-100 min-h-full">
-     <header class="flex justify-between py-[10px] px-[70px] h-[80px] border-b sticky top-0 bg-slate-600 z-40 lg:px-[100px]">
+     <header class="flex justify-between py-[10px] px-[50px] h-[80px] border-b sticky top-0 bg-slate-600 z-40 lg:px-[100px]">
         <nav class="flex justify-center items-center">
             {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg> --}}
              <a href="<?php echo route('home') ?>">

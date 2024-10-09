@@ -1,11 +1,11 @@
 <main class=".container">
-    <header class="overflow-hidden px-[100px] pt-[50px] .border border-red-200 relative lg:pt-0">
+    <header class="overflow-hidden px-[50px] pt-[50px] .border border-red-200 relative lg:pt-0">
         <section class="flex flex-col justify-between items-center w-[inherit] lg:h-[550px] lg:flex-row">
             <section class="flex flex-col justify-between w-[inherit] text-slate-600">
                 <h1 class="text-3xl font-medium text-gray-500">RepCollect</h1>
-                <p class="text-4xl font-bold my-2 lg:text-5xl">Be Safe.</p>
+                <p class="text-4xl lg:text-5xl font-bold my-2">Be Safe.</p>
                 <p class="text-4xl font-bold my-2 lg:text-5xl">Be Organized.</p>
-                <p class="text-4xl font-bold my-2 lg:text-5xl">Be Transparent.</p>
+                <p class="text-5xl font-bold my-2">Be Transparent.</p>
                 <p class="mt-5">Start <b class="bg-green-400 text-white p-1 rounded-md ">tracking</b> payments and group collections today in three easy steps</p>
                 @guest
                     <section class='flex .justify-center items-center mt-[40px] gap-5'>
