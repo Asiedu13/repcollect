@@ -7,11 +7,11 @@
                             <input
                             wire:model="collectionTitle"
                             name="title"
-                            @save-collection-meta.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-xl text-gray-500 font-medium bg-white border-none')" 
+                            @save-collection-meta.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-xl text-primary font-medium bg-white border-none')" 
                             @edit-collection-meta.window="$el.removeAttribute('disabled'); $el.setAttribute('class', 'text-xl p-2 border rounded-md')"
-                            class="text-xl text-wrap text-gray-500 font-medium bg-transparent border-none lg:flex-1" 
+                            class="text-xl text-wrap text-neutral font-medium bg-transparent border-none lg:flex-1" 
                             disabled />
-                            <button x-show="! save" @click="$dispatch('edit-collection-meta'); save = true" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-gray-400 text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white transition delay-150">
+                            <button x-show="! save" @click="$dispatch('edit-collection-meta'); save = true" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-neutral text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white transition delay-150">
                                 Edit
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-line"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/><path d="m15 5 3 3"/></svg>
                             </button>
@@ -26,10 +26,10 @@
                             name="description"
                             @save-collection-meta.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0')" 
                             @edit-collection-meta.window="$el.removeAttribute('disabled'); $el.setAttribute('class', 'p-2 my-2 border rounded-md')" 
-                            class="text-gray-500 bg-transparent text-wrap w-full mt-5 lg:h-[180px] lg:w-[500px]" 
+                            class="text-neutral bg-transparent text-wrap w-full mt-5 lg:h-[100px] lg:w-[500px]" 
                              disabled ></textarea>
                         <div class="flex flex-col">
-                            <label for="status" class="text-gray-500 font-medium mt-2">Status</label>
+                            <label for="status" class="text-neutral font-medium mt-2">Status</label>
                             <div class="flex gap-2 items-center">
                                 <p class="relative top-[2px]"> 
                                     <span class="relative flex h-3 w-3">
@@ -40,7 +40,8 @@
                                 <select 
                                     name="collectionStatus" 
                                     wire:model="collectionStatus" 
-                                    id="status"    
+                                    id="status" 
+                                    class="bg-transparent text-neutral"
                                     @save-collection-meta.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 font-medium bg-white border-none')" 
                                     @edit-collection-meta.window="$el.removeAttribute('disabled'); $el.setAttribute('class', 'p-2 border rounded-md')" 
                                     disabled
@@ -56,7 +57,7 @@
 
             <section class="p-4 border border-gray-200 rounded-lg" x-data="{save: false}">
                 <header class="flex justify-between items-center">
-                    <h2 class="font-medium text-gray-500">Payment Information</h2>
+                    <h2 class="font-medium text-neutral">Payment Information</h2>
                      <!-- edit icon goes here -->
                      <!-- <button x-show="! save" @click="$dispatch('edit-payment'); save = true" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-gray-400 text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white transition delay-150">
                          Edit
@@ -70,13 +71,14 @@
                 </header>
                 <section class="grid grid-cols-2 gap-5">
                     <div class="flex flex-col my-2">
-                        <label class="text-gray-400">Payment type</label>
+                        <label class="text-neutral">Payment type</label>
                         <select 
                             name="paytype" 
                             wire:model="collectionPayType" 
                             id="paytype"
                             @save-payment.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0'); $wire.updateCollection()" 
-                            @edit-payment.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="paytype" class="font-medium bg-white text-gray-600" type="text" name="firstname" disabled 
+                            @edit-payment.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="paytype" 
+                            class="font-medium bg-transparent text-neutral" type="text" name="firstname" disabled 
                        
                         >
                             <option value="momo">Momo</option>
@@ -93,11 +95,11 @@
                     </div>
                    
                     <div class="flex flex-col my-2">
-                        <label class="text-gray-400">Receiving number</label>
+                        <label class="text-neutral">Receiving number</label>
                         <input 
                             wire:model="collectionReceivingNumber"
                             @save-payment.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0')" 
-                            @edit-payment.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="collectionReceivingNumber" class="font-medium bg-white text-gray-500" type="text" name="collectionReceivingNumber" disabled 
+                            @edit-payment.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="collectionReceivingNumber" class="font-medium bg-transparent text-neutral" type="text" name="collectionReceivingNumber" disabled 
                         />
                         @error('collectionReceivingNumber')
                             <p class="text-red-400 text-sm mt-5 flex gap-2">
@@ -110,11 +112,12 @@
                     </div>
                     
                     <div class="flex flex-col my-2">
-                        <label class="text-gray-400">Currency</label>
+                        <label class="text-neutral">Currency</label>
                         <select 
+                            class="bg-transparent text-neutral"
                             wire:model="collectionCurrency"
-                            @save-payment.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0')" 
-                            @edit-payment.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="currency" class="font-medium bg-white text-gray-600" type="text" name="currency" disabled 
+                            @save-payment.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-neutral bg-white border-none p-0 my-0')" 
+                            @edit-payment.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="currency" class="font-medium bg-transparent text-neutral" type="text" name="currency" disabled 
                         >
                             <option value="GHS">GHS</option>
                             <option value="USD">USD</option>
@@ -126,38 +129,38 @@
             <!-- Goals and timelines -->
             <section class="p-4 border border-gray-200 rounded-lg" x-data="{save: false}">
                 <header class="flex justify-between items-center">
-                    <h2 class="font-medium text-gray-500">Goals and Timelines</h2>
+                    <h2 class="font-medium text-neutral">Goals and Timelines</h2>
                      <!-- edit icon goes here -->
-                     <button x-show="! save" @click="$dispatch('edit-goals'); save = true" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-gray-400 text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white transition delay-150">
+                     <button x-show="! save" @click="$dispatch('edit-goals'); save = true" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-neutral text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white transition delay-150">
                          Edit
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-line"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/><path d="m15 5 3 3"/></svg>
                      </button>
                      <!-- Save button -->
-                     <button x-show="save"  @click="$dispatch('save-goals'); save = false; $wire.updateCollection();" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-gray-400 text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white delay-150">
+                     <button x-show="save"  @click="$dispatch('save-goals'); save = false; $wire.updateCollection();" class="flex items-center justify-center gap-2 border border-gray-200 py-2 px-4 rounded-full text-neutral text-sm font-medium w-fit h-fit self-center hover:bg-gray-400 hover:text-white delay-150">
                          Save
                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>
                     </button>
                 </header>
                 <section class="grid lg:grid-cols-2">
                     <div class="flex flex-col my-2">
-                        <label class="text-gray-400">Goal</label>
+                        <label class="text-neutral">Goal</label>
                         <div>
-                            <span class="text-gray-500"> {{$collectionCurrency}} </span>
+                            <span class="text-neutral"> {{$collectionCurrency}} </span>
                             <input
                             wire:model="collectionAmount"
-                            @save-goals.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0'); updateUser;" 
-                            @edit-goals.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="collectionAmount" class="font-medium bg-white text-gray-500" type="text" name="collectionAmount" disabled 
+                            @save-goals.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-neutral bg-white border-none p-0 my-0'); updateUser;" 
+                            @edit-goals.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="collectionAmount" class="font-medium bg-transparent text-neutral" type="text" name="collectionAmount" disabled 
                             /> 
                         </div>
                     </div>
                     <div class="flex flex-col my-2">
-                        <label class="text-gray-400">Base Contribution</label>
+                        <label class="text-neutral">Base Contribution</label>
                         <div>
-                            <span class="text-gray-500"> {{$collectionCurrency}} </span>
+                            <span class="text-neutral"> {{$collectionCurrency}} </span>
                             <input
                             wire:model="collectionBaseAmount"
                             @save-goals.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'text-gray-500 bg-white border-none p-0 my-0')" 
-                            @edit-goals.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="collectionBaseAmount" class="font-medium bg-white text-gray-500" type="text" name="collectionBaseAmount" disabled 
+                            @edit-goals.window="$el.removeAttribute('disabled'); $el.setAttribute('class', '.text-xl p-2 border rounded-md')" id="collectionBaseAmount" class="font-medium bg-transparent text-neutral" type="text" name="collectionBaseAmount" disabled 
                             /> 
                         </div>
                     </div>

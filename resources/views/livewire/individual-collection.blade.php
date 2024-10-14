@@ -48,51 +48,51 @@
             </section>
             
             {{-- Individual collection --}}
-            <section  class="flex-1 bg-secondary w-screen lg:w-full rounded-md my-5 lg:order-1">
-                <div class="flex gap-2 text-gray-500 font-semibold items-center py-2 px-4 justify-between">
+            <section  class="flex-1 bg-primary w-screen border border-neutral lg:w-full rounded-md my-5 lg:order-1">
+                <div class="flex gap-2 text-neutral font-semibold items-center py-2 px-4 justify-between">
 
                     <div class="flex gap-2">
-                        <a href="{{route('home')}}" class="flex gap-2 font-normal items-center text-sm text-gray-500 border-gray-400 border-r-2 pr-4">
+                        <a href="{{route('home')}}" class="flex gap-2 font-normal items-center text-sm text-neutral border-gray-400 border-r-2 pr-4">
                         RepCollect 
                         </a>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-                        <h2 class="text-sm font-normal">Collections</h2>
+                        <h2 class="text-sm text-neutral font-normal">Collections</h2>
                     </div>
                       
-                    <a href="{{route('me.generate', $theOne->link)}}" class="bg-gray-600 text-white rounded-md p-2 text-sm hover:bg-gray-500 gap-2 flex text-right" wire:navigate> 
+                    <a href="{{route('me.generate', $theOne->link)}}" class="bg-primary text-neutral rounded-md p-2 text-sm hover:bg-gray-500 gap-2 flex text-right" wire:navigate> 
                         Get payment link
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5.5"/><path d="M4 13.5V6a2 2 0 0 1 2-2h2"/><path d="M13.378 15.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>
                     </a>
                 </div>
 
-                <hr class="bg-accent h-1 text-accent">
+                <hr>
 
                 <section class="px-4 py-4">
                     <header class="py-4 text-gray-700 flex flex-col gap-3 lg:flex-row">
                         <div class="flex-1">
-                            <h2 class="capitalize text-2xl text-primary font-medium"> {{$theOne->title}} </h2>
-                            <p class="text-sm px-1 text-primary my-2 max-h-[80px] w-4/4 text-wrap truncate">{{$theOne->description}}</p>
+                            <h2 class="capitalize text-2xl text-neutral font-medium"> {{$theOne->title}} </h2>
+                            <p class="text-sm px-1 text-neutral my-2 max-h-[80px] w-4/4 text-wrap truncate">{{$theOne->description}}</p>
                         </div>
 
-                        <div class="max-w-[600px] w-fit .w-[600px] max-h-[inherit] h-[inherit] overflow-clip">
-                            <b class="text-primary text-lg">Goal: <span>{{$theOne->currency}} {{number_format($theOne->desired_amount)}}.00 </span></b> <br>
-                            <b class="text-primary text-2xl ">Current: <span>{{$theOne->currency}}  {{number_format($transactionsSum)}}.00</span></b>
+                        <div class="max-w-[600px] w-fit .w-[600px] max-h-[inherit] h-[inherit] overflow-clip text-neutral">
+                            <b class="text-neutral text-lg">Goal: <span>{{$theOne->currency}} {{number_format($theOne->desired_amount)}}.00 </span></b> <br>
+                            <b class="text-neutral text-2xl ">Current: <span>{{$theOne->currency}}  {{number_format($transactionsSum)}}.00</span></b>
                             <p class="text-sm font-semibold text-accent">{{number_format($nOfPaymentsAtBase)}}  more payment{{$nOfPaymentsAtBase > 1 ? 's': ''}} at base price ({{$theOne->currency}} {{number_format($theOne->cost)}}.00 )</p>
                         </div>
                     </header>
-                    <hr class="bg-accent h-1 text-accent">
+                    <hr>
                     <section  x-data="{settingsShow: false}" class="mt-5">
                         <nav class="flex .gap-2 mx-3 border-b-2 border-accent">
-                            <button @click="settingsShow = false" :class="settingsShow ? 'border-b-0': 'border-b-2 border-accent' " class="bg-transparent z-10 text-sm text-primary font-semibold py-2 px-5 ">Payments</button>
-                            <button @click="settingsShow = true" :class="! settingsShow ? 'border-b-0': 'border-b-2 border-accent' " class="bg-transparent z-10 text-sm text-primary font-semibold py-2 px-5 ">Settings</button>
+                            <button @click="settingsShow = false" :class="settingsShow ? 'border-b-0': 'border-b-2 border-accent' " class="bg-transparent z-10 text-sm text-neutral font-semibold py-2 px-5 ">Payments</button>
+                            <button @click="settingsShow = true" :class="! settingsShow ? 'border-b-0': 'border-b-2 border-accent' " class="bg-transparent z-10 text-sm text-neutral font-semibold py-2 px-5 ">Settings</button>
                         </nav>
                         <section x-show="! settingsShow" class="overflow-y-auto h-[400px] max-h-[400px] rounded-lg p-3">
                             @forelse ($transactions as $transaction )
                                 <div class="my-2">
-                                    <a class="border-2 border-accent rounded-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between text-gray-400" href="#" class="capitalize">
-                                    <p class="text-slate-500">{{$transaction->payer_name}} </p>
-                                    <div class="text-sm font-bold text-gray-400 ">
-                                        <span class="text-slate-500 capitalize">{{$transaction->payment_type}}</span>
+                                    <a class="border-2 border-accent rounded-md h-[50px] flex items-center px-2 py-2 flex-1 justify-between text-neutral" href="#" class="capitalize">
+                                    <p class="text-neutral">{{$transaction->payer_name}} </p>
+                                    <div class="text-sm font-bold ">
+                                        <span class="capitalize">{{$transaction->payment_type}}</span>
                                         •
                                     <span class="text-green-500">{{$theOne->currency}} {{number_format($transaction->amount_paid)}}.00 </span>
                                     </div>

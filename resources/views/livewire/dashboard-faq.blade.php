@@ -1,4 +1,4 @@
- <main x-data="{qopen: false, success:false}" class="bg-white mt-5 rounded-md h-[fit] lg:w-[700px] flex flex-start flex-col px-2">
+ <main x-data="{qopen: false, success:false}" class="bg-transparent border border-secondary mt-5 rounded-md h-[fit] lg:w-[700px] flex flex-start flex-col px-2">
             <header class="flex gap-2 text-sky-500 font-semibold items-center py-4 px-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-question">
                     <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>
@@ -21,15 +21,15 @@
             </div>
 
             <section class="my-6"> 
-                <dl class="px-6">
+                <dl class="px-6 text-neutral">
                     <dt class="text-sky-500 text-lg">How do I send money to another user? </dt>
-                    <dd class="text-gray-600 mb-10"> To send money to another user, log in to your account, navigate to the "Send Money" or "Transfer" section, enter the recipient's details including their account number or email address, specify the amount you want to send, and confirm the transaction. </dd>
+                    <dd class=".text-gray-600 mb-10"> To send money to another user, log in to your account, navigate to the "Send Money" or "Transfer" section, enter the recipient's details including their account number or email address, specify the amount you want to send, and confirm the transaction. </dd>
 
                      <dt class="text-sky-500 text-lg"> What payment methods are accepted for adding funds to my account? </dt>
-                    <dd class="text-gray-600 mb-10"> We accept various payment methods including bank transfers, credit/debit cards, and third-party payment platforms such as Momo. You can choose the most convenient option for you. </dd>
+                    <dd class=".text-gray-600 mb-10"> We accept various payment methods including bank transfers, credit/debit cards, and third-party payment platforms such as Momo. You can choose the most convenient option for you. </dd>
 
                      <dt class="text-sky-500 text-lg">What should I do if I encounter an issue with my account or transaction? </dt>
-                    <dd class="text-gray-600"> If you encounter any issues with your account or transactions, please contact our customer support team immediately. They are available to assist you with any questions or concerns you may have. </dd>
+                    <dd class=".text-gray-600"> If you encounter any issues with your account or transactions, please contact our customer support team immediately. They are available to assist you with any questions or concerns you may have. </dd>
                 </dl>
             </section>
         </main>

@@ -6,7 +6,7 @@
         @vite('resources/css/app.css')
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
-    <body class="bg-gray-100 mx-[100px] min-h-full flex justify-center items-center m-2">
+    <body class="bg-primary mx-[100px] min-h-full flex justify-center items-center m-2">
         {{-- <main class="w-[700px] flex justify-center items-center"> --}}
             {{$slot}}
 

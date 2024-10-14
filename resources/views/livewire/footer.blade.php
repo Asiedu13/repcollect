@@ -1,4 +1,4 @@
-<footer class="bg-secondary text-accent min-w-screen p-[50px] mt-40 grid gap-10 lg:gap-0 lg:h-[350px] lg:p-[100px] lg:grid-cols-2">
+<footer class="bg-secondary text-primary min-w-screen p-[50px] mt-40 grid gap-10 lg:gap-0 lg:h-[350px] lg:p-[100px] lg:grid-cols-2">
             <section>
                 <h2 class="text-xl font-medium">RepCollect</h2>
                 <p class="w-3/4 mt-3">

@@ -6,7 +6,7 @@
         @vite('resources/css/app.css')
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
-    <body class="bg-gradient-to-tr from-primary from-50% via-secondary to-primary .mx-[10px] flex flex-col justify-center .items-center lg:block lg:mx-[100px] min-h-screen">
+    <body class="bg-primary .mx-[10px] flex flex-col justify-center .items-center lg:block lg:mx-[100px] min-h-screen">
      {{-- <header class="flex justify-between py-[10px] h-[100px]">
         <nav class="flex justify-center items-center">
              <a href="<?php echo route('home') ?>">
