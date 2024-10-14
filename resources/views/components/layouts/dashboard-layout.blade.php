@@ -11,18 +11,18 @@
         <nav class="flex justify-center items-center">
             {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg> --}}
              <a href="<?php echo route('home') ?>">
-                <h2 class="text-2xl font-bold text-slate-600">RepCollect</h2>
+                <h2 class="text-2xl font-bold text-primary">RepCollect</h2>
             </a>
         </nav>
         @guest
         <a href="<?php echo route('home') ?>" class='flex gap-2 justify-center items-center' wire:navigate>
-            <h2 class="text-2xl font-bold text-slate-600">RepCollect</h2>
+            <h2 class="text-2xl font-bold text-primary">RepCollect</h2>
         </a>
         @endguest
         @auth
         <div x-data="{open: false}" class='hidden gap-2 justify-center items-center lg:flex'>
             <nav class='relative'> 
-                <button  class="inline-flex items-center px-4 gap-2 py-2 bg-secondary border border-gray-800 w-[300px] rounded-md text-sm text-white focus:outline-none focus:border-gray-900 focus:ring ring-gray-300" @click="open = true" >
+                <button  class="inline-flex items-center px-4 gap-2 py-2 bg-secondary border border-primary w-[300px] rounded-md text-sm text-white focus:outline-none focus:border-gray-900 focus:ring ring-gray-300" @click="open = true" >
                 <p class=".bg-white py-1 px-1 rounded-md font-semibold text-gray-600 flex justify-center items-center gap-4 .shadow-md"> 
                     <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id=":r1d:" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFFFFF"></rect></mask><g mask="url(#:r1d:)"><rect width="36" height="36" fill="#6cbdb5"></rect><rect x="0" y="0" width="36" height="36" transform="translate(5 -1) rotate(315 18 18) scale(1)" fill="#e3dfba" rx="6"></rect><g transform="translate(3 -6) rotate(5 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="14" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="20" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>
                     <div class="flex flex-col w-fit text-sm text-primary text-left">
@@ -43,7 +43,7 @@
 
                 <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-secondary ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"  x-show.transition="open"  @mouseenter="open = true" @click.away="open = false">
                 <div class="py-1" role="none">
-                    <a href="{{route('dashboard')}}" class="flex gap-2 px-4 py-2 text-sm text-primary hover:bg-gray-100" role="menuitem" tabindex="-1" id="menu-item-1" wire:navigate>
+                    <a href="{{route('dashboard')}}" class="flex gap-2 px-4 py-2 text-sm text-primary hover:bg-primary hover:text-secondary" role="menuitem" tabindex="-1" id="menu-item-1" wire:navigate>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                         Dashboard
                     </a>
@@ -53,7 +53,7 @@
                     Notifications
                 </a> --}}
 
-                <a href="/logout" class="flex gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="menu-item-0">
+                <a href="/logout" class="flex gap-2 px-4 py-2 text-sm text-primary hover:bg-primary hover:text-secondary" role="menuitem" tabindex="-1" id="menu-item-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
                         Logout
                      </a>
@@ -93,27 +93,27 @@
 
                 <ul class="hidden group-hover/menu:block absolute bottom-20 left-0 w-[300px] bg-primary p-2 shadow-md lg:p-0 lg:shadow-none lg:relative lg:bottom-0 lg:left-0 lg:block lg:w-full">
                     <a href="{{route('dashboard.profile')}}" wire:navigate>
-                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'profile' ? 'bg-accent text-neutral px-4 rounded-md' : 'bg-transparent text-neutral' }} "   wire:click="handleMenuClick('profile')">
+                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-secondary hover:rounded-md hover:px-4 transition-all {{$view == 'profile' ? 'bg-secondary text-primary px-4 rounded-md' : 'bg-transparent text-neutral' }} "   wire:click="handleMenuClick('profile')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                             <p class="text-sm">Profile</p>
                         </li>
                     </a>
 
                     <a href="{{route('dashboard')}}" wire:navigate>
-                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'collections' ? 'bg-accent text-neutral px-4 rounded-md' : 'bg-transparent text-neutral' }} "  wire:click="handleMenuClick('collections')">
+                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'collections' ? 'bg-secondary text-primary px-4 rounded-md' : 'bg-transparent text-neutral' }} "  wire:click="handleMenuClick('collections')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
                             <p class="text-sm">Collections</p>
                         </li>
                     </a>
                     <a href="{{route('dashboard.settings')}}" wire:navigate>
-                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'settings' ? 'bg-accent text-neutral px-4 rounded-md' : 'bg-transparent text-neutral' }} "  wire:click="handleMenuClick('settings')">
+                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'settings' ? 'bg-secondary text-primary px-4 rounded-md' : 'bg-transparent text-neutral' }} "  wire:click="handleMenuClick('settings')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
                             <p class="text-sm">Settings</p>
                         </li>
                     </a>
 
                     <a href="{{route('dashboard.faq')}}" wire:navigate>
-                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'faq' ? 'bg-accent text-neutral px-4 rounded-md' : 'bg-transparent text-neutral' }} "   wire:click="handleMenuClick('faq')">
+                        <li class="flex gap-2 items-center h-[50px] cursor-pointer hover:border-2 hover:border-slate-600 hover:rounded-md hover:px-4 transition-all {{$view == 'faq' ? 'bg-secondary text-primary px-4 rounded-md' : 'bg-transparent text-neutral' }} "   wire:click="handleMenuClick('faq')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-question"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
                             <p class="text-sm">Frequently Asked Questions</p>
                         </li>

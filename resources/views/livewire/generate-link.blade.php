@@ -6,11 +6,11 @@
         </div>
         <p class="text-sm pl-10 .w-2/3 lg:w-full">Your link has been generated. Share with anyone to receive payments</p>
         <div class="rounded-md my-2 ml-10 w-fit flex">
-            <input class="border px-2 text-primary rounded-md w-[300px] lg:w-[400px] outline-none" type="text" id='link' x-ref='linkToCopy' value="{{url("/pay/$link")}}" readonly>
+            <input class="border px-2 text-secondary rounded-md w-[300px] lg:w-[400px] outline-none" type="text" id='link' x-ref='linkToCopy' value="{{url("/pay/$link")}}" readonly>
         </div>
 
         <div class="ml-10 flex gap-5 mt-10">
-            <button class="bg-gray-600 text-white rounded-md p-2 text-sm hover:bg-gray-500 gap-2 flex" x-on:click="
+            <button class="bg-secondary text-primary rounded-md p-2 text-sm hover:bg-gray-500 gap-2 flex" x-on:click="
                 $refs.linkToCopy.select();
                 document.execCommand('copy');
                 copied = true

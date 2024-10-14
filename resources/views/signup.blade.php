@@ -4,7 +4,7 @@
         RepCollect | Sign Up
     </x-slot>
 
-    <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center">
+    <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] shadow-md md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center ">
         <div class="lg:w-[500px] text-neutral">
             <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
                 <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> | 
@@ -31,7 +31,7 @@
                 </a>
                 <div class="relative flex flex-col text-primary justify-center">
                     <hr class="h-px mt-8 bg-neutral dark:bg-gray-700">
-                    <span class="absolute right-[50%] top-[20px] bg-[#fff] px-1 shadow-xl rounded-md">or</span>
+                    <span class="absolute right-[50%] top-[20px] text-secondary bg-primary px-1 shadow-xl rounded-md font-medium">or</span>
                 </div>
             </div>
         </div>
@@ -50,9 +50,9 @@
             </div>
 
             <div class="mt-10 flex mb-10">
-                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md text-neutral flex justify-center items-center w-[100%] text-sm">Sign Up</button>
+                <button type="submit" class="bg-secondary text-primary p-1 h-[40px] rounded-md flex justify-center items-center w-[100%] text-sm">Sign Up</button>
             </div>
-            <p class="text-sm font-bold  mb-[20px]">Already have an account? <a  class='text-purple-500 text-sm' href="<?php echo route('login') ?>">Sign In</a></p>
+            <p class="text-sm text-accent font-bold  mb-[20px]">Already have an account? <a  class='text-secondary text-sm' href="<?php echo route('login') ?>">Sign In</a></p>
         </form>
     </section>
 </x-app>

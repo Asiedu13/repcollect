@@ -11,8 +11,8 @@
                     <div class="absolute opacity-40 text-accent">
                         <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hash"><line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/></svg>
                     </div>
-                    <div class="text-gray-700 z-10 pl-16">
-                        <h3 class="text-lg font-semibold text-gray-600">Tip 2</h3>
+                    <div class="text-primary z-10 pl-16">
+                        <h3 class="text-lg font-semibold text-primary">Tip 2</h3>
                         <p class="w-[300px] text-sm">Clearly communicate the purpose and provide regular updates to ensure transparency and build trust with contributors.</p>
                     </div>
                 </article>
@@ -59,7 +59,7 @@
                         <h2 class="text-sm text-neutral font-normal">Collections</h2>
                     </div>
                       
-                    <a href="{{route('me.generate', $theOne->link)}}" class="bg-primary text-neutral rounded-md p-2 text-sm hover:bg-gray-500 gap-2 flex text-right" wire:navigate> 
+                    <a href="{{route('me.generate', $theOne->link)}}" class="bg-primary text-neutral rounded-md p-2 text-sm transition-all hover:bg-secondary hover:text-primary gap-2 flex text-right" wire:navigate> 
                         Get payment link
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-pen"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5.5"/><path d="M4 13.5V6a2 2 0 0 1 2-2h2"/><path d="M13.378 15.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>
                     </a>
@@ -70,11 +70,11 @@
                 <section class="px-4 py-4">
                     <header class="py-4 text-gray-700 flex flex-col gap-3 lg:flex-row">
                         <div class="flex-1">
-                            <h2 class="capitalize text-2xl text-neutral font-medium"> {{$theOne->title}} </h2>
-                            <p class="text-sm px-1 text-neutral my-2 max-h-[80px] w-4/4 text-wrap truncate">{{$theOne->description}}</p>
+                            <h2 class="capitalize text-2xl text-neutral font-medium max-h-[100px] w-5/6 truncate"> {{$theOne->title}} </h2>
+                            <p class="text-sm px-1 text-neutral my-2 max-h-[50px] .text-wrap max-w-[250px] truncate">{{$theOne->description}}</p>
                         </div>
 
-                        <div class="max-w-[600px] w-fit .w-[600px] max-h-[inherit] h-[inherit] overflow-clip text-neutral">
+                        <div class=".max-w-[600px] flex-1 .w-fit .w-[600px] max-h-[inherit] h-[inherit] overflow-clip text-neutral">
                             <b class="text-neutral text-lg">Goal: <span>{{$theOne->currency}} {{number_format($theOne->desired_amount)}}.00 </span></b> <br>
                             <b class="text-neutral text-2xl ">Current: <span>{{$theOne->currency}}  {{number_format($transactionsSum)}}.00</span></b>
                             <p class="text-sm font-semibold text-accent">{{number_format($nOfPaymentsAtBase)}}  more payment{{$nOfPaymentsAtBase > 1 ? 's': ''}} at base price ({{$theOne->currency}} {{number_format($theOne->cost)}}.00 )</p>

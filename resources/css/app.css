@@ -9,6 +9,25 @@
         font-family: "ubuntu";
         src: url(/public/fonts/Ubuntu/Ubuntu-Regular.ttf);
     }
+    /* * {
+        color: #222222;
+    } */
+    /* h1 {
+        font-size: 2.986rem;
+    }
+    h2 {
+        font-size: 2.488rem;
+    }
+    h3 {
+        font-size: 2.074rem;
+    }
+    h4 {
+        font-size: 1.728rem;
+    } */
+
+    p {
+        font-size: 1rem;
+    }
 }
 
 :root {
@@ -25,11 +44,17 @@
     --primary-normal-hover: #185fbb;
     --primary-normal-active: #ffd691; */
 
-    --primary: #233a66;
-    --secondary: #ffd691;
-    --accent: #ff6e80;
-    --neutral: #ffffff;
-    --primary-hover: #d7a859;
+    /* --primary: #F1F5F9; */
+    --primary: #ffffff;
+    /* --neutral: #64748B; */
+    /* --secondary: #3173b9; */
+    --accent: #aab4c2;
+    /* --secondary: var(--accent); */
+    /* --secondary: #64748B; */
+    /* --neutral: #F1F5F9; */
+    --secondary: #373636;
+    --neutral : var(--secondary);
+    --primary-hover: var(--accent);
 /* 
     --neutral: #fff;
     --primary: #2f4156;

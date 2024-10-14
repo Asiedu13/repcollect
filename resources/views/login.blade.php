@@ -3,7 +3,7 @@
         RepCollect | Sign In
     </x-slot>
 
-    <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center">
+    <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center shadow-md">
         <div class="lg:w-[500px] text-neutral">
             <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
                 <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> | 
@@ -29,9 +29,9 @@
                     <path d="M12.5003 6.09928C14.1826 6.09928 15.693 6.67741 16.8805 7.81283L20.167 4.52637C18.1826 2.67741 15.5889 1.54199 12.5003 1.54199C8.02116 1.54199 4.14616 4.1097 2.26074 7.85449L6.08887 10.8232C6.98991 8.11491 9.51595 6.09928 12.5003 6.09928Z" fill="#EA4335"/>
                     </svg> Log in with Google
                 </a>
-                <div class="relative flex flex-col justify-center">
-                    <hr class="h-px w-full mt-8 border-neutral .border-0 dark:bg-gray-700">
-                    <span class="absolute right-[50%] top-[20px] text-primary bg-[#fff] px-1 shadow-xl rounded-md text-sm">or</span>
+                <div class="relative flex flex-col text-primary justify-center">
+                    <hr class="h-px mt-8 bg-neutral dark:bg-gray-700">
+                    <span class="absolute right-[50%] top-[20px] text-secondary bg-primary px-1 shadow-xl rounded-md font-medium">or</span>
                 </div>
             </div>
         </div>
@@ -50,9 +50,9 @@
             </div>
 
             <div class="mt-10 flex mb-10 text-neutral">
-                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md flex justify-center items-center w-[100%] text-sm">Sign In</button>
+                <button type="submit" class="bg-secondary text-primary p-1 h-[40px] rounded-md flex justify-center items-center w-[100%] text-sm">Sign In</button>
             </div>
-            <p class="text-sm font-bold mb-[20px]">Don&apos;t have an account? <a  class='text-purple-500 text-sm' href="<?php echo route('register') ?>">Sign Up</a></p>
+            <p class="text-sm text-accent font-bold mb-[20px]">Don&apos;t have an account? <a  class='text-secondary text-sm' href="<?php echo route('register') ?>">Sign Up</a></p>
         </form>
     </section>
 </x-app>
