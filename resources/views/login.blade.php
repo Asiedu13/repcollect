@@ -3,10 +3,11 @@
         RepCollect | Sign In
     </x-slot>
 
-    <section class="flex flex-col gap-2 bg-white rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center">
-        <div class="lg:w-[500px]">
-             <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
-                <h2 class="text-sm font-bold text-gray-700 md:text-md lg:text-lg">RepCollect</h2> | <span clas="text-sm md:text-md lg:text-lg">Login</span>
+    <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center">
+        <div class="lg:w-[500px] text-neutral">
+            <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
+                <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> | 
+                <span>Login</span>
             </div>
 
             <div class="text-neutral">
