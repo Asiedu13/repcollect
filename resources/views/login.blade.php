@@ -9,8 +9,8 @@
                 <h2 class="text-sm font-bold text-gray-700 md:text-md lg:text-lg">RepCollect</h2> | <span clas="text-sm md:text-md lg:text-lg">Login</span>
             </div>
 
-            <div>
-                <h1 class="text-lg font-bold text-gray-700 md:text-xl lg:text-2xl">Welcome Back</h1>
+            <div class="text-neutral">
+                <h1 class="text-lg font-bold text-neutral md:text-xl lg:text-2xl">Welcome Back</h1>
                 <p class="mb-10 text-sm lg:text-lg">Enter your credentials to access your account</p>
                 @if($errors->any())
                 <div>
@@ -20,7 +20,7 @@
                 </div>
                 @endif
 
-                <a href="{{route('auth.google')}}" class="border border-slate-300 p-1 rounded-md flex gap-3 items-center justify-center font-bold text-sm text-gray-700">
+                <a href="{{route('auth.google')}}" class="border border-slate-300 p-1 rounded-md flex gap-3 items-center justify-center font-bold text-sm ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
                     <path d="M23.5 13.2607C23.5 12.4482 23.4271 11.667 23.2917 10.917H12.5V15.3493H18.6667C18.401 16.7816 17.5938 17.9951 16.3802 18.8076V21.6826H20.0833C22.25 19.6878 23.5 16.7503 23.5 13.2607Z" fill="#4285F4"/>
                     <path d="M12.5003 24.458C15.5941 24.458 18.1878 23.432 20.0837 21.682L16.3805 18.807C15.3545 19.4945 14.042 19.9007 12.5003 19.9007C9.51595 19.9007 6.98991 17.8851 6.08887 15.1768H2.26074V18.1455C4.14616 21.8903 8.02116 24.458 12.5003 24.458Z" fill="#34A853"/>
@@ -29,29 +29,29 @@
                     </svg> Log in with Google
                 </a>
                 <div class="relative flex flex-col justify-center">
-                    <hr class="h-px w-full mt-8 bg-gray-400 border-0 dark:bg-gray-700">
-                    <span class="absolute right-[50%] top-[20px] bg-[#fff] px-1 shadow-xl rounded-md text-sm">or</span>
+                    <hr class="h-px w-full mt-8 border-neutral .border-0 dark:bg-gray-700">
+                    <span class="absolute right-[50%] top-[20px] text-primary bg-[#fff] px-1 shadow-xl rounded-md text-sm">or</span>
                 </div>
             </div>
         </div>
 
-        <form action="" class="md:w-[500px]" method="POST">
+        <form action="" class="md:w-[500px] text-neutral" method="POST">
             @csrf
             <div class="my-5 flex flex-col">
-                <label for="email" class="text-sm font-semibold text-gray-600">Email address</label> <br />
+                <label for="email" class="text-sm font-semibold">Email address</label> <br />
                 <input class="outline-none border border-gray-400 rounded-md p-2 lg:w-full placeholder:text-sm lg:placeholder:text-md" type="email" id="email" name="email" placeholder="example@gmail.com">
             </div>
 
             <div class="my-5 flex flex-col">
-                <label for="password" class="text-sm font-semibold text-gray-600">Password</label>
+                <label for="password" class="text-sm font-semibold">Password</label>
                     <input class="outline-none border border-gray-400 rounded-md p-2" type="password" id="password" name="password" placeholder="••••••••••">
-                    <a href="#" class="text-sm font-bold text-gray-700 text-right">Forgot password?</a>
+                    <a href="#" class="text-sm font-bold text-right">Forgot password?</a>
             </div>
 
-            <div class="mt-10 flex mb-10">
-                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%] text-sm">Sign In</button>
+            <div class="mt-10 flex mb-10 text-neutral">
+                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md flex justify-center items-center w-[100%] text-sm">Sign In</button>
             </div>
-            <p class="text-sm font-bold text-gray-700 mb-[20px]">Don&apos;t have an account? <a  class='text-purple-500 text-sm' href="<?php echo route('register') ?>">Sign Up</a></p>
+            <p class="text-sm font-bold mb-[20px]">Don&apos;t have an account? <a  class='text-purple-500 text-sm' href="<?php echo route('register') ?>">Sign Up</a></p>
         </form>
     </section>
 </x-app>
