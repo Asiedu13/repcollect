@@ -1,7 +1,10 @@
 <section class='gap-5 .cursor-pointer'>
     <p class=" py-4 px-5 rounded-md font-bold text-neutral flex items-center gap-2 .shadow-md capitalize text-lg lg:px-10"> 
         {!! $svg !!} 
-       {{$type}}
+       {{$type}} •
+       <span class="text-accent text-sm lowercase ">
+           {{count($items)}} collection{{count($items) > 1 ? "s": " "}}
+       </span>
     </p> 
         <section class="">
             <div class="w-[inherit] h-[200px] px-5 overflow-y-auto lg:px-10 ">
