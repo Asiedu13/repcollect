@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Events\FocusCreated;
 use Exception;
 use App\Models\Link;
 use App\Models\User;
@@ -50,6 +51,7 @@ class FocusForm extends Component
         ]);
 
         $newLink->save();
+        FocusCreated::dispatch($newFocus);
 
         $this->reset();
         return redirect()->route('me.generate', ['url' => $newLink->link]);
