@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\focus;
+use App\Models\Focus;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
