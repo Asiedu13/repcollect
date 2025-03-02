@@ -14,7 +14,7 @@ class GivePage extends Component
 
     use PayStackRequest;
 
-    protected int $focusId;
+    protected $focusId;
     protected $authorizer;
     protected $paymentVerified;
 
@@ -50,8 +50,6 @@ class GivePage extends Component
         $this->focus = Link::where('link', $this->focusId)->first()->focus;
         $this->creator = User::findOrFail($this->focus->user_id);
         $this->min = $this->focus->cost;
-
-
     }
 
     public function toggleModal()
