@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('focus', function (Blueprint $table) {
-            $table->enum('status', ['ongoing', 'completed', 'paused']);
+            $table->enum('status', ['ongoing', 'completed', 'paused'])->default('ongoing');
         });
     }
 
