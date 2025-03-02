@@ -39,7 +39,8 @@ class FocusForm extends Component
             'user_id' => auth()->id(),
             'description' => $this->description,
             'desired_amount' => $this->desired_amount,
-            'cost' => $this->amount
+            'cost' => $this->amount,
+           'status' => 'ongoing'
         ]);
 
         $newFocus->save();
