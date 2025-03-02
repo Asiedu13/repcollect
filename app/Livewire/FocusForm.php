@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Events\FocusCreated;
-use Exception;
 use App\Models\Link;
 use App\Models\User;
 use App\Models\Focus;
