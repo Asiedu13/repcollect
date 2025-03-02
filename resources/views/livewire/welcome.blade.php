@@ -138,10 +138,10 @@
     </section>
 
     {{-- FAQs --}}
-    <section class="mt-[100px] mx-[50px]">
+    <section class="mt-[100px] mx-[50px] text-secondary">
         <livewire:utils.feature-intro heading="Frequently asked questions" description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus ab vitae illum est recusandae adipisci laudantium autem dolorem accusamus repellendus! " />
         <section class="grid gap-10 grid-cols-3">
-            <section class="mt-[20px]">
+            <section class="mt-[20px] text-secondary">
                 <h3 class="text-2xl font-bold">How can I get money back?</h3>
                 <p class="w-4/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae labore odio, velit id repudiandae animi laborum, impedit vitae modi a voluptate vel ullam veritatis quod beatae aperiam consectetur eos voluptatum.</p>
             </section>

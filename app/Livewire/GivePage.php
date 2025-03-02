@@ -14,7 +14,7 @@ class GivePage extends Component
 
     use PayStackRequest;
 
-    protected $focusId;
+    protected int $focusId;
     protected $authorizer;
     protected $paymentVerified;
 
@@ -35,7 +35,7 @@ class GivePage extends Component
     public $min;
 
 
-    public function mount() 
+    public function mount()
     {
         $this->focusId = request()->segment(2);
 
@@ -63,7 +63,7 @@ class GivePage extends Component
     {
         $this->validate();
         $this->authorizer = $this->PayPOST(
-            'transaction/initialize', 
+            'transaction/initialize',
             $this->payerName,
             $this->payerContact,
             "http://localhost:8000/pay/{$this->focusId}",
@@ -73,7 +73,7 @@ class GivePage extends Component
         // dd($this->authorizer);
 
         // Create a transaction (unverified transaction)
-        // 
+        //
         // ]);
         return redirect()->away($this->authorizer->data->authorization_url);
         // $this->verifyPayment();
@@ -84,7 +84,7 @@ class GivePage extends Component
         $this->paymentVerified = $this->PayGET("transaction/verify/{$reference}");
         if ($this->paymentVerified->data->status ) {
             $newTransaction = Transaction::firstOrNew([
-                    'focus_id' => Link::where('link', $this->focusId)->first()->focus->id, 
+                    'focus_id' => Link::where('link', $this->focusId)->first()->focus->id,
                     'payer_name' => $this->paymentVerified->data->metadata->username,
                     'payer_contact' => $this->paymentVerified->data->metadata->phone,
                     'email' => $this->paymentVerified->data->customer->email,
@@ -97,7 +97,7 @@ class GivePage extends Component
                 ]);
             $newTransaction->save();
             redirect()->route('pay.success', [$this->paymentVerified->data->reference]);
-            
+
         } else {
             // Trhow an error or exception
             abort(403);
@@ -109,4 +109,4 @@ class GivePage extends Component
     {
         return view('livewire.give-page')->title("RepCollect | " .$this->focus->title)->layout('components.layouts.pay-layout');
     }
-} 
+}
