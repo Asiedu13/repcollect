@@ -34,6 +34,8 @@ class GivePage extends Component
     public $payerEmail;
     public $min;
 
+//    public $currentUrl = url()->current();
+
 
     public function mount()
     {
@@ -64,7 +66,7 @@ class GivePage extends Component
             'transaction/initialize',
             $this->payerName,
             $this->payerContact,
-            "http://localhost:8000/pay/{$this->focusId}",
+            request()->root() . "/pay/{$this->focusId}",
             (string) $this->payerAmount * 100,
             $this->payerEmail,
          );
