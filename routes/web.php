@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Livewire\DashboardFaq;
 use App\Livewire\GenerateLink;
 use App\Livewire\DashboardProfile;
+use \App\Livewire\PaymentSuccess;
 use App\Livewire\DashboardSettings;
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
