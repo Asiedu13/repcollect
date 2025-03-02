@@ -19,8 +19,6 @@ class Dashboard extends Component
     public $paused;
 
     public $transactions;
-
-    // One crazy wise saying
     public $saying;
 
     public $view = 'collections';
@@ -40,31 +38,40 @@ class Dashboard extends Component
     public function mount() 
     {
         try {
-             $this->ongoing = User::find(auth()->id())->focus->where('status', 'ongoing')->reverse();
+            $this->ongoing = User::find(auth()->id())->focus->where('status', 'ongoing')->reverse();
             
             $this->completed = User::find(auth()->id())->focus->where('status', 'completed')->reverse();
-            
             $this->paused = User::find(auth()->id())->focus->where('status', 'paused')->reverse();
-            
+    
+            if ($this->ongoing->count() > 0) {
+                foreach($this->ongoing as $item) {
+                    $item->sum = $item->transactions->sum('amount_paid');
+                    $item->payCount = $item->transactions->count();
+                }
+            }
+        
+            if ($this->completed->count() > 0) {   
+                foreach($this->completed as $item) {
+                    $item->sum = $item->transactions->sum('amount_paid');
+                    $item->payCount = $item->transactions->count();
+                }
+            }
+            if ($this->paused->count() > 0) {
+                foreach($this->paused as $item) {
+                    $item->sum = $item->transactions->sum('amount_paid');
+                    $item->payCount = $item->transactions->count();
+                }
+            }
+
+        } catch(Exception $e) {
+            // dd('Something');
+        }
+
+        try {
             $this->saying = Saying::findOrFail(rand(1, Saying::all()->count()));
-
-            foreach($this->ongoing as $item) {
-                $item->sum = $item->transactions->sum('amount_paid');
-                $item->payCount = $item->transactions->count();
-            }
-            
-            foreach($this->completed as $item) {
-                $item->sum = $item->transactions->sum('amount_paid');
-                $item->payCount = $item->transactions->count();
-            }
-
-            foreach($this->paused as $item) {
-                $item->sum = $item->transactions->sum('amount_paid');
-                $item->payCount = $item->transactions->count();
-            }
-
-        }catch(Exception $e) {
-        //  $this->saying = 'Nothing to say about money today';   
+            // dd($this->saying);
+        } catch(Exception $e) {
+            // dd('Saying error');
         }
     }
 

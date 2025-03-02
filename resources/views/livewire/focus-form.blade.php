@@ -1,13 +1,15 @@
-<div>
-    <section class="flex flex-col gap-2 justify-center items-center bg-white rounded-md p-1">
+<div class="flex justify-center items-center my-5">
+    <section class="flex flex-col gap-2 justify-center items-center bg-primary rounded-md p-1 w-2/4 .w-[500px] shadow-md">
         <div class="w-[500px] .h-[700px]">
-            <div class="mt-24 mb-14 flex items-center gap-2">
-                <h2 class="text-lg font-bold text-gray-700">RepCollect</h2> | <span>Let's Collect</span>
+            <!-- TODO:Add a back navigation button -->
+            <livewire:utils.return-nav styles="m-0" />
+            <div class="mt-12 mb-14 flex items-center gap-2">
+                <h2 class="text-lg font-bold text-gray-700">RepCollect</h2> | <span>Let's Organize Collections</span>
             </div>
             
             <div>
                 <h1 class="text-2xl font-bold text-gray-700">Create A Cause For Collection</h1>
-                <p class="mb-10">Setup money collection point for a cause</p>
+                <p class="mb-10">Where leaders, business owners and representatives can streamline the process of collecting payments for goods, group projects, class resources and more. </p>
             </div>
         </div>
 
@@ -45,7 +47,7 @@
             </div>
 
             <div class="mt-10 flex mb-10">
-                <button type="submit" class="bg-gray-700 p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%] text-sm gap-5"> Create Collection Point
+                <button type="submit" class="bg-secondary p-1 h-[40px] rounded-md text-white flex justify-center items-center w-[100%] text-sm gap-5"> Create Collection Point
                      <div wire:loading>
                         <div class="relative w-8 h-8">
                             <div class="absolute left-0 bottom-0 w-full h-4 bg-white rounded-b-full animate-move"></div>

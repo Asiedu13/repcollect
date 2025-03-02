@@ -4,3 +4,49 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: "ubuntu";
+        src: url(/public/fonts/Ubuntu/Ubuntu-Regular.ttf);
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+:root {
+    /* --primary-light: #e8f0fa;
+    --primary-hover: #dde9f8;
+    --primary-active: #b8d1f0;
+    --primary-normal: #1b69d0;
+    --primary-normal-hover: #185fbb;
+    --primary-normal-active: #1654a6; */
+    /* --primary-light: #233a66;
+    --primary-hover: #dde9f8;
+    --primary-active: #b8d1f0;
+    --primary-normal: #ffffff;
+    --primary-normal-hover: #185fbb;
+    --primary-normal-active: #ffd691; */
+
+    /* --primary: #F1F5F9; */
+    --primary: #ffffff;
+    /* --neutral: #64748B; */
+    /* --secondary: #3173b9; */
+    --accent: #aab4c2;
+    /* --secondary: var(--accent); */
+    --secondary: #64748B;
+    /* --neutral: #F1F5F9; */
+    /* --secondary: #373636; */
+    /* --secondary: #0e5d7c; */
+    --neutral : var(--secondary);
+    --primary-hover: var(--accent);
+/* 
+    --neutral: #fff;
+    --primary: #2f4156;
+    --accent: #567c8d;
+    --primary-hover: #f5efeb;
+    --secondary: #c8d9e6; */
+
+
+}

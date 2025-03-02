@@ -19,7 +19,10 @@ class Focus extends Model
         'desired_amount',
         'end_date',
         'cost',
-        'tags'
+        'tags',
+        'payment_type',
+        'currency',
+        'status'
     ];
 
     public function user()

@@ -9,17 +9,13 @@ use App\Livewire\DashboardFaq;
 use App\Livewire\GenerateLink;
 use App\Livewire\DashboardProfile;
 use App\Livewire\DashboardSettings;
+use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\IndividualCollection;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PaystackPaymentController;
 
-
-Route::get('/', function () {
-    // dd(User::where('id', auth()->id())->value('email'));
-    return view('welcome')->with('username', auth()->id() ? User::where('id', auth()->id())->value('email') : 'Nobody man');
-})->name('home');
-
+Route::get('/', Welcome::class)->name('home');
 // ------------ Registration -----------------
 Route::get('login', function() {
     return view('login');
@@ -52,11 +48,10 @@ Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
 // ------------ Payment ---------------
-Route::get('/pay/{url}', GivePage::class)->name('pay');
+Route::get('/pay/{url?}', GivePage::class)->name('pay');
 Route::get('/payment/callback', [PaystackPaymentController::class, 'handleGatewayCallback']);
-// Route::get('https://checkout.paystack.com/{r}', function(){
-//     return redirect()->away("https://checkout.paystack.com/xj2w8zi223n6q8r");
-// });
+Route::get('/success/{reference}', PaymentSuccess::class)->name('pay.success');
+// Route::get('/payment/{url}/',  );
 // ------------ Admin -----------------
 Route::middleware(['auth'])->group(function(){
     Route::get('dashboard', Dashboard::class)->name('dashboard');
