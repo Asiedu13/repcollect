@@ -35,9 +35,10 @@
     /* --secondary: #3173b9; */
     --accent: #aab4c2;
     /* --secondary: var(--accent); */
-    /* --secondary: #64748B; */
+    --secondary: #64748B;
     /* --neutral: #F1F5F9; */
-    --secondary: #373636;
+    /* --secondary: #373636; */
+    /* --secondary: #0e5d7c; */
     --neutral : var(--secondary);
     --primary-hover: var(--accent);
 /* 

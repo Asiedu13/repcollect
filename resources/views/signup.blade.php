@@ -1,5 +1,5 @@
 <x-app>
-    
+
     <x-slot:title>
         RepCollect | Sign Up
     </x-slot>
@@ -7,10 +7,10 @@
     <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] shadow-md md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center ">
         <div class="lg:w-[500px] text-neutral">
             <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
-                <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> | 
+                <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> |
                 <span>Sign Up</span>
             </div>
-            
+
             <div>
                 <h1 class="text-lg font-bold md:text-xl lg:text-2xl">Get Started Now</h1>
                 <p class="mb-10 text-sm lg:text-lg">Enter your credentials to access your account</p>
@@ -50,7 +50,9 @@
             </div>
 
             <div class="mt-10 flex mb-10">
-                <button type="submit" class="bg-secondary text-primary p-1 h-[40px] rounded-md flex justify-center items-center w-[100%] text-sm">Sign Up</button>
+                <button type="submit" class="bg-secondary text-primary p-1 h-[40px] rounded-md flex justify-center items-center w-[100%] text-sm">
+                    Sign Up <div wire:loading>| Signing up...</div>
+                </button>
             </div>
             <p class="text-sm text-accent font-bold  mb-[20px]">Already have an account? <a  class='text-secondary text-sm' href="<?php echo route('login') ?>">Sign In</a></p>
         </form>
