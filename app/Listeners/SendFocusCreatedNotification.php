@@ -21,6 +21,6 @@ class SendFocusCreatedNotification
      */
     public function handle(FocusCreated $event): void
     {
-        dd($event);
+//        dd($event);
     }
 }
