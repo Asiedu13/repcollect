@@ -6,7 +6,7 @@ use App\Events\FocusCreated;
 use Exception;
 use App\Models\Link;
 use App\Models\User;
-use App\Models\focus;
+use App\Models\Focus;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
@@ -16,7 +16,7 @@ class FocusForm extends Component
 {
     #[Validate('required')]
     public $title;
-    
+
     #[Validate('required')]
     public $description;
 
@@ -26,7 +26,7 @@ class FocusForm extends Component
     public $amount;
 
     public $currentUser;
-    
+
     public function mount()
     {
         $this->currentUser = User::where('id', auth()->id())->value('name');
@@ -35,7 +35,7 @@ class FocusForm extends Component
     {
         $this->validate();
 
-       $newFocus = focus::firstOrNew([
+       $newFocus = Focus::firstOrNew([
             'title' => $this->title,
             'user_id' => auth()->id(),
             'description' => $this->description,
