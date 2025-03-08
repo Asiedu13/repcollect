@@ -7,7 +7,7 @@
     <title> {{ $title ?? 'RepCollect'}} </title>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-gradient-to-tr from-primary from-50% via-secondary to-primary h-screen flex flex-col justify-center items-center md:mx-[50px]">
+<body class=".bg-gradient-to-tr from-primary from-50% via-secondary to-primary h-screen flex flex-col justify-center items-center md:mx-[50px]">
     {{$slot}}
 </body>
 </html>
