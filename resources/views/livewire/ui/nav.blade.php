@@ -10,7 +10,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#features" class="text-gray-600 hover:text-brand-blue transition duration-200">Features</a>
                     <a href="#how-it-works" class="text-gray-600 hover:text-brand-blue transition duration-200">How It Works</a>
-                    <a href="#pricing" class="text-gray-600 hover:text-brand-blue transition duration-200">Pricing</a>
+{{--                    <a href="#pricing" class="text-gray-600 hover:text-brand-blue transition duration-200">Pricing</a>--}}
 
                     <x-ui.button class="ml-2" variant="outline" size="sm">Login </x-ui.button>
                     <x-ui.button class="bg-gradient-to-r from-brand-blue to-brand-teal text-white" size="sm"> Get Started </x-ui.button>
@@ -49,13 +49,7 @@
                     >
                     How It Works
                     </a>
-                    <a
-                        href="#pricing"
-                        class="text-gray-600 hover:text-brand-blue py-2 px-4"
-                        x-on:click="open=false"
-                    >
-                    Pricing
-                    </a>
+{{--                    <a--}}fa>--}}
                     <div class="pt-2 flex flex-col space-y-2">
                         <x-ui.button variant="outline">Log In</x-ui.button>
                         <x-ui.button class="bg-gradient-to-r from-brand-blue to-brand-teal text-white"

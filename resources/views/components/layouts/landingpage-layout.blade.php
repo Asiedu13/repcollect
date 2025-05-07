@@ -22,5 +22,7 @@
 <body>
     <livewire:ui.nav />
     {{$slot}}
+
+    <livewire:footer />
 </body>
 </html>

@@ -3,4 +3,5 @@
     <livewire:marketing.hero></livewire:marketing.hero>
     <livewire:landing.features></livewire:landing.features>
     <livewire:landing.how-it-works></livewire:landing.how-it-works>
+    <livewire:landing.cta-section></livewire:landing.cta-section>
 </div>
