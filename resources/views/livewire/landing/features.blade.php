@@ -20,6 +20,7 @@
                 <x-landing.feature-card
                 title="Real-time Analytics"
                 description="Track every payment with detailed analytics and insights on your dashboard."
+                inactive="true"
                 >
                     <x-icons.bar-chart-column class="h-6 w-6 text-brand-teal" />
                 </x-landing.feature-card>
@@ -48,6 +49,7 @@
                 <x-landing.feature-card
                 title="Multiple Currencies"
                 description="Accept payments in multiple currencies to reach global customers."
+                inactive="true"
                 >
                     <x-icons.dollar-sign class="h-6 w-6 text-amber-600" />
                 </x-landing.feature-card>
