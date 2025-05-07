@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    <livewire:ui.nav />
     {{$slot}}
 </body>
 </html>
