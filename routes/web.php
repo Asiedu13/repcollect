@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Marketing\Hero;
+use App\Livewire\Home;
 use App\Models\User;
 use App\Livewire\GivePage;
 use App\Livewire\Dashboard;
@@ -11,14 +11,13 @@ use App\Livewire\GenerateLink;
 use App\Livewire\DashboardProfile;
 use \App\Livewire\PaymentSuccess;
 use App\Livewire\DashboardSettings;
-use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\IndividualCollection;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PaystackPaymentController;
 
 //Route::get('/', Welcome::class)->name('home');
-Route::get('/', Hero::class)->name('home');
+Route::get('/', Home::class)->name('home');
 // ------------ Registration -----------------
 
 Route::get('login', function() {
