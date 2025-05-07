@@ -9,7 +9,7 @@ use App\Traits\PayStackRequest;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
-class GivePage extends Component
+class   GivePage extends Component
 {
 
     use PayStackRequest;
