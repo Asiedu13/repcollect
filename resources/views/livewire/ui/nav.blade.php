@@ -12,12 +12,19 @@
                     <a href="#how-it-works" class="text-gray-600 hover:text-brand-blue transition duration-200">How It Works</a>
 {{--                    <a href="#pricing" class="text-gray-600 hover:text-brand-blue transition duration-200">Pricing</a>--}}
 
-                    <x-ui.button class="ml-2" variant="outline" size="sm">Login </x-ui.button>
-                    <x-ui.button class="bg-gradient-to-r from-brand-blue to-brand-teal text-white" size="sm"> Get Started </x-ui.button>
+                    <x-ui.button className="ml-2 py-2" variant="outline" size="sm">
+                        <a href="{{route('login')}}">Log in</a>
+                    </x-ui.button>
+{{--                    <div>--}}
+{{--                        <a class="bg-white p-3 rounded-sm border-2" href="{{route('login')}}">Log in</a>--}}
+{{--                    </div>--}}
+                    <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2" size="sm">
+                        <a href="{{route('register')}}">Get Started</a>
+                    </x-ui.button>
                 </div>
 
 {{--                {/* Mobile Menu Button */}--}}
-                <div class="md:hidden"  @click="open = ! open">
+                <div class="md:hidden" @click="open = ! open">
                     <x-ui.button
                         variant="ghost"
                         size="icon"
@@ -49,11 +56,10 @@
                     >
                     How It Works
                     </a>
-{{--                    <a--}}fa>--}}
+{{--                    <afa>--}}
                     <div class="pt-2 flex flex-col space-y-2">
                         <x-ui.button variant="outline">Log In</x-ui.button>
-                        <x-ui.button class="bg-gradient-to-r from-brand-blue to-brand-teal text-white"
-                                >
+                        <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white">
                         Get Started
                         </x-ui.button>
                     </div>

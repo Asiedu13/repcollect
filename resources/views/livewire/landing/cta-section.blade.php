@@ -14,11 +14,11 @@
                                 Start creating payment links in minutes and never chase payments again.
                             </p>
                             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                                <x-ui.button size="lg" class="bg-white text-brand-blue hover:bg-gray-100">
+                                <x-ui.button size="lg" className="bg-white text-brand-blue hover:bg-gray-100">
                                     Get Started Free
                                     <x-icons.arrow-right class="ml-2 h-5 w-5" />
                                 </x-ui.button>
-                                <x-ui.button size="lg" variant="outline" class="border-white text-white hover:bg-white/10">
+                                <x-ui.button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                                     View Demo
                                 </x-ui.button>
                             </div>

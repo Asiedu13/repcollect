@@ -17,7 +17,7 @@
                             Get Started Free
                             <x-icons.arrow-right class="ml-2 h-5 w-5" />
                         </x-ui.button>
-                        <x-ui.button variant="outline" class="px-8 py-6 h-auto text-lg">
+                        <x-ui.button variant="outline" className="px-8 py-6 h-auto text-lg">
                             View Demo
                         </x-ui.button>
                     </div>

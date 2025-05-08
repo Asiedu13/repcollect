@@ -13,11 +13,12 @@
                         Create custom payment links, share them anywhere, and track every payment in real-time with powerful analytics.
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                        <x-ui.button class="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-8 py-6 h-auto text-lg">
-                            Get Started Free
+                        <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-8 py-6 h-auto text-lg">
+                            <a href="{{route('register')}}"> Get Started Free</a>
                             <x-icons.arrow-right class="ml-2 h-5 w-5" />
                         </x-ui.button>
-                        <x-ui.button variant="outline" class="px-8 py-6 h-auto text-lg">
+    {{-- TODO: Add link to youtube video --}}
+                        <x-ui.button variant="outline" className="px-8 py-6 h-auto text-lg">
                             View Demo
                         </x-ui.button>
                     </div>
@@ -25,7 +26,8 @@
                         <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
-                        No credit card required • Free plan available
+{{--                        No credit card required • Free plan available--}}
+                        Welcome to financial ease
                     </div>
                 </div>
                 <div class="md:w-1/2 mt-12 md:mt-0">
