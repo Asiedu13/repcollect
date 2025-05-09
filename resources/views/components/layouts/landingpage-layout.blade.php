@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RepCollect - Share Links & Track Payments</title>
+{{--    TODO: edit the open graph tags here--}}
     <meta name="description" content="Create custom payment links, share them anywhere, and track every payment in real-time with powerful analytics." />
     <meta name="author" content="RepCollect" />
 
@@ -19,10 +20,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 
-<body>
+<body class="font-playfair">
     <livewire:ui.nav />
     {{$slot}}
-
     <livewire:footer />
 </body>
 </html>

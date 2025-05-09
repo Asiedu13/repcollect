@@ -30,8 +30,9 @@ class   GivePage extends Component
      #[Validate('required', message: "The contact field is required")]
     public $payerContact;
 
-    #[Validate("required|email", message: "The email field is required")]
-    public $payerEmail;
+    #[Validate("required | email", message: "The email field is required")]
+    public $email;
+
     public $min;
 
 //    public $currentUrl = url()->current();
@@ -68,7 +69,7 @@ class   GivePage extends Component
             $this->payerContact,
             request()->root() . "/pay/{$this->focusId}",
             (string) $this->payerAmount * 100,
-            $this->payerEmail,
+            $this->email,
          );
         // dd($this->authorizer);
 
@@ -107,6 +108,6 @@ class   GivePage extends Component
 
     public function render()
     {
-        return view('livewire.give-page')->title("RepCollect | " .$this->focus->title)->layout('components.layouts.pay-layout');
+        return view('livewire.give-page')->title("RepCollect | " . $this->focus->title)->layout('components.layouts.pay-layout');
     }
 }

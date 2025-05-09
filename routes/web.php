@@ -72,7 +72,7 @@ Route::middleware(['auth'])->group(function(){
 Route::get('/logout', function(){
     auth()->logout();
     return redirect()->route('home');
-});
+})->name('logout');
 
 Route::fallback(function(){
     return abort(404); // change this because it indicates laravel
