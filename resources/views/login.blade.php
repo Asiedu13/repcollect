@@ -3,10 +3,10 @@
         RepCollect | Sign In
     </x-slot>
 
-    <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center shadow-md">
+    <section class="flex flex-col gap-2 .bg-primary rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center shadow-md">
         <div class="lg:w-[500px] text-neutral">
             <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
-                <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> | 
+                <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> |
                 <span>Login</span>
             </div>
 
@@ -31,7 +31,7 @@
                 </a>
                 <div class="relative flex flex-col text-primary justify-center">
                     <hr class="h-px mt-8 bg-neutral dark:bg-gray-700">
-                    <span class="absolute right-[50%] top-[20px] text-secondary bg-primary px-1 shadow-xl rounded-md font-medium">or</span>
+                    <span class="absolute right-[50%] top-[20px] text-secondary .bg-primary px-1 shadow-xl rounded-md font-medium">or</span>
                 </div>
             </div>
         </div>
