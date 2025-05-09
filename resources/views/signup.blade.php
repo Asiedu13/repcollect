@@ -1,23 +1,22 @@
 <x-app>
-
     <x-slot:title>
         RepCollect | Sign Up
     </x-slot>
 
-    <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] shadow-md md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center ">
+    <section class="flex flex-col gap-2 rounded-md p-1 px-10 w-[450px] shadow-md md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center ">
         <div class="lg:w-[500px] text-neutral">
             <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
-                <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> |
-                <span>Sign Up</span>
+                <h2 class="text-sm font-bold md:text-md lg:text-lg gradient-text"> <a href="{{route('home')}}">RepCollect</a></h2> |
+                <span>Sign up</span>
             </div>
 
-            <div>
+            <div class="text-gray-600 ">
                 <h1 class="text-lg font-bold md:text-xl lg:text-2xl">Get Started Now</h1>
                 <p class="mb-10 text-sm lg:text-lg">Enter your credentials to access your account</p>
                  @if($errors->any())
                 <div>
                     @foreach ($errors->all() as $error )
-                    <p class='text-red-600'>* {{$error}}</p>
+                    <p class='text-destructive'>* {{$error}}</p>
                     @endforeach
                 </div>
                 @endif
@@ -29,9 +28,9 @@
                 <path d="M12.5003 6.09928C14.1826 6.09928 15.693 6.67741 16.8805 7.81283L20.167 4.52637C18.1826 2.67741 15.5889 1.54199 12.5003 1.54199C8.02116 1.54199 4.14616 4.1097 2.26074 7.85449L6.08887 10.8232C6.98991 8.11491 9.51595 6.09928 12.5003 6.09928Z" fill="#EA4335"/>
                 </svg> Sign up with Google
                 </a>
-                <div class="relative flex flex-col text-primary justify-center">
+                <div class="relative flex flex-col  justify-center">
                     <hr class="h-px mt-8 bg-neutral dark:bg-gray-700">
-                    <span class="absolute right-[50%] top-[20px] text-secondary bg-primary px-1 shadow-xl rounded-md font-medium">or</span>
+                    <span class="absolute right-[50%] top-[20px] px-1 shadow-xl rounded-md font-medium">or</span>
                 </div>
             </div>
         </div>
@@ -39,22 +38,28 @@
         <form action="{{route('register')}}" class="md:w-[500px] text-neutral" method="POST">
             @csrf
             <div class="my-5 flex flex-col">
-                <label for="email" class="text-sm font-semibold">Email address</label>
-                <input class="outline-none border border-gray-400 rounded-md p-2 lg:w-full placeholder:text-sm lg:placeholder:text-md" type="email" id="email" name="email" placeholder="example@gmail.com">
+                <label for="email" class="text-sm text-gray-600 font-semibold">Email address</label>
+                <div class="flex gap-2 outline-none border border-gray-300 rounded-md px-2 items-center">
+                    <x-icons.mail-small class="text-gray-400" />
+                    <input class="outline-none p-2 lg:w-full placeholder:text-sm lg:placeholder:text-md flex-1" type="email" id="email" name="email" placeholder="example@gmail.com">
+                </div>
             </div>
 
             <div class="my-5 flex flex-col">
-                <label for="password" class="text-sm font-semibold">Password</label>
-                <input class="outline-none border border-gray-400 rounded-md p-2" type="password" id="password" name="password" placeholder="••••••••••">
+                <label for="password" class="text-sm  text-gray-600 font-semibold">Password</label>
+                <div class="flex gap-2 outline-none border border-gray-300 rounded-md px-2 items-center">
+                    <x-icons.lock class="text-gray-400"/>
+                    <input class="outline-none p-2 flex-1" type="password" id="password" name="password" placeholder="••••••••••">
+                </div>
                 {{-- <a href="#" class="text-sm font-bold text-gray-700 text-right">Forgot password?</a> --}}
             </div>
 
-            <div class="mt-10 flex mb-10">
-                <button type="submit" class="bg-secondary text-primary p-1 h-[40px] rounded-md flex justify-center items-center w-[100%] text-sm">
-                    Sign Up <div wire:loading>| Signing up...</div>
-                </button>
+            <div class="mt-10 .flex mb-10">
+                <x-ui.button type="submit" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-2 py-4 h-auto text-lg">
+                    Sign Up <div wire:loading> | Signing up...</div>
+                </x-ui.button>
             </div>
-            <p class="text-sm text-accent font-bold  mb-[20px]">Already have an account? <a  class='text-secondary text-sm' href="<?php echo route('login') ?>">Sign In</a></p>
+            <p class="text-sm text-brand-dark font-bold  mb-[20px]">Already have an account? <a  class='text-brand-teal text-sm' href="<?php echo route('login') ?>">Sign In</a></p>
         </form>
     </section>
 </x-app>

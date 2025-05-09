@@ -11,13 +11,13 @@ class button extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $size="default", public $className = 'something',  public $variant = "default")
+    public function __construct(public $size="default", public $className = 'something', public $type="normal",  public $variant = "default")
     {
         $sizes = [
             'sm' => "h-9 rounded-md px-3",
-            'lg' => 'h-11 rounded-md px-8',
+            'lg' => 'h-11 w-[inherit] rounded-md px-8',
             'icon' => 'h-10 w-10',
-            'default' => "h-10 px-4 py-2",
+            'default' => "h-10 w-full px-4 py-2",
 
         ];
         $variants = [
@@ -30,6 +30,7 @@ class button extends Component
         ];
         $this->variant = $variants[$variant];
         $this->size = $sizes[$size];
+        $this->type = $type;
         $this->className = $className;
     }
 
