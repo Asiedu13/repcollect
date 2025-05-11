@@ -56,7 +56,7 @@
             </div>
 
             <div class="mt-10 .flex mb-10 text-neutral min-w-screen">
-                <x-ui.button size="lg" type="submit" className="w-full .flex-1 bg-gradient-to-r from-brand-blue to-brand-teal text-white px-2 py-4 h-auto text-lg">
+                <x-ui.button variant="default" size="lg" type="submit" className="w-full .flex-1 bg-gradient-to-r from-brand-blue to-brand-teal text-white px-2 py-4 h-auto text-lg">
                    Sign In
                     <x-icons.arrow-right class="ml-2 h-5 w-5" />
                 </x-ui.button>

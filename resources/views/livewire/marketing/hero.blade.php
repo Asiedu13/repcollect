@@ -15,7 +15,7 @@
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                         @guest
                             <a href="{{route('register')}}">
-                                <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-8 py-4 h-auto text-lg">
+                                <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-8 py-4 h-auto text-lg">
                                      Get Started Free
                                     <x-icons.arrow-right class="ml-2 h-5 w-5" />
                                 </x-ui.button>
@@ -23,7 +23,7 @@
                         @endguest
                         @auth
                             <a href="{{route('dashboard')}}">
-                                <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-8 py-4 h-auto text-lg">
+                                <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-8 py-4 h-auto text-lg">
                                     Go to dashboard
                                     <x-icons.arrow-right class="ml-2 h-5 w-5" />
                                 </x-ui.button>

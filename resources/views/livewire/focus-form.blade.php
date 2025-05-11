@@ -55,7 +55,7 @@
             </div>
 
             <div class="mt-10 mb-10">
-                <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white p-1 h-[40px] rounded-md flex justify-center items-center w-full text-sm gap-5"> Create Collection Point
+                <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white p-1 h-[40px] rounded-md flex justify-center items-center w-full text-sm gap-5"> Create Collection Point
                      <div wire:loading>
                         <div class="relative w-8 h-8">
                             <div class="absolute left-0 bottom-0 w-full h-4 .bg-white rounded-b-full animate-move"></div>

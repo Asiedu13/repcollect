@@ -18,7 +18,7 @@
                             </x-ui.button>
                         </a>
                         <a href="{{route('register')}}">
-                            <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2" size="sm">
+                            <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2" size="sm">
                                 Get Started
                             </x-ui.button>
                         </a>
@@ -28,7 +28,7 @@
                 {{--                {/* Mobile Menu Button */}--}}
                 @guest
                     <div class="md:hidden" @click="open = ! open">
-                        <x-ui.button className="something"
+                        <x-ui.button variant="default" className="something"
                                 variant="ghost"
                                 size="icon"
                                 aria-label="Toggle Menu"
@@ -67,7 +67,7 @@
                                 </x-ui.button>
                             </a>
                             <a href="{{route('register')}}" class="flex-1">
-                                <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2">
+                                <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2">
                                     Get Started
                                 </x-ui.button>
                             </a>

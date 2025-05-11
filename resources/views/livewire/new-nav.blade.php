@@ -16,7 +16,7 @@
                             <a href="{{route('login')}}">Log in</a>
                         </x-ui.button>
 
-                        <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2" size="sm">
+                        <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2" size="sm">
                             <a href="{{route('register')}}">Get Started</a>
                         </x-ui.button>
                     </div>
@@ -59,7 +59,7 @@
 
                             <div class="pt-2 flex flex-col space-y-2">
                                 <x-ui.button className="something" variant="outline">Log In</x-ui.button>
-                                <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white">
+                                <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white">
                                     Get Started
                                 </x-ui.button>
                             </div>
