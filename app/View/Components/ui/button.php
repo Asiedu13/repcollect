@@ -30,8 +30,6 @@ class button extends Component
         ];
         $this->variant = $variants[$variant];
         $this->size = $sizes[$size];
-        $this->type = $type;
-        $this->className = $className;
     }
 
     /**
