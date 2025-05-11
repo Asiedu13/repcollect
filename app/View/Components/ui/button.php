@@ -11,14 +11,13 @@ class button extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $size="default", public $className = 'something',  public $variant = "default")
+    public function __construct(public string $size="default", public string $className = 'something',  public string $variant = "default")
     {
         $sizes = [
             'sm' => "h-9 rounded-md px-3",
             'lg' => 'h-11 w-[inherit] rounded-md px-8',
             'icon' => 'h-10 w-10',
             'default' => "h-10 w-full px-4 py-2",
-
         ];
         $variants = [
             'link' => 'text-primary underline-offset-4 hover:underline',
