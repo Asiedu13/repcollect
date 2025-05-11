@@ -54,6 +54,7 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 Route::get('/pay/{url?}', GivePage::class)->name('pay');
 Route::get('/payment/callback', [PaystackPaymentController::class, 'handleGatewayCallback']);
 Route::get('/success/{reference}', PaymentSuccess::class)->name('pay.success');
+Route::post('/success/hook', [PaystackPaymentController::class, 'handleSuccessWebHook']);
 // Route::get('/payment/{url}/',  );
 // ------------ Admin -----------------
 Route::middleware(['auth'])->group(function(){
@@ -66,7 +67,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/me/generate/{url}', GenerateLink::class )->name('me.generate');
 
     Route::get('/collect/{url}', IndividualCollection::class)->name('collect')->middleware('isCreator');
-
 });
 
 Route::get('/logout', function(){

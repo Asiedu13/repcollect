@@ -54,12 +54,14 @@ class   GivePage extends Component
         $this->creator = User::findOrFail($this->focus->user_id);
         $this->min = $this->focus->cost;
     }
-
+    // This function is called from the UI
     public function toggleModal()
     {
         $this->showModal = !$this->showModal;
     }
 
+
+    // This function is called from the UI
      public function redirectToGateway()
     {
         $this->validate();
@@ -71,13 +73,9 @@ class   GivePage extends Component
             (string) $this->payerAmount * 100,
             $this->email,
          );
-        // dd($this->authorizer);
 
-        // Create a transaction (unverified transaction)
-        //
-        // ]);
+//        dd($this->authorizer->data->authorization_url);
         return redirect()->away($this->authorizer->data->authorization_url);
-        // $this->verifyPayment();
     }
 
     public function verifyPayment($reference)
@@ -103,7 +101,6 @@ class   GivePage extends Component
             // Trhow an error or exception
             abort(403);
         }
-
     }
 
     public function render()

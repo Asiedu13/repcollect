@@ -18,4 +18,13 @@ class PaystackPaymentController extends Controller
         // you can store the authorization_code in your db to allow for recurrent subscriptions
         // you can then redirect or do whatever you want
     }
+
+    public function handleSuccessWebHook(Request $request)
+    {
+        dd($request);
+        //dd(request());
+        // confirm the event
+        // Send a notification of success
+        //
+    }
 }
