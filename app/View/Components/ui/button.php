@@ -11,7 +11,7 @@ class button extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $size="default", public $className = 'something', public $type="normal",  public $variant = "default")
+    public function __construct(public $size="default", public $className = 'something',  public $variant = "default")
     {
         $sizes = [
             'sm' => "h-9 rounded-md px-3",
