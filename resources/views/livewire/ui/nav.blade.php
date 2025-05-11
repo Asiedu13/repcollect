@@ -62,12 +62,12 @@
 
                         <div class="pt-2 grid grid-cols-1 gap-2 space-y-2">
                             <a href="{{route('login')}}" class="flex-1 ">
-                                <x-ui.button className="ml-2 py-2 flex-1" variant="outline">
+                                <x-ui.button size="default" className="ml-2 py-2 flex-1" variant="outline">
                                     Log in
                                 </x-ui.button>
                             </a>
                             <a href="{{route('register')}}" class="flex-1">
-                                <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2">
+                                <x-ui.button size="default" variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white py-2">
                                     Get Started
                                 </x-ui.button>
                             </a>

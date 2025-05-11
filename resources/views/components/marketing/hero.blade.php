@@ -13,11 +13,11 @@
                         Create custom payment links, share them anywhere, and track every payment in real-time with powerful analytics.
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                        <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-8 py-6 h-auto text-lg">
+                        <x-ui.button size="default" variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-8 py-6 h-auto text-lg">
                             Get Started Free
                             <x-icons.arrow-right class="ml-2 h-5 w-5" />
                         </x-ui.button>
-                        <x-ui.button variant="outline" className="px-8 py-6 h-auto text-lg">
+                        <x-ui.button size="default" variant="outline" className="px-8 py-6 h-auto text-lg">
                             View Demo
                         </x-ui.button>
                     </div>

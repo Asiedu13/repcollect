@@ -55,7 +55,7 @@
             </div>
 
             <div class="mt-10 .flex mb-10">
-                <x-ui.button variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-2 py-4 h-auto text-lg">
+                <x-ui.button size="default" variant="default" className="bg-gradient-to-r from-brand-blue to-brand-teal text-white px-2 py-4 h-auto text-lg">
                     Sign Up <div wire:loading> | Signing up...</div>
                 </x-ui.button>
             </div>
