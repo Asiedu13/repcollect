@@ -3,7 +3,7 @@
         RepCollect | Sign Up
     </x-slot>
 
-    <section class="flex flex-col gap-2 rounded-md p-1 px-10 w-[450px] shadow-md md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center ">
+    <section class="flex flex-col gap-2 rounded-md p-1 px-10 .w-[400px] shadow-md md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center ">
         <div class="lg:w-[500px] text-neutral">
             <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
                 <h2 class="text-sm font-bold md:text-md lg:text-lg gradient-text"> <a href="{{route('home')}}">RepCollect</a></h2> |
