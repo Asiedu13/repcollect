@@ -28,7 +28,7 @@
                 {{--                {/* Mobile Menu Button */}--}}
                 @guest
                     <div class="md:hidden" @click="open = ! open">
-                        <x-ui.button
+                        <x-ui.button className="something"
                                 variant="ghost"
                                 size="icon"
                                 aria-label="Toggle Menu"

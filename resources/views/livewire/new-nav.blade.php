@@ -58,7 +58,7 @@
                             </a>
 
                             <div class="pt-2 flex flex-col space-y-2">
-                                <x-ui.button variant="outline">Log In</x-ui.button>
+                                <x-ui.button className="something" variant="outline">Log In</x-ui.button>
                                 <x-ui.button className="bg-gradient-to-r from-brand-blue to-brand-teal text-white">
                                     Get Started
                                 </x-ui.button>
