@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Home;
 use App\Models\User;
 use App\Livewire\GivePage;
 use App\Livewire\Dashboard;
@@ -10,14 +11,15 @@ use App\Livewire\GenerateLink;
 use App\Livewire\DashboardProfile;
 use \App\Livewire\PaymentSuccess;
 use App\Livewire\DashboardSettings;
-use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\IndividualCollection;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PaystackPaymentController;
 
-Route::get('/', Welcome::class)->name('home');
+//Route::get('/', Welcome::class)->name('home');
+Route::get('/', Home::class)->name('home');
 // ------------ Registration -----------------
+
 Route::get('login', function() {
     return view('login');
 })->name('login');
@@ -52,6 +54,7 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 Route::get('/pay/{url?}', GivePage::class)->name('pay');
 Route::get('/payment/callback', [PaystackPaymentController::class, 'handleGatewayCallback']);
 Route::get('/success/{reference}', PaymentSuccess::class)->name('pay.success');
+Route::post('/success/hook', [PaystackPaymentController::class, 'handleSuccessWebHook']);
 // Route::get('/payment/{url}/',  );
 // ------------ Admin -----------------
 Route::middleware(['auth'])->group(function(){
@@ -64,13 +67,12 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/me/generate/{url}', GenerateLink::class )->name('me.generate');
 
     Route::get('/collect/{url}', IndividualCollection::class)->name('collect')->middleware('isCreator');
-
 });
 
 Route::get('/logout', function(){
     auth()->logout();
     return redirect()->route('home');
-});
+})->name('logout');
 
 Route::fallback(function(){
     return abort(404); // change this because it indicates laravel

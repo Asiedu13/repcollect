@@ -3,9 +3,6 @@ namespace App\Traits;
 
 trait PayStackRequest
 {
-    //open connection
-    
-
     public function PayGET($url)
 {
         $ch = curl_init();
@@ -13,7 +10,7 @@ trait PayStackRequest
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            "Authorization:  Bearer sk_test_8ab2e89ffe3deadce41ed50134439d6dfa0ecbe1",
+            "Authorization:  Bearer " .config('paystack.secretKey'),
         ));
         $result = curl_exec($ch);
 
@@ -29,7 +26,7 @@ trait PayStackRequest
     public function PayPOST($url, $name, $phone, $callbackUrl="http://localhost:8000/", $amount=null, $email=null)
     {
         $url = "https://api.paystack.co/{$url}";
-        
+
         $fields = [
             'email' => $email,
             'amount' => $amount,
@@ -41,24 +38,24 @@ trait PayStackRequest
             'callback_url' => $callbackUrl,
             'metadata' => ["username" => $name, "phone" => $phone]
         ];
-        
+
         $fields_string = http_build_query($fields);
-        
-        
-        
+
+
+
         $ch = curl_init();
-  
+
         //set the url, number of POST vars, POST data
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch,CURLOPT_POST, true);
         curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            "Authorization:  Bearer sk_test_8ab2e89ffe3deadce41ed50134439d6dfa0ecbe1",
+            "Authorization:  Bearer " .config('paystack.secretKey'),
         ));
-  
+
         //So that curl_exec returns the contents of the cURL; rather than echoing it
-        curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
-  
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+
         //execute post
         $result = curl_exec($ch);
 
@@ -70,7 +67,6 @@ trait PayStackRequest
             return redirect()->back()->withErrors($err)->withInput();
         } else {
            return json_decode($result);
-            // 
         }
 
     }
