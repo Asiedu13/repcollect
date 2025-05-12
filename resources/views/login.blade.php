@@ -3,16 +3,16 @@
         RepCollect | Sign In
     </x-slot>
 
-    <section class="flex flex-col gap-2 bg-primary rounded-md p-1 px-10 w-[350px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center shadow-md">
+    <section class="flex flex-col gap-2 .bg-primary rounded-md p-1 px-10 .w-[450px] md:w-[600px] lg:px-0 lg:mx-0 lg:justify-center lg:items-center shadow-md">
         <div class="lg:w-[500px] text-neutral">
             <div class="mb-6 lg:mb-8 flex items-center gap-2 mt-12 lg:mt-20">
-                <h2 class="text-sm font-bold md:text-md lg:text-lg"> <a href="{{route('home')}}">RepCollect</a></h2> | 
+                <h2 class="text-sm font-bold md:text-md lg:text-lg gradient-text"> <a href="{{route('home')}}">RepCollect</a></h2> |
                 <span>Login</span>
             </div>
 
-            <div class="text-neutral">
-                <h1 class="text-lg font-bold text-neutral md:text-xl lg:text-2xl">Welcome Back</h1>
-                <p class="mb-10 text-sm lg:text-lg">Enter your credentials to access your account</p>
+            <div class="text-neutral text-gray-600">
+                <h1 class="text-lg font-bold  text-neutral md:text-xl lg:text-2xl">Welcome Back</h1>
+                <p class="mb-10 text-sm lg:text-md">Enter your credentials to access your account</p>
                 @if($errors->any())
                 <div>
                     @foreach ($errors->all() as $error )
@@ -31,7 +31,7 @@
                 </a>
                 <div class="relative flex flex-col text-primary justify-center">
                     <hr class="h-px mt-8 bg-neutral dark:bg-gray-700">
-                    <span class="absolute right-[50%] top-[20px] text-secondary bg-primary px-1 shadow-xl rounded-md font-medium">or</span>
+                    <span class="absolute right-[50%] top-[20px] text-secondary .bg-primary px-1 shadow-xl rounded-md font-medium">or</span>
                 </div>
             </div>
         </div>
@@ -39,20 +39,29 @@
         <form action="" class="md:w-[500px] text-neutral" method="POST">
             @csrf
             <div class="my-5 flex flex-col">
-                <label for="email" class="text-sm font-semibold">Email address</label> <br />
-                <input class="outline-none border border-gray-400 rounded-md p-2 lg:w-full placeholder:text-sm lg:placeholder:text-md" type="email" id="email" name="email" placeholder="example@gmail.com">
+                <label for="email" class="text-sm text-gray-600 font-semibold">Email address</label> <br />
+                <div class="flex gap-2 outline-none border border-gray-300 rounded-md px-2 items-center">
+                    <x-icons.mail-small class="text-gray-400" />
+                    <input class="outline-none p-2 lg:w-full placeholder:text-sm lg:placeholder:text-md" type="email" id="email" name="email" placeholder="example@gmail.com">
+                </div>
             </div>
 
             <div class="my-5 flex flex-col">
-                <label for="password" class="text-sm font-semibold">Password</label>
-                    <input class="outline-none border border-gray-400 rounded-md p-2" type="password" id="password" name="password" placeholder="••••••••••">
-                    <a href="#" class="text-sm font-bold text-right">Forgot password?</a>
+                <label for="password" class="text-sm font-semibold text-gray-600">Password</label>
+                    <div class="flex gap-2 outline-none border border-gray-300 rounded-md px-2 items-center">
+                        <x-icons.lock class="text-gray-400"/>
+                        <input class="flex-1 outline-none p-2" type="password" id="password" name="password" placeholder="••••••••••">
+                    </div>
+                    <a href="#" class="text-sm text-gray-600 font-bold text-right">Forgot password?</a>
             </div>
 
-            <div class="mt-10 flex mb-10 text-neutral">
-                <button type="submit" class="bg-secondary text-primary p-1 h-[40px] rounded-md flex justify-center items-center w-[100%] text-sm">Sign In</button>
+            <div class="mt-10 .flex mb-10 text-neutral min-w-screen">
+                <x-ui.button variant="default" size="lg" type="submit" className="w-full .flex-1 bg-gradient-to-r from-brand-blue to-brand-teal text-white px-2 py-4 h-auto text-lg">
+                   Sign In
+                    <x-icons.arrow-right class="ml-2 h-5 w-5" />
+                </x-ui.button>
             </div>
-            <p class="text-sm text-accent font-bold mb-[20px]">Don&apos;t have an account? <a  class='text-secondary text-sm' href="<?php echo route('register') ?>">Sign Up</a></p>
+            <p class="text-sm text-brand-dark font-bold mb-[20px]">Don&apos;t have an account? <a  class='text-brand-teal text-sm' href="<?php echo route('register') ?>">Sign Up</a></p>
         </form>
     </section>
 </x-app>

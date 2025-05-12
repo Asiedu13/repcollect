@@ -9,7 +9,7 @@ use App\Traits\PayStackRequest;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
-class GivePage extends Component
+class   GivePage extends Component
 {
 
     use PayStackRequest;
@@ -30,8 +30,9 @@ class GivePage extends Component
      #[Validate('required', message: "The contact field is required")]
     public $payerContact;
 
-    #[Validate("required|email", message: "The email field is required")]
-    public $payerEmail;
+    #[Validate("required | email", message: "The email field is required")]
+    public $email;
+
     public $min;
 
 //    public $currentUrl = url()->current();
@@ -53,12 +54,14 @@ class GivePage extends Component
         $this->creator = User::findOrFail($this->focus->user_id);
         $this->min = $this->focus->cost;
     }
-
+    // This function is called from the UI
     public function toggleModal()
     {
         $this->showModal = !$this->showModal;
     }
 
+
+    // This function is called from the UI
      public function redirectToGateway()
     {
         $this->validate();
@@ -68,15 +71,11 @@ class GivePage extends Component
             $this->payerContact,
             request()->root() . "/pay/{$this->focusId}",
             (string) $this->payerAmount * 100,
-            $this->payerEmail,
+            $this->email,
          );
-        // dd($this->authorizer);
 
-        // Create a transaction (unverified transaction)
-        //
-        // ]);
+//        dd($this->authorizer->data->authorization_url);
         return redirect()->away($this->authorizer->data->authorization_url);
-        // $this->verifyPayment();
     }
 
     public function verifyPayment($reference)
@@ -102,11 +101,10 @@ class GivePage extends Component
             // Trhow an error or exception
             abort(403);
         }
-
     }
 
     public function render()
     {
-        return view('livewire.give-page')->title("RepCollect | " .$this->focus->title)->layout('components.layouts.pay-layout');
+        return view('livewire.give-page')->title("RepCollect | " . $this->focus->title)->layout('components.layouts.pay-layout');
     }
 }

@@ -1,5 +1,5 @@
-  <main class="bg-primary mt-5 rounded-md h-[fit] lg:w-[700px] flex flex-start flex-col .container px-2">
-      <header class="flex gap-2 .text-gray-600 text-neutral font-semibold items-center py-4 px-4">
+  <main class=".bg-primary mt-5 rounded-md h-[fit] lg:w-[700px] flex flex-start flex-col px-2">
+      <header class="flex gap-2 .text-gray-600 .text-neutral font-semibold items-center py-4 px-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
         <h2 class="text-xl">Settings</h2>
       </header>
@@ -23,20 +23,20 @@
             <div>
               <label class="font-medium">Momo Account</label>
               <p class="text-sm mb-5">All payments will be made to this number</p>
-              <input 
+              <input
               wire:model="momo"
-              @save-methods.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'bg-white p-0 my-0 font-medium bg-white text-secondary border rounded-md p-2')" 
+              @save-methods.window="$el.setAttribute('disabled', 'true'); $el.setAttribute('class', 'bg-white p-0 my-0 font-medium bg-white text-secondary border rounded-md p-2')"
               @edit-methods.window="$el.removeAttribute('disabled'); $el.setAttribute('class', 'p-2 border text-secondary border-blue-400 rounded-md outline-blue-400 placeholder:text-blue-400')" id="momo"
-              class="font-medium bg-primary text-secondary border rounded-md p-2" 
-              type="text" 
-              name="momo" 
-              placeholder="+233" 
-              disabled 
+              class="font-medium .bg-primary .text-secondary border rounded-md p-2"
+              type="text"
+              name="momo"
+              placeholder="+233"
+              disabled
               />
               @error('momo')
                 <p class="text-red-400 text-sm mt-5 flex gap-2">
-                  <span class=""> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>  
+                  <span class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                   </span>
                   {{$message}}
                 </p>
