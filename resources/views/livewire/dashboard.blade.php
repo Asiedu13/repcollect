@@ -1,4 +1,4 @@
-<main class=".bg-primary border border-gray-400 mt-5 rounded-md h-[fit] lg:w-[700px] flex flex-col px-2">
+<main class=".bg-primary border border-gray-400 .mt-5 rounded-md h-[fit] lg:w-[700px] flex flex-col px-2">
         <header class="flex gap-2 text-brand-blue font-semibold items-center py-4 px-4">
            <x-icons.squigglydollarsign />
             <h2 class="text-xl .text-brand-teal border-r-2 border-brand-teal pr-4">Collections</h2>
