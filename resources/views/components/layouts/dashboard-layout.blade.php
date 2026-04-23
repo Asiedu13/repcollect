@@ -54,7 +54,7 @@
         </section>
 
         <x-ui.container>
-            <div class="mt-20">
+            <div class=".mt-20">
             {{ $slot }}
             </div>
         </x-ui.container>
